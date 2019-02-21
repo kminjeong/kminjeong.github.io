@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>대전병원 - 병원안내</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileImage" content="">
+
+    <!-- 메타데이터 개발 공통 사항 -->
+    <!-- 데스크탑에서 IE로 웹 문서를 열 때 가장 최신 버전으로 실행 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- 앱(웹 사이트)의 이름 -->
+    <meta name="application-name" content="SRC hospital Site">
+    <!-- 웹 사이트 저작자의 이름 -->
+    <meta name="author" content="kitae Kim">
+    <!-- 현재 문서의 설명 -->
+    <meta name="description" content="SRC hospital Site Mainpage"> 
+    <!-- 현재 문서의 저작도구 -->
+    <meta name="generator" content="Brackts">
+    <!-- 검색엔진에서 검색되게할 키워드 -->
+    <meta name="keywords" content="SRC 병원, 건강관리, 휴양">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua|Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link rel="stylesheet" href="com.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="sub4.css">
+    <style>
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display:none; }    
+    ::-o-scrollbar { display:none; } 
+    ::-moz-scrollbar { display:none; }     
+    </style>
+<!--    <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="./js/jquery-1.11.1.js"></script>
+    
+    <script>
+    /* 여기가 스크립트 처리 구간 */    
+    $(function(){
+        var intv = setInterval(function(){ lAni(); }, 3000);
+        function lAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":"-510px"}, 800, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+            });
+            
+        }
+    });    
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcG6XLlvSL0DQtg1G38wiT_r8BYN3RbWQ&callback=initMap"></script> -->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpo7PlmFhN57HAxDlD8MTLI4DT1bL9VFY&callback=initMap"></script>-->
+<!--
+1) 구글 지도 api key 발급 사이트로 이동하여 지도 API 서비스 신청
+2) https://console.cloud.google.com/getting-started?pli=1
+3) [API 및 서비스] -> [사용자 인증 정보] -> 인증 키 발급
+-->
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.4931346, 126.92737779999993);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: '근로복지공단 대전병원'	  //레이블을 바꿔서 입력
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+<script>
+$(function(){
+//   setTimeout(function(){
+//       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+//   }, 1000); 
+});    
+</script>
+</head>
+<body onload="initialize()">
+<div class="hdFrame on"></div>
+<header id="hd">
+    <div class="wrap">
+        <a href="index.html" class="logo">
+            <img src="./img/logo.png" alt="앰블럼">
+        </a>
+        <nav id="gnb">
+            <ul>
+                 <li><a href="intro.html#page1">병원안내</a></li>
+                <li><a href="physical.html#page1">진료안내</a></li>
+                <li><a href="ward.html#page1">입.퇴원안내</a></li>
+                <li><a href="news.html#page1">정보공개</a></li>
+                <li><a href="speech.html#page1">의료영상정보</a></li>
+            </ul>
+        </nav>
+        <label for="ck" class="lstBtn">
+            <span class="item1 on"></span>
+            <span class="item2 on"></span>
+            <span class="item3 on"></span>
+            <span class="item4 on"></span>
+        </label>
+    </div>
+</header>    
+<main id="content">
+    <div class="blank"></div>
+    <div class="page" id="page1">
+        <a href="#page1" class="btn1 item1">공지사항/새소식</a>
+            <div class="con">
+            <h1 class="pageTitle">공지사항</h1>
+            <section class="sec2">
+                <div class="subBox">
+                    <form action="notice_lst.php" class="searchForm">
+                        <p>
+                            <input type="text" id="keyword" class="searchKey" placeholder="검색어를 입력해주세요" />
+                            <button class="submitBtn">
+                                <i class="icon-search"></i>
+                            </button>
+                        </p>
+                    </form>
+                    <ul class="newsLst">
+                        <li class="item1">
+                            <a href="">
+                                <div class="col4">
+                                    <img src="./img/newe1.png" alt="사이트리뉴얼오픈" class="thumbNail">
+                                </div>
+                                <div class="col8">
+                                    <h2 class="newsTitle">[근로복지공단 대전병원] 대전병원 내부</h2>
+                                    <p class="newsComent">
+                                        <span class="newsDate">
+                                            <i class="icon-calendar">2018.11.27</i>
+                                        </span>
+                                        <span class="newsCnt">
+                                            <i class="icon-eye">66</i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </a>       
+                        </li>
+                        <li class="item2">
+                           <a href="">
+                                <div class="col4">
+                                    <img src="./img/newe2.png" alt="제휴할인" class="thumbNail">
+                                </div>
+                                <div class="col8">
+                                    <h2 class="newsTitle">[근로복지공단] 2019년도 거점형 공공직장어린이집 건립 사업 공모 실시 안내</h2>
+                                    <p class="newsComent">
+                                        <span class="newsDate">
+                                            <i class="icon-calendar">2018.01.07</i>
+                                        </span>
+                                        <span class="newsCnt">
+                                            <i class="icon-eye">43</i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <a href="#page2" class="btn1 item2">보도자료</a>
+                <div class="con">
+            <h1 class="pageTitle">대전병원</h1>
+            <section class="sec2">
+                <div class="subBox">
+                    <ul class="letterLst">
+                        <li class="col4">
+                            <a href="">
+                                <img src="./img/news.png" alt="뉴스레터2019년01월호">
+                                <span class="letterCom">(2019년 01월 발행) </span>
+                            </a>
+                        </li>
+                        <li class="col4">
+                            
+                        </li>
+                        <li class="col4">
+                            
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <a href="#page3" class="btn1 item3">자원봉사단</a>
+          <div class="con">
+            <h1 class="pageTitle">자원봉사단</h1>
+            <figure class="vsBox">
+                    <img src="./img/news4.png" alt="자원봉사단" class="vsImg">
+                    <div class="vsTitBox">
+                        <h1 class="vsTitle">
+                            <img src="./img/news-logo.PNG" alt="근로복지공단 대전병원">
+                        </h1>
+                        <p class="vsComent">
+                            근로복지공단 대전병원 자원봉사 공지안내 지역주민과 함께 하는 <br>근로복지공단 대전병원에서는 『따뜻한 마음』으로 <br>『나눔을 실천』하고자 뜻있는 자원봉사자를 모십니다.
+                        </p>
+                        <a href="#" class="more">사이트 바로가기</a>
+                    </div>
+            </figure>
+            <section class="sec1">
+                <div class="subBox">
+                    <h2 class="subTit">자원봉사안내</h2>
+                    <ul class="txtLst">
+                        <li class="col12">
+                            <p class="picTit">
+                                <span class="picNum">1</span>
+                                자원봉사 자격요건
+                            </p>
+                            <p class="subCom">20세 이상의 신체적,정신적으로 따뜻한 마음으로 나눔을 실천할 수 있는 건강한 성인 <br>최소 3개월 이상 지속적인 봉사활동이 가능한 분 </p>
+                        </li>
+                        <li class="col12">
+                            <p class="picTit">
+                                <span class="picNum">2</span>
+                                자원봉사 봉사활동 시간
+                            </p>
+                            <p class="subCom">오전 09:30~12:00/오후 13:30~16:30 (단 토요일,일요일 공휴일 제외) </p>
+                        </li>
+                        <li class="col12">
+                            <p class="picTit">
+                                <span class="picNum">3</span>
+                                초ㆍ중ㆍ고 학생자원봉사자는 모집하지 않습니다. 
+                            </p>
+                            <p class="subCom"> 단, 필요시 공지사항에 공지하도록 할 예정입니다.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="sec1">
+                <div class="subBox">
+                    <h2 class="subTit">자원봉사 봉사활동 분야</h2>
+                    <ul class="picLst">
+                        <li class="col6">
+                            <img src="./img/s.png" alt="일반자원봉사">
+                            <p class="picTit">
+                                <span class="picNum">1</span>
+                                 건강관리센터
+                            </p>
+                            <p class="subCom">건강검진문진표 정리 및 행정업무보조</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/s1.png" alt="일반자원봉사">
+                            <p class="picTit">
+                                <span class="picNum">2</span>
+                               의무기록실
+                            </p>
+                            <p class="subCom">의무기록차트 정리 및 차트이송</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/s2.png" alt="일반자원봉사">
+                            <p class="picTit">
+                                <span class="picNum">3</span>
+                               중앙공급실
+                            </p>
+                            <p class="subCom">처치물품 정리작업</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/s3.png" alt="일반자원봉사">
+                            <p class="picTit">
+                                <span class="picNum">4</span>
+                                환자 도서관
+                            </p>
+                            <p class="subCom">도서정리,대출 및 반납</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/s4.png" alt="일반자원봉사">
+                            <p class="picTit">
+                                <span class="picNum">5</span>
+                                약제부
+                            </p>
+                            <p class="subCom">약 분리 및 포장작업</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/s5.png" alt="일반자원봉사">
+                            <p class="picTit">
+                                <span class="picNum">6</span>
+                               안내봉사
+                            </p>
+                            <p class="subCom">원내시설 안내 및 환자이동보조</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="sec3">
+                <div class="subBox">
+                    <h2 class="subTit">정신과치료프로그램</h2>
+                    <ul class="picLst">
+                        <li class="col3">
+                            <a href="">
+                                <img src="./img/ss.png" alt="천사들의 공간" class="pic">
+                                <span class="picTxt1">정신과치료프로그램진행1</span>
+                                <span class="picTxt2">자세히 보기</span>
+                            </a>
+                        </li>
+                        <li class="col3">
+                            <a href="">
+                                <img src="./img/ss.png" alt="천사들의 공간" class="pic">
+                                <span class="picTxt1">정신과치료프로그램진행1</span>
+                                <span class="picTxt2">자세히 보기</span>
+                            </a>
+                        </li>
+                        <li class="col3">
+                            <a href="">
+                                <img src="./img/ss.png" alt="천사들의 공간" class="pic">
+                                <span class="picTxt1">정신과치료프로그램진행1</span>
+                                <span class="picTxt2">자세히 보기</span>
+                            </a>
+                        </li>
+                        <li class="col3">
+                            <a href="">
+                                <img src="./img/ss.png" alt="천사들의 공간" class="pic">
+                                <span class="picTxt1">정신과치료프로그램진행1</span>
+                                <span class="picTxt2">자세히 보기</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="sec3">
+                <div class="subBox">
+                    <h2 class="subTit">자원봉사 신청방법</h2>
+                    <ul class="iconLst">
+                        <li class="col3 item1">
+                            <div class="iconBox">
+                                <h3 class="iconTit">홈페이지들어가기</h3>
+                                <p class="iconCom">자원봉사 홈페이지 들어가기<br>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="col3 item2">
+                            <div class="iconBox">
+                                <h3 class="iconTit">회원가입/로그인</h3>
+                                <p class="iconCom">회원이 아닌 분은 회원가입을 하시고<br>
+                                회원이신분은 로그인하기</p>
+                            </div>
+                        </li>
+                        <li class="col3 item3">
+                            <div class="iconBox">
+                                <h3 class="iconTit">지역/자원봉사명</h3>
+                                <p class="iconCom">본인의 지역을 선택하고<br>
+                                하고자 하는 자원봉사자명을 선택하기</p>
+                            </div>
+                        </li>
+                        <li class="col3 item4">
+                            <div class="iconBox">
+                                <h3 class="iconTit">신청하기</h3>
+                                <p class="iconCom">자원봉사 선택하고<br>
+                                신청하기 완료</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="lastPage">
+        <div class="wrap">
+            <ul>
+                <li class="col4 item1 first">
+                    <h2 class="itemTitle">근로복지공단 대전병원</h2>
+                    <h1 class="telTxt">042.670.5114</h1>
+                    <p class="itemData">
+                        대전광역시 대덕구 계족로 637 우 : 34384 
+                    </p>
+                    <p class="itemData" style="padding-bottom:40px;">
+                        Fax.042)631-8250,8260
+                    </p>
+                </li>
+                <li class="col4 item2">
+                    <h2 class="itemTitle">진료시간</h2>
+                    <p class="itemData">
+                         평일 : 08:30 ~ 17:30 <br>
+                       토요일 : 08:30 ~ 12:30 <br>
+                       휴무 : 일요일,공휴일 <br>
+                    </p>
+                                       
+                </li>
+                <li class="col4 item3">
+                    <h2 class="itemTitle">찾아오시는 길</h2>
+                    <div id="mapFrame">
+                        <div id="map_canvas" style="width:360px; height:180px"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer id="ft">
+    <div class="wrap">
+        <p class="copyright">Copyright (c) 근로복지공단 대전병원. All Rights Reserved.</p>
+        <div class="ftLogo"></div>
+    </div>
+</footer>
+<input type="checkbox" id="ck">
+<div id="popFrm">
+    <label for="ck" class="closeBtn">닫기</label>
+    <div class="popBox">
+        <ul class="item1">
+            <li>
+                <h2>
+                    <a href="intro.html#page1">병원안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="intro.html#page1">병원소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page2">병원장인사말</a>
+            </li>
+            <li>
+                <a href="intro.html#page3">병원이용안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page4">부서별전화번호</a>
+            </li>
+            <li>
+                <a href="intro.html#page5">오시는 길</a>
+            </li>
+        </ul>
+        <ul class="item2">
+            <li>
+                <h2>
+                    <a href="physical.html#page1">진료안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="physical.html#page1">종합검진안내</a>
+            </li>
+            <li>
+                <a href="physical.html#page2">전문화 특화안내</a>
+            </li>
+            <li>
+                <a href="physical.html#page3">재활전문센터안내</a>
+            </li>
+        </ul>
+        <ul class="item3">
+           <li>
+                <h2>
+                    <a href="ward.html#page1">진료예약</a>
+                </h2>
+            </li>
+            <li>
+                <a href="ward.html#page1">진료예약</a>
+            </li>
+            <li>
+                <a href="ward.html#page2">입.퇴원안내</a>
+            </li>
+            <li>
+                <a href="ward.html#page3">사이버민원실</a>
+            </li>
+            <li>
+                <a href="ward.html#page4">의료장비안내</a>
+            </li>
+        </ul>
+        <ul class="item4">
+            <li>
+                <h2>
+                    <a href="news.html#page1">정보공개</a>
+                </h2>
+            </li>
+            <li>
+                <a href="news.html#page1">공지사항/새소식</a>
+            </li>
+            <li>
+                <a href="news.html#page2">보도자료</a>
+            </li>
+            <li>
+                <a href="news.html#page3">홍보동영상</a>
+            </li>
+            <li>
+                <a href="news.html#page4">자원봉사단</a>
+            </li>
+        </ul>
+        <ul class="item5">
+            <li>
+                <h2>
+                    <a href="speech.html#page1">의료영상정보</a>
+                </h2>
+            </li>
+            <li>
+                <a href="speech.html#page1">pacs의 필요성</a>
+            </li>
+            <li>
+                <a href="speech.html#page2">web pacs연결</a>
+            </li>
+        </ul>
+    </div>
+</div>        
+<aside id="quick">
+    <div class="qWrap">
+        <ul class="top">
+            <li>
+                <a href="" class="qlogo"></a>
+            </li>
+            <li>
+                <a href="joinForm.html" class="hv">회원가입</a>
+            </li>
+            <li>   
+                <a href="loginForm.html" class="hv">로그인</a>
+            </li>
+            <li>       
+                <a href="intro.html#page5" class="hv">비급여안내</a>
+            </li>
+            <li>       
+                <a href="intro.html#page4" class="hv">오시는길</a>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li>
+                <a href="speech.html#page1" class="yellow">pacs의 필요성</a>
+            </li>
+            <li>
+                <a href="speech.html#page2" class="cyan">web pacs연결</a>
+            </li>
+            <li><a href="#page1" class="toTop">위로</a></li>
+        </ul>
+    </div>
+</aside>
+</body>
+</html>

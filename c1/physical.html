@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>대전병원 - 병원안내</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileImage" content="./ico/favicon-144.png">
+
+    <!-- 메타데이터 개발 공통 사항 -->
+    <!-- 데스크탑에서 IE로 웹 문서를 열 때 가장 최신 버전으로 실행 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- 앱(웹 사이트)의 이름 -->
+    <meta name="application-name" content="SRC hospital Site">
+    <!-- 웹 사이트 저작자의 이름 -->
+    <meta name="author" content="kitae Kim">
+    <!-- 현재 문서의 설명 -->
+    <meta name="description" content="SRC hospital Site Mainpage"> 
+    <!-- 현재 문서의 저작도구 -->
+    <meta name="generator" content="Brackts">
+    <!-- 검색엔진에서 검색되게할 키워드 -->
+    <meta name="keywords" content="SRC 병원, 건강관리, 휴양">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua|Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link rel="stylesheet" href="com.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="sub2.css">
+    <style>
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display:none; }    
+    ::-o-scrollbar { display:none; } 
+    ::-moz-scrollbar { display:none; }     
+    </style>
+<!--    <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="./js/jquery-1.11.1.js"></script>
+    
+    <script>
+    /* 여기가 스크립트 처리 구간 */    
+    $(function(){
+        var intv = setInterval(function(){ lAni(); }, 3000);
+        function lAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":"-510px"}, 800, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+            });
+            
+        }
+    });    
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcG6XLlvSL0DQtg1G38wiT_r8BYN3RbWQ&callback=initMap"></script> -->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpo7PlmFhN57HAxDlD8MTLI4DT1bL9VFY&callback=initMap"></script>-->
+<!--
+1) 구글 지도 api key 발급 사이트로 이동하여 지도 API 서비스 신청
+2) https://console.cloud.google.com/getting-started?pli=1
+3) [API 및 서비스] -> [사용자 인증 정보] -> 인증 키 발급
+-->
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.4931346, 126.92737779999993);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: '근로복지공단 대전병원'	  //레이블을 바꿔서 입력
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+<script>
+$(function(){
+//   setTimeout(function(){
+//       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+//   }, 1000); 
+});    
+</script>
+</head>
+<body onload="initialize()">
+<div class="hdFrame on"></div>
+<header id="hd">
+    <div class="wrap">
+        <a href="index.html" class="logo">
+            <img src="./img/logo.png" alt="앰블럼">
+        </a>
+        <nav id="gnb">
+            <ul>
+                 <li><a href="intro.html#page1">병원안내</a></li>
+                <li><a href="physical.html#page1">진료안내</a></li>
+                <li><a href="ward.html#page1">입.퇴원안내</a></li>
+                <li><a href="news.html#page1">정보공개</a></li>
+                <li><a href="speech.html#page1">의료영상정보</a></li>
+            </ul>
+        </nav>
+        <label for="ck" class="lstBtn">
+            <span class="item1 on"></span>
+            <span class="item2 on"></span>
+            <span class="item3 on"></span>
+            <span class="item4 on"></span>
+        </label>
+    </div>
+</header>    
+<main id="content">
+    <div class="blank"></div>
+    <div class="page" id="page1">
+        <a href="#page1" class="btn1 item1">진료예약안내</a>
+        <div class="con">
+        <figure class="vsBox">
+           <img src="./img/physical_vs.png" alt="예약" class="vsImg">
+            <div class="vsTitBox">
+                    <h1 class="vsTitle">진료예약</h1>
+                    <p class="vsComent">내 가족을 대하듯이 편안하면서 정확한 진단 그리고 빠른 결과를 알려드리는 고객우선을 추구하는 건강관리센터입니다. </p>
+                </div>
+        </figure>
+                <section class="sec1">
+                <input type="radio" name="ra11" id="ra11" class="raItem raItem1" checked>
+                <input type="radio" name="ra11" id="ra12" class="raItem raItem2">
+                <input type="radio" name="ra11" id="ra13" class="raItem raItem3">              
+                <ul class="btnFrame">
+                    <li><label for="ra11" class="raBtn item1">예약안내</label></li>
+                    <li><label for="ra12" class="raBtn item2">건강검진유의사항</label></li>
+                    <li><label for="ra13" class="raBtn item3">프로그램안내</label></li>
+                </ul>
+                 <div class="subBox item1">
+                    <h1 class="subTit">예약 전 상담</h1>
+                    <p class="subCom"> </p>
+                    <p class="subCom">검사프로그램,검사인원,검진 일정 협의(필요서류 : 기업체확인서, 협약서,사업자등록증 1부)</p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">예약</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                건진 대상자 명단 송부 <br> 인적사항(성명, 주민번호, 의료보험증번호, 근무구분, 자격취득일, 휴대폰번호, 선택검진)<br>
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                               검사관련(예약 희망일, 추가희망 검사) <br>공단청구 관련서류(확정자 명단) 
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">건진일시</h3>
+                            <p class="thumCom">
+                               유의사항(*참고:건진전 유의사항)<br>2일정변경 및 취소는 최소 10일전까지 담당자에게 연락을 하셔서 조정해 주시기 바랍니다. 
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">결과상담 및 검진비 청구</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                우편 수령 : 2주정도 (주말제외) -> 해당 사업장 보건관리자에게 배송 
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                검진비 청구방법 및 일자 :매월 말일에 계산서 발행 
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">3</span>
+                               검진비용 : 당일 개인/법인카드 결재 )<br>매월 일괄 법인카드 결재<br> 청구 후 입금 및 결재
+
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra201" name="conRaOne" checked>
+                        <input type="radio" class="raItem conRa2" id="ra202" name="conRaOne">
+                        <input type="radio" class="raItem conRa3" id="ra203" name="conRaOne">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/physical1.png" alt="배너이미지1" class="imgItem">
+                            </li>
+                            <li class="raCon2">
+                                <img src="./img/physical2.png" alt="배너이미지2" class="imgItem">
+                            </li>
+                            <li class="raCon3">
+                                <img src="./img/physical3.png" alt="배너이미지3" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">진료예약</h3>
+                            <p class="tbComent">내 가족을 대하듯이 편안하면서  정확한 진단 그리고  빠른 결과를 알려드리는 고객우선을 추구하는 건강관리센터입니다. </p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra201">
+                                    <img src="./img/physical1.png" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn2">
+                                <label for="ra202">
+                                    <img src="./img/physical2.png" alt="썸네일버튼2">
+                                </label>
+                            </li>
+                            <li class="thumBtn3">
+                                <label for="ra203">
+                                    <img src="./img/physical3.png" alt="썸네일버튼3">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+                <div class="subBox item2">
+                   <h1 class="subTit">건강검진유의사항</h1>
+                    <p class="subCom">내 가족을 대하듯이  편안하면서  정확한 진단 그리고  빠른 결과를 알려드리는 고객우선을 추구하는 종합건강관리센터입니다.</p>
+                   
+                        <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">검진전날</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                문진표 작성은 고객님의 정확한 건강상태와 위험요인을 파악하고 건강 진단결과를 평가하는데 중요한 자료가 되므로 원활한 건강진단을 위하여 내원 전까지 작성하시기 바랍니다.
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                검진 2-3일 전부터는 술, 육류, 기름진 음식은 금합니다. 검사 전날 저녁식사는 8시이전에 가볍게 드시고 저녁 9시 부터 검사 종료시까지 금식하여 주십시오.(물, 흡연, 껌, 사탕 등도 삼가주십시오.)
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">검진당일</h3>
+                            <p class="thumCom">
+                                귀중품 휴대, 진한 화장, 매니큐어는 자제하여 주시고 종합건강진단센터 1층으로 오십시오.
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">여성검진자</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                               생리중, 임신중, 임신가능성이 있는 경우 검사에 제한이 있을 수 있으므로 미리 직원과 상담하십시오.
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                검진당일 샤워나 목욕은 삼가 하십시오.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra211" name="conRaTwo" checked>
+                        <input type="radio" class="raItem conRa2" id="ra212" name="conRaTwo">
+                        <input type="radio" class="raItem conRa3" id="ra213" name="conRaTwo">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/physical2-1.png" alt="배너이미지1" class="imgItem">
+                            </li>
+                            <li class="raCon2">
+                                <img src="./img/physical2-2.png" alt="배너이미지2" class="imgItem">
+                            </li>
+                            <li class="raCon3">
+                                <img src="./img/physical2-3.png" alt="배너이미지3" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">건강검진유의사항</h3>
+                            <p class="tbComent">예약일을 변경시 상당기간 연기될 수 있습니다.<br>변경은 검진 7일전까지 042-670-5195, 5196으로 연락주시기 바랍니다</p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra211">
+                                    <img src="./img/physical2-1.png" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn2">
+                                <label for="ra212">
+                                    <img src="./img/physical2-2.png" alt="썸네일버튼2">
+                                </label>
+                            </li>
+                            <li class="thumBtn3">
+                                <label for="ra213">
+                                    <img src="./img/physical2-3.png" alt="썸네일버튼3">
+                                </label>
+                            </li>
+                        </ul>       
+                </div>
+                    </div>
+                <div class="subBox item3">
+                    <h1 class="subTit">프로그램 안내</h1>
+                    <p class="subCom">내 가족을 대하듯이  편안하면서  정확한 진단 그리고  빠른 결과를 알려드리는 고객우선을 추구하는 건강관리센터입니다.</p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">행복플러스형</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                종합건강검진 기본형으로 성인병 예방과 주요장기의 조기 암진단 및 예방을 목적으로 실시하는 건강검진 프로그램입니다.
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                공통검사항목 : 예진,문진,소변,대변검사,위내시경(일반),의학상담,식생활평가&영양상담,심전도검사 및 흉뷰X-선촬영,염증검사
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">3</span>
+                                검사정보 : 소요시간 2시간 <br> 남자:30만/여자:33만원
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">4</span>
+                               추가검사 : MRI검사,CT검사,초음파검사,위장검사,대장검사
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">추가내용</h3>
+                            <p class="thumCom">
+                                수면내시경과 장검사(직장내시경/ 대장내시경)는 추가검사이며, 희망하시는 경우 건강검진 예약시 반드시 신청하시기 바랍니다.
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">검사항목</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                남자 : 전립선 암 검사 (P.S.A)
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                               여자 : 난소암검사(CA125), 유방X-선, 자궁세포검사, 골밀도검사
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra221" name="conRaThree" checked>
+                        <input type="radio" class="raItem conRa2" id="ra222" name="conRaThree">
+                        <input type="radio" class="raItem conRa3" id="ra223" name="conRaThree">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/checkup.png" alt="배너이미지1" class="imgItem">
+                            </li>
+                            <li class="raCon2">
+                                <img src="./img/checkup1.png" alt="배너이미지2" class="imgItem">
+                            </li>
+                            <li class="raCon3">
+                                <img src="./img/checkup2.png" alt="배너이미지3" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">프로그램안내</h3>
+                            <p class="tbComent">다양한 프로그램을 안내드립니다. </p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra221">
+                                    <img src="./img/checkup.png" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn2">
+                                <label for="ra222">
+                                    <img src="./img/checkup1.png" alt="썸네일버튼2">
+                                </label>
+                            </li>
+                            <li class="thumBtn3">
+                                <label for="ra223">
+                                    <img src="./img/checkup2.png" alt="썸네일버튼3">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+        </section>
+    </div>
+     </div>
+    
+ <div class="page" id="page2">
+        <a href="#page2" class="btn1 item2">종합검진안내</a>
+        <div class="con">
+            <figure class="vsBox">
+                <img src="./img/sub-d.png" alt="종합검진안내" class="vsImg">
+                <div class="vsTitBox">
+                    <h1 class="vsTitle">외과</h1>
+                    <p class="vsComent">근로복지공단 대전병원 외과에 찾아주셔서 감사합니다.</p>
+                </div>
+            </figure>
+            <section class="sec2">
+                <input type="radio" name="ra21" id="ra21" class="raItem raItem1" checked>
+                <input type="radio" name="ra21" id="ra22" class="raItem raItem2">
+                <input type="radio" name="ra21" id="ra23" class="raItem raItem3">               
+                <ul class="btnFrame">
+                    <li><label for="ra21" class="raBtn item1">소화 위장관 수술</label></li>
+                    <li><label for="ra22" class="raBtn item2">간담도, 췌장 수술</label></li>
+                    <li><label for="ra23" class="raBtn item3">대장항문 클리닉</label></li>
+                </ul>
+                <div class="subBox item1">
+                    <ul class="secFrm">
+                        <li>
+                            <div class="left imgFrame">
+                                <img src="./img/physical3-1.png" alt="대전병원 썸네일">
+                            </div>
+                            <div class="right txtFrame">
+                                <h2 class="secTitle">소화 위장관<span class="gtxt">수술</span></h2>
+                                <p class="itemComent">위궤양천공, 십이지장궤양 천공, 소장질환 치료 등을 진행합니다. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left txtFrame">
+                                <h3 class="secTitle">외과<span class="gtxt">진료</span></h3>
+                                <p class="itemComent">외과는 의학의 한 분야로 내과에 대비되는 학문 분야이다. 내과에서는 주로 약물치료를 하는 반면에 외과에서는 수술로 환자의 질병이나 상태를 치료한다. 영어로 외과를 ‘surgery’라고 하는데 이는 그리스어인 ‘cheirourgike’에서 기원하였다고 한다. 이를 풀이하면 ‘hand(손)’+‘work(작업)’ 즉, 손으로 하는 작업이라는 뜻입니다. </p>
+                            </div>
+                            <div class="right imgFrame">
+                                <img src="./img/physical3-2.png" alt="재활병원 썸네일">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="subBox item2">
+                    <h1 class="subTit">간담도.췌장수술</h1>
+                    <p class="subCom">위궤양천공, 십이지장궤양 천공, 소장질환 치료 등을 진행합니다. </p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">치료대상</h3>
+                            <p class="thumCom">
+                               위궤양천공, 십이지장궤양 천공, 소장질환 치료 등에 걸린 대상자
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">의료진 및 진료일정</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                날짜 : 월요일~금요일
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                시간: 오전,오후
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">의료진 : 김영민</h3>
+                            <p class="thumCom">
+                                주요진료분야 : 갑상선 암 검진 및 수술 <br>갑상선 양성질환 진단 및 수술<br> 유방암 검진 및 조직검사 <br>유방 양성질환 진단 및 수술 <br>급성 충수염 <br>위장관 천공 및 복막염 <br>항문 양성 질환 <br>탈장
+
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra251" name="conRa2_two" checked>
+                        <input type="radio" class="raItem conRa2" id="ra252" name="conRa2_two">
+                        <input type="radio" class="raItem conRa3" id="ra253" name="conRa2_two">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/p.png" alt="배너이미지1" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">외과진료안내</h3>
+                            <p class="tbComent">근로복지공단 대전병원 외과진료안내입니다.  </p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra251">
+                                    <img src="./img/p.png" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+                <div class="subBox item3">
+                    <h1 class="subTit">대장항문클리닉</h1>
+                    <p class="subCom">염증성장질환, 대장폴립, 항문출혈, 변비, 치질, 항문소양증, 항문주위농양, 충수돌기염, 맹장염</p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">치료대상</h3>
+                            <p class="thumCom">
+                                염증성장질환, 대장폴립, 항문출혈, 변비, 치질, 항문소양증, 항문주위농양, 충수돌기염, 맹장염 환자 대상
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">의료진 및 진료일정</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                              요일 : 월요일~금요일
+                              *토요일,일요일은 쉽니다. 
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                시간 : 오전,오후
+                            </p>
+                            
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">의료진 : 김영민</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                주요진료분야 : 갑상선 암 검진 및 수술 <br>갑상선 양성질환 진단 및 수술<br> 유방암 검진 및 조직검사 <br>유방 양성질환 진단 및 수술 <br>급성 충수염 <br>위장관 천공 및 복막염 <br>항문 양성 질환 <br>탈장
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra261" name="conRa2_three" checked>
+                        <input type="radio" class="raItem conRa2" id="ra262" name="conRa2_three">
+                        <input type="radio" class="raItem conRa3" id="ra263" name="conRa2_three">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/pp.png" alt="배너이미지1" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">대장항문클리닉</h3>
+                            <p class="tbComent">근로복지공단 대전병원 외과 진료안내입니다. </p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra261">
+                                    <img src="./img/pp.png" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+     <div class="page" id="page3">
+        <a href="#page3" class="btn1 item3">전문화특화안내</a>
+        <div class="con">
+            <figure class="vsBox">
+                <img src="./img/jjj.png" alt="전문화특화안내" class="vsImg">
+                <div class="vsTitBox">
+                    <h1 class="vsTitle">관절염</h1>
+                    <p class="vsComent">관절의 염증(붓고 아픈 것)을 말하는 것입니다.<br>뼈와 뼈들이 맞닿아서 움직이는 관절은 매끄러운 연골로 덮여 있어 충격을 완화시키고 보호해주면서 원활하게 움직이게 해줍니다.<br> 연골은 혈관이 없어 관절 속에 있는 관절액을 통해 영양을 공급 받으며 신경이 없어 이상이 있어도 아픈 것을 느끼지 못합니다. <br>따라서 관절염으로 아픈 이유는 관절이 붓거나 주위 조직에 자극을 주기 때문입니다.</p>
+                </div>
+            </figure>
+            <section class="sec2">
+                <input type="radio" name="ra31" id="ra31" class="raItem raItem2" checked>
+                <input type="radio" name="ra31" id="ra32" class="raItem raItem3">              
+                <ul class="btnFrame">
+                    <li><label for="ra31" class="raBtn item2">인공관절안내 </label></li>
+                    <li><label for="ra32" class="raBtn item3">관절내시경</label></li>
+                </ul>
+                <div class="subBox item2">
+                    <h1 class="subTit">인공관절안내</h1>
+                    <p class="subCom">인공관절에 대한 설명입니다. </p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">인공관절 수술법</h3>
+                            <p class="thumCom">
+                                인공관절 수술은 약물이나 보존요법으로 치료가 불가능한 말기의 관절 병변을 수술로써 치료하는 방법입니다. 수술 후, 통증은 사라지고 정상인과 같이 생활할 수 있습니다. 많은 경우에 인공관절 수술은 자기 뼈를 잘라내고 인공관절을 삽입하는 것으로 잘못 인식되고 있습니다. 인공관절 수술이란 치아에 충치가 있을 때, 충치부분을 곱게 다듬고 금, 백금으로 겉면을 씌워 주는 것처럼 관절 겉면에 특수 금속으로 만든 얇은 막을 씌워주고, 씌운 뼈와 뼈 사이에 특수 플라스틱이나 세라믹을 삽입하여 그 사이가 매끈매끈하게 움직이게 하는 수술이므로 자기 뼈는 그대로 보존하게 됩니다. 엉덩이관절이나 무릎관절, 발목관절의 경우, 관절을 형성하는 뼈의 겉면을 곱게 다듬고, 얇은 특수 금속막을 다듬은 뼈 겉면에 씌우면서 중간에 인공 물렁뼈 역할을 하는 특수 플라스틱을 삽입해 줌으로써 엉덩이 관절과 무릎관절, 발목관절이 유연하게 움직이도록 해줍니다. 인공관절수술은 양측 엉덩이관절 또는 무릎관절, 발목관절을 동시에 시행할 수 있으며, 한쪽 수술시간은 약 40분 내지 1시간 정도가 소요됩니다. 흔히 당뇨병, 심장병 및 고혈압이 있으면 수술이 불가능하다고 알려져 있으나, 적절한 내과 치료를 받으면 수술이 가능합니다. 
+
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">수술효과</h3>
+                            <p class="thumCom">
+                                관절염으로 인한 통증이 완전히 없어지게 되므로 정상인과 똑같이 걷고 생활할 수 있으며, 휘어진 다리가 바르게 교정되어 키가 커지는 효과가 있습니다.수술 후 하루 반 정도가 지나면 화장실 출입이 가능합니다.보행연습을 시작해 합병증이 없는 경우, 수술 후 15일이면 퇴원하여 집에서 요양 하시게 됩니다. 
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">고관절</h3>
+                            <p class="thumCom">
+                                아프지 않게 하면서 무릎 기능을 최대한 보존 하는데 있습니다. 유의해야할 사항은 한번 퇴행성 변화, 즉 노화가 시작되면 다시 이전상태로 돌아가기 힘들며, 노화는 시간이 갈수록 심해진다는 점입니다. 그렇다고 해서 아무런 치료도 하지 않고 아픈 것을 참고 지내는 것은 현명하지 못합니다. 치료를 하면 통증이 없어 졌다가 무리를 하면 다시 아플 수 있으며, 증상은 병 진행정도에 비례하지만, 반드시 그렇지는 않고 통증도 항상 있는 것이 아니라 시시각각 변할 수 있습니다. 치료는 수술을 하지 않는 법과 수술을 하는 법으로 크게 나뉘며, 수술을 하지 않는 방법은 대중요법, 물리치료, 운동치료, 약물요법이 있습니다. 
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra271" name="conRa3_two" checked>
+                        <input type="radio" class="raItem conRa2" id="ra272" name="conRa3_two">
+                        <input type="radio" class="raItem conRa3" id="ra273" name="conRa3_two">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/qqqq.png" alt="배너이미지1" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">인공관절안내</h3>
+                            <p class="tbComent">인공관절안내입니다. 내용을 꼼꼼히 살펴보시기 바랍니다.</p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra271">
+                                    <img src="./img/qqqq.png" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+                <div class="subBox item3">
+                    <h1 class="subTit">관절내시경</h1>
+                    <p class="subCom">퇴행성 관절염이나 류마티스성 관절염과 같은 각종 관절염, 관절 외상 특히 스포츠로 인한 관절 및 인대 손상, 척추 디스크, 관절내의 유리체 등 관절의 이상이 있을 때에 그 대상이 됩니다.
+                    관절내시경 수술 대상 관절은 처음에 무릎관절에서 시작된 관절내시경 진단과 수술에서 점차 다른 관절로 확대되어 최근에는 어깨 관절, 팔꿈치 관절, 엉덩이 관절, 손목 관절, 발목 관절, 손가락 관절 등에까지 확대되고 있습니다. </p>
+                    <ul class="thumLst">
+                        <li class="item1">
+                            <h3 class="thumTitle">관절내시경 수술이란 </h3>
+                            <p class="thumCom">
+                                피부를 크게 절개하여 직접 병변을 노출시켜서 시행하는 종래의 수술과는 달리 피부를 아주 조금 절개하고도 정확한 진단과 적절한 치료를 할 수 있는 첨단의 수술방법입니다. 
+                                무릎 관절내시경 수술은 1918년에 최초로 도입되어 괄목할 만한 발전을 해 왔습니다. 현재에 와선 주로 각 관절부위의 내부 이상의 진단 및 손상 부위와 범위를 직접 관찰할 수 있어 필수적인 진단 및 치료 방법이라 할 수 있습니다. 
+                            </p>
+                        </li>
+                        <li class="item2">
+                            <h3 class="thumTitle">관절내시경의 장점</h3>
+                            <p class="thumCom">
+                                <span class="thumNum">1</span>
+                                수술 절개 부위가 작아 빠른 시간 내에 일상생활로 복귀할 수 있습니다. 
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">2</span>
+                                수술 후 통증이 적습니다. 
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">3</span>
+                                카메라를 통해 관절 속을 직접 보는 것이므로 진단이 정확합니다. 
+                            </p>
+                            <p class="thumCom">
+                                <span class="thumNum">4</span>
+                                진단과 수술이 동시에 가능합니다. 
+                            </p>
+                        </li>
+                        <li class="item3">
+                            <h3 class="thumTitle">관절내시경의 단점</h3>
+                            <p class="thumCom">
+                              무릎 반월상 연골판 손상 <br>관절내의 유리체<br> 급, 만성 외상으로 인한 손상 <br>무릎 십자 인대 손상 <br>슬개골 연골 연화증 <br>원판형 연골판 <br>퇴행성 관절염<br>활막염 및 추벽 증후군 <br>류마티스 관절염, 화농성 관절염, 통풍성 관절염 <br>박리성 골연골염, 골연골 손상<br> 관절 유착증<br> 관절 검사 목적 시행, 수술 효과 판정을 위해 2차적으로 필요한 경우 수술후 관리
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra281" name="conRa3_three" checked>
+                        <input type="radio" class="raItem conRa2" id="ra282" name="conRa3_three">
+                        <input type="radio" class="raItem conRa3" id="ra283" name="conRa3_three">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/checkup4.png" alt="배너이미지1" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">성인작업치료</h3>
+                            <p class="tbComent">작업치료는 신체적 정신적인 장애나 발달장애가 있는 환자들이 일상생활 중 요구되는 활동을 스스로 수행할 수 있도록 그 기능의 회복을 도와주는 치료 프로그램입니다. </p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra281">
+                                    <img src="./img/checkup4.png" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                        </ul>       
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+      <div class="page" id="page4">
+        <a href="#page4" class="btn1 item4">재활전문센터 사업안내 </a>
+        <div class="con">
+            <h1 class="pageTitle">재활전문센터</h1>
+            <section class="sec2">
+                <div class="subBox">
+                    <h2 class="subTit">퇴원안내사항입니다. </h2>
+                    <table class="subTable3">
+                        <thead>
+                            <tr>
+                                <th class="col3">구분</th>
+                                <th class="col9">상세내용</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col3">퇴원통지</td>
+                                <td class="col9">
+                                    <p class="tbCon">
+                                        <span class="tbNum">1</span>
+                                        담당의사로부터 퇴원이 결정되면간호사실에서 퇴원통지를 해드립니다. 
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col3">진료비납부</td>
+                                <td class="col9">
+                                    <p class="tbCon">
+                                        <span class="tbNum">1</span>
+                                       퇴원통지를 받으시고 병실내에서 기다리시다가 원무과에서 퇴원 완료에 대한 연락이 오면 퇴원비 수납창구에 진료비를 납부하시면 됩니다. 
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col3">퇴원</td>
+                                <td class="col9">
+                                    <p class="tbCon">
+                                        <span class="tbNum">1</span>
+                                        수납한 퇴원수속 완료증을 병동에 제출하시고 퇴원약을 받아 약복용 및 진료에 대한 설명을 듣고 퇴원 하시면 됩니다.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            </div>
+    </div>
+    
+    
+    <div class="page" id="lastPage">
+        <div class="wrap">
+            <ul>
+                <li class="col4 item1 first">
+                    <h2 class="itemTitle">근로복지공단 대전병원</h2>
+                    <h1 class="telTxt">042.670.5114</h1>
+                    <p class="itemData">
+                        대전광역시 대덕구 계족로 637 우 : 34384 
+                    </p>
+                    <p class="itemData" style="padding-bottom:40px;">
+                        Fax.042)631-8250,8260
+                    </p>
+                </li>
+                <li class="col4 item2">
+                    <h2 class="itemTitle">진료시간</h2>
+                    <p class="itemData">
+                         평일 : 08:30 ~ 17:30 <br>
+                       토요일 : 08:30 ~ 12:30 <br>
+                       휴무 : 일요일,공휴일 <br>
+                    </p>
+                                    
+                </li>
+                <li class="col4 item3">
+                    <h2 class="itemTitle">찾아오시는 길</h2>
+                    <div id="mapFrame">
+                        <div id="map_canvas" style="width:360px; height:180px"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer id="ft">
+    <div class="wrap">
+        <p class="copyright">Copyright (c) 근로복지공단 대전병원. All Rights Reserved.</p>
+        <div class="ftLogo"></div>
+    </div>
+</footer>
+<input type="checkbox" id="ck">
+<div id="popFrm">
+    <label for="ck" class="closeBtn">닫기</label>
+    <div class="popBox">
+        <ul class="item1">
+            <li>
+                <h2>
+                    <a href="intro.html#page1">병원안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="intro.html#page1">병원소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page2">병원장인사말</a>
+            </li>
+            <li>
+                <a href="intro.html#page3">병원이용안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page4">부서별전화번호</a>
+            </li>
+            <li>
+                <a href="intro.html#page5">오시는 길</a>
+            </li>
+        </ul>
+        <ul class="item2">
+            <li>
+                <h2>
+                    <a href="physical.html#page1">진료안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="physical.html#page1">진료예약</a>
+            </li>
+            <li>
+                <a href="physical.html#page2">종합검진안내</a>
+            </li>
+            <li>
+                <a href="physical.html#page3">전문화 특화안내</a>
+            </li>
+             <li>
+                <a href="physical.html#page4">재활전문센터안내</a>
+            </li>
+        </ul>
+        <ul class="item3">
+           <li>
+                <h2>
+                    <a href="ward.html#page1">입.퇴원안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="ward.html#page1">입원안내</a>
+            </li>
+            <li>
+                <a href="ward.html#page2">퇴원안내</a>
+            </li>
+            <li>
+                <a href="ward.html#page3">병문안안내</a>
+            </li>
+        </ul>
+        <ul class="item4">
+            <li>
+                <h2>
+                    <a href="news.html#page1">정보공개</a>
+                </h2>
+            </li>
+            <li>
+                <a href="news.html#page1">공지사항/새소식</a>
+            </li>
+            <li>
+                <a href="news.html#page2">보도자료</a>
+            </li>
+            <li>
+                <a href="news.html#page3">홍보동영상</a>
+            </li>
+            <li>
+                <a href="news.html#page4">자원봉사단</a>
+            </li>
+        </ul>
+        <ul class="item5">
+            <li>
+                <h2>
+                    <a href="speech.html#page1">의료영상정보</a>
+                </h2>
+            </li>
+            <li>
+                <a href="speech.html#page1">pacs의 필요성</a>
+            </li>
+            <li>
+                <a href="speech.html#page2">web pacs연결</a>
+            </li>
+        </ul>
+    </div>
+</div>        
+<aside id="quick">
+    <div class="qWrap">
+        <ul class="top">
+            <li>
+                <a href="" class="qlogo"></a>
+            </li>
+            <li>
+                <a href="joinForm.html" class="hv">회원가입</a>
+            </li>
+            <li>   
+                <a href="loginForm.html" class="hv">로그인</a>
+            </li>
+            <li>       
+                <a href="intro.html#page5" class="hv">비급여안내</a>
+            </li>
+            <li>       
+                <a href="intro.html#page4" class="hv">오시는길</a>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li>
+                <a href="speech.html#page1" class="yellow">pacs의 필요성</a>
+            </li>
+            <li>
+                <a href="speech.html#page2" class="cyan">web pacs연결</a>
+            </li>
+            <li><a href="#page1" class="toTop">위로</a></li>
+        </ul>
+    </div>
+</aside>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>대전병원 - 병원안내</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileImage" content="./ico/favicon-144.png">
+
+    <!-- 메타데이터 개발 공통 사항 -->
+    <!-- 데스크탑에서 IE로 웹 문서를 열 때 가장 최신 버전으로 실행 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- 앱(웹 사이트)의 이름 -->
+    <meta name="application-name" content="SRC hospital Site">
+    <!-- 웹 사이트 저작자의 이름 -->
+    <meta name="author" content="kitae Kim">
+    <!-- 현재 문서의 설명 -->
+    <meta name="description" content="SRC hospital Site Mainpage"> 
+    <!-- 현재 문서의 저작도구 -->
+    <meta name="generator" content="Brackts">
+    <!-- 검색엔진에서 검색되게할 키워드 -->
+    <meta name="keywords" content="SRC 병원, 건강관리, 휴양">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua|Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link rel="stylesheet" href="com.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="sub3.css">
+    <style>
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display:none; }    
+    ::-o-scrollbar { display:none; } 
+    ::-moz-scrollbar { display:none; }     
+    </style>
+<!--    <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="./js/jquery-1.11.1.js"></script>
+    
+    <script>
+    /* 여기가 스크립트 처리 구간 */    
+    $(function(){
+        var intv = setInterval(function(){ lAni(); }, 3000);
+        function lAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":"-510px"}, 800, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+            });
+            
+        }
+    });    
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcG6XLlvSL0DQtg1G38wiT_r8BYN3RbWQ&callback=initMap"></script> -->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpo7PlmFhN57HAxDlD8MTLI4DT1bL9VFY&callback=initMap"></script>-->
+<!--
+1) 구글 지도 api key 발급 사이트로 이동하여 지도 API 서비스 신청
+2) https://console.cloud.google.com/getting-started?pli=1
+3) [API 및 서비스] -> [사용자 인증 정보] -> 인증 키 발급
+-->
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.4931346, 126.92737779999993);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: '근로복지공단 대전병원'	  //레이블을 바꿔서 입력
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+<script>
+$(function(){
+//   setTimeout(function(){
+//       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+//   }, 1000); 
+});    
+</script>
+</head>
+<body onload="initialize()">
+<div class="hdFrame on"></div>
+<header id="hd">
+    <div class="wrap">
+        <a href="index.html" class="logo">
+            <img src="./img/logo.png" alt="앰블럼">
+        </a>
+        <nav id="gnb">
+            <ul>
+                 <li><a href="intro.html#page1">병원안내</a></li>
+                <li><a href="physical.html#page1">진료안내</a></li>
+                <li><a href="ward.html#page1">입.퇴원안내</a></li>
+                <li><a href="news.html#page1">정보공개</a></li>
+                <li><a href="speech.html#page1">의료영상정보</a></li>
+            </ul>
+        </nav>
+        <label for="ck" class="lstBtn">
+            <span class="item1 on"></span>
+            <span class="item2 on"></span>
+            <span class="item3 on"></span>
+            <span class="item4 on"></span>
+        </label>
+    </div>
+</header>    
+<main id="content">
+    <div class="blank"></div>
+    <div class="page" id="page1">
+        <a href="#page1" class="btn1 item1">입원안내</a>
+       <div class="page" id="page1">
+        <a href="#page1" class="btn1 item1">입원안내</a>
+        <div class="con">
+            <figure class="vsBox">
+                <ul class="row">
+                    <li class="col6 vsImg">
+                        <img src="./img/ward-img.png" alt="입원안내">
+                    </li>
+                    <li class="col6 vsTitBox">
+                        <h1 class="vsTitle">
+                            <span class="gtxt">입원</span>안내
+                        </h1>
+                        <p class="vsComent">01 입원결정 : 담당의사로부터입원이 결정되어 병실이 배정되면,진료 받으신 과의 간호사로부터 입원결정서를 받아 접수창구(입,퇴원 창구)로 가십시오.  
+                        </p>
+                        <p class="vsComent">02 입원수속 : 입,퇴원 창구에서 건강보험증, 진료카드, 입원결정서를 제출하고 입원수속을 합니다.
+                        </p>
+                    </li>
+                </ul>       
+            </figure>
+            <section class="sec1">
+                <div class="subBox">
+                    <h2 class="subTit">입원안내</h2>
+                    <ul class="picLst">
+                        <li class="col6">
+                            <img src="./img/ward1.png" alt="병동안내이미지1">
+                            <p class="picTit">
+                                <span class="picNum">1</span>
+                                입원수속시 필요서류
+                            </p>
+                            <p class="subCom">입원서약서, 건강보험증, 보증인</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/ward2.png" alt="병동안내이미지2">
+                            <p class="picTit">
+                                <span class="picNum">2</span>
+                                입원시 연대보증인
+                            </p>
+                            <p class="subCom">자택을 소유하고 있거나 직업이 확실한 가족, 친지분 이면 가능합니다. </p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/ward3.png" alt="병동안내이미지3">
+                            <p class="picTit">
+                                <span class="picNum">3</span>
+                              병실료 산정기준
+                            </p>
+                            <p class="subCom">보건복지부 고시에 의하여 당일 12시(정오)부터 익일 12시까지를 1일로 계산합니다. </p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/ward4.png" alt="병동안내이미지4">
+                            <p class="picTit">
+                                <span class="picNum">4</span>
+                               신용카드 사용여부
+                            </p>
+                            <p class="subCom">외래진료 또는 퇴원진료비 모두 신용카드 사용이 가능합니다. </p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/ward5.png" alt="병동안내이미지5">
+                            <p class="picTit">
+                                <span class="picNum">5</span>
+                                입원시 필요한 물품
+                            </p>
+                            <p class="subCom">비누, 치약, 칫솔, 수건, 슬리퍼, 휴지, 물컵 등이며 준비하지 못하신 경우 구내매점에서 구입 </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            </div>
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <a href="#page2" class="btn1 item2">퇴원안내</a>
+        <div class="con">
+            <h1 class="pageTitle">퇴원안내</h1>
+            <section class="sec2">
+                <div class="subBox">
+                    <h2 class="subTit">퇴원안내사항입니다. </h2>
+                    <table class="subTable3">
+                        <thead>
+                            <tr>
+                                <th class="col3">구분</th>
+                                <th class="col9">상세내용</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col3">퇴원통지</td>
+                                <td class="col9">
+                                    <p class="tbCon">
+                                        <span class="tbNum">1</span>
+                                        담당의사로부터 퇴원이 결정되면간호사실에서 퇴원통지를 해드립니다. 
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col3">진료비납부</td>
+                                <td class="col9">
+                                    <p class="tbCon">
+                                        <span class="tbNum">1</span>
+                                       퇴원통지를 받으시고 병실내에서 기다리시다가 원무과에서 퇴원 완료에 대한 연락이 오면 퇴원비 수납창구에 진료비를 납부하시면 됩니다. 
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col3">퇴원</td>
+                                <td class="col9">
+                                    <p class="tbCon">
+                                        <span class="tbNum">1</span>
+                                        수납한 퇴원수속 완료증을 병동에 제출하시고 퇴원약을 받아 약복용 및 진료에 대한 설명을 듣고 퇴원 하시면 됩니다.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            </div>
+    </div>
+    <div class="page" id="page3">
+        <a href="#page3" class="btn1 item3">병문안안내</a>
+         <div class="con">
+            <h1 class="pageTitle">병문안안내</h1>
+            <section class="sec2">
+                <div class="subBox">
+                    <h2 class="subTit">병문안안내입니다. </h2>
+                    <table class="subTable3">
+                        <thead>
+                            <th class="col3">구분</th>
+                            <th class="col9">평일/공휴일,토,일요일</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col3">일반변동</td>
+                                <td class="col9"><p>18:00∼20:00/1차10:00∼12:00 2차18:00∼20:00</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col3">중환자실(1일 2회)</td>
+                                <td class="col9"><p>1차 07:30∼08:00 2차 17:30∼18:00/좌동</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col3">간호간병통합서비스병동</td>
+                                <td class="col9"><p>18:00∼20:00/1차10:00∼12:00 2차 18:00∼20:00</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="lastPage">
+        <div class="wrap">
+            <ul>
+                <li class="col4 item1 first">
+                    <h2 class="itemTitle">근로복지공단 대전병원</h2>
+                    <h1 class="telTxt">042.670.5114</h1>
+                    <p class="itemData">
+                        대전광역시 대덕구 계족로 637 우 : 34384 
+                    </p>
+                    <p class="itemData" style="padding-bottom:40px;">
+                        Fax.042)631-8250,8260
+                    </p>
+                </li>
+                <li class="col4 item2">
+                    <h2 class="itemTitle">진료시간</h2>
+                    <p class="itemData">
+                         평일 : 08:30 ~ 17:30 <br>
+                       토요일 : 08:30 ~ 12:30 <br>
+                       휴무 : 일요일,공휴일 <br>
+                    </p>
+                                       
+                </li>
+                <li class="col4 item3">
+                    <h2 class="itemTitle">찾아오시는 길</h2>
+                    <div id="mapFrame">
+                        <div id="map_canvas" style="width:360px; height:180px"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer id="ft">
+    <div class="wrap">
+        <p class="copyright">Copyright (c) 근로복지공단 대전병원. All Rights Reserved.</p>
+        <div class="ftLogo"></div>
+    </div>
+</footer>
+<input type="checkbox" id="ck">
+<div id="popFrm">
+    <label for="ck" class="closeBtn">닫기</label>
+    <div class="popBox">
+        <ul class="item1">
+            <li>
+                <h2>
+                    <a href="intro.html#page1">병원안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="intro.html#page1">병원소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page2">병원장인사말</a>
+            </li>
+            <li>
+                <a href="intro.html#page3">병원이용안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page4">부서별전화번호</a>
+            </li>
+            <li>
+                <a href="intro.html#page5">오시는 길</a>
+            </li>
+        </ul>
+        <ul class="item2">
+            <li>
+                <h2>
+                    <a href="physical.html#page1">진료안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="physical.html#page1">종합검진안내</a>
+            </li>
+            <li>
+                <a href="physical.html#page2">전문화 특화안내</a>
+            </li>
+            <li>
+                <a href="physical.html#page3">재활전문센터안내</a>
+            </li>
+        </ul>
+        <ul class="item3">
+           <li>
+                <h2>
+                    <a href="ward.html#page1">진료예약</a>
+                </h2>
+            </li>
+            <li>
+                <a href="ward.html#page1">진료예약</a>
+            </li>
+            <li>
+                <a href="ward.html#page2">입.퇴원안내</a>
+            </li>
+            <li>
+                <a href="ward.html#page3">사이버민원실</a>
+            </li>
+            <li>
+                <a href="ward.html#page4">의료장비안내</a>
+            </li>
+        </ul>
+        <ul class="item4">
+            <li>
+                <h2>
+                    <a href="news.html#page1">정보공개</a>
+                </h2>
+            </li>
+            <li>
+                <a href="news.html#page1">공지사항/새소식</a>
+            </li>
+            <li>
+                <a href="news.html#page2">보도자료</a>
+            </li>
+            <li>
+                <a href="news.html#page3">홍보동영상</a>
+            </li>
+            <li>
+                <a href="news.html#page4">자원봉사단</a>
+            </li>
+        </ul>
+        <ul class="item5">
+            <li>
+                <h2>
+                    <a href="speech.html#page1">의료영상정보</a>
+                </h2>
+            </li>
+            <li>
+                <a href="speech.html#page1">pacs의 필요성</a>
+            </li>
+            <li>
+                <a href="speech.html#page2">web pacs연결</a>
+            </li>
+        </ul>
+    </div>
+</div>        
+<aside id="quick">
+    <div class="qWrap">
+        <ul class="top">
+            <li>
+                <a href="" class="qlogo"></a>
+            </li>
+            <li>
+                <a href="joinForm.html" class="hv">회원가입</a>
+            </li>
+            <li>   
+                <a href="loginForm.html" class="hv">로그인</a>
+            </li>
+            <li>       
+                <a href="intro.html#page5" class="hv">비급여안내</a>
+            </li>
+            <li>       
+                <a href="intro.html#page4" class="hv">오시는길</a>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li>
+                <a href="speech.html#page1" class="yellow">pacs의 필요성</a>
+            </li>
+            <li>
+                <a href="speech.html#page2" class="cyan">web pacs연결</a>
+            </li>
+            <li><a href="#page1" class="toTop">위로</a></li>
+        </ul>
+    </div>
+</aside>
+</body>
+</html>

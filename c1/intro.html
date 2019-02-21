@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>대전병원 - 병원안내</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileImage" content="./ico/favicon-144.png">
+
+    <!-- 메타데이터 개발 공통 사항 -->
+    <!-- 데스크탑에서 IE로 웹 문서를 열 때 가장 최신 버전으로 실행 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <!-- 앱(웹 사이트)의 이름 -->
+    <meta name="application-name" content="SRC hospital Site">
+    <!-- 웹 사이트 저작자의 이름 -->
+    <meta name="author" content="kitae Kim">
+    <!-- 현재 문서의 설명 -->
+    <meta name="description" content="SRC hospital Site Mainpage"> 
+    <!-- 현재 문서의 저작도구 -->
+    <meta name="generator" content="Brackts">
+    <!-- 검색엔진에서 검색되게할 키워드 -->
+    <meta name="keywords" content="SRC 병원, 건강관리, 휴양">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua|Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link rel="stylesheet" href="com.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="sub1.css">
+    <style>
+    body, html { -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display:none; }    
+    ::-o-scrollbar { display:none; } 
+    ::-moz-scrollbar { display:none; }     
+    </style>
+<!--    <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="./js/jquery-1.11.1.js"></script>
+    
+    <script>
+    /* 여기가 스크립트 처리 구간 */    
+    $(function(){
+        var intv = setInterval(function(){ lAni(); }, 3000);
+        function lAni(){
+            $(".imgBox").not(":animated").animate({"margin-left":"-510px"}, 800, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+            });
+            
+        }
+    });    
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcG6XLlvSL0DQtg1G38wiT_r8BYN3RbWQ&callback=initMap"></script> -->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpo7PlmFhN57HAxDlD8MTLI4DT1bL9VFY&callback=initMap"></script>-->
+<!--
+1) 구글 지도 api key 발급 사이트로 이동하여 지도 API 서비스 신청
+2) https://console.cloud.google.com/getting-started?pli=1
+3) [API 및 서비스] -> [사용자 인증 정보] -> 인증 키 발급
+-->
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.4931346, 126.92737779999993);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: '근로복지공단 대전병원'	  //레이블을 바꿔서 입력
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+<script>
+$(function(){
+//   setTimeout(function(){
+//       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+//   }, 1000); 
+});    
+</script>
+</head>
+<body onload="initialize()">
+<div class="hdFrame on"></div>
+<header id="hd">
+    <div class="wrap">
+        <a href="index.html" class="logo">
+            <img src="./img/logo.png" alt="앰블럼">
+        </a>
+        <nav id="gnb">
+            <ul>
+                 <li><a href="intro.html#page1">병원안내</a></li>
+                <li><a href="physical.html#page1">진료안내</a></li>
+                <li><a href="ward.html#page1">입.퇴원안내</a></li>
+                <li><a href="news.html#page1">정보공개</a></li>
+                <li><a href="speech.html#page1">의료영상정보</a></li>
+            </ul>
+        </nav>
+        <label for="ck" class="lstBtn">
+            <span class="item1 on"></span>
+            <span class="item2 on"></span>
+            <span class="item3 on"></span>
+            <span class="item4 on"></span>
+        </label>
+    </div>
+</header>    
+<main id="content">
+    <div class="blank"></div>
+    <div class="page" id="page1">
+        <a href="#page1" class="btn1 item1">병원소개</a>
+        <div class="con">
+            <h1 class="pageTitle">병원소개</h1>
+            <section class="sec11 wtxt">
+                <h2 class="secTitle">근로복지공단 대전병원(대전)</h2>
+                <p class="secCom">대전광역시에 위치한 또 하나의 근로복지공단 대전병원</p>
+                <p class="secCom2">"근로복지공단대전병원은 쾌적한 진료환경과 
+                최첨단의료장비와 시설을 갖추고<br> 전직원이 친절봉사정신으로 환자에게 정성을!
+                진료에는 최선을!<br>이라는 목표로 전진하는 종합병원입니다"</p>
+            </section>
+            <section class="sec12 wtxt">
+                <ul class="secFrm">
+                    <li>
+                        <div class="left imgFrame">
+                            <img src="./img/sub.png" alt="근로복지공단">
+                        </div>
+                        <div class="right txtFrame">
+                            <h3 class="itemTitle">1. 근로복지공단 대전병원</h3>
+                            <p class="itemComent">일하는 사람들이 보다 더 안심하고 일할 수 있도록보다<br> 더 건강하게 일할 수 있도록 그리고 퇴직 후까지 보다 더 안심하고 살아갈 수 있도록<br> 세계최고 수준의 사회보장서비스기관을 지향하는 근로복지공단이 모든 근로자의 희망과 함께 하는 곳</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left txtFrame">
+                            <h3 class="itemTitle">2. 균형가 있는 맞춤 영양상담</h3>
+                            <p class="itemComent">환자들의 건강과 빠른 쾌유를 위해 비만,당뇨,고지혈증 등 각종 질환이 있는<br>모든 환자에게 영양상담을 실시하고 있습니다.<br>매일 오전(조식)빵식과 백반 중 선택1 <br>매주수요일 선택식단제(중식):백반,분식중 선택1</p>
+                        </div>
+                        <div class="right imgFrame">
+                            <img src="./img/sub2%20(1).png" alt="재활병원 썸네일">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left imgFrame">
+                            <img src="./img/sub2%20(2).png" alt="생활속의 재활 썸네일">
+                        </div>
+                        <div class="right txtFrame">
+                            <h3 class="itemTitle">3. 주차장 편의시설</h3>
+                            <p class="itemComent">대전병원을 찾아주시는 환자분들을 위하여<br> 넓은 주차시설(대전시내 종합병원 중 최대주차 약 300대)을 만들었습니다.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <a href="#page2" class="btn1 item2">병원이용안내</a>
+        <div class="con">
+            <h1 class="pageTitle">병원이용안내</h1>
+            <section class="sec21">
+                <input type="radio" name="ra20" id="ra21" class="raItem" checked>
+                <input type="radio" name="ra20" id="ra22" class="raItem">
+                <input type="radio" name="ra20" id="ra23" class="raItem">
+                <ul class="btnFrame">
+                    <li><label for="ra21" class="raBtn item1">건물배치 및 병동안내</label></li>
+                    <li><label for="ra22" class="raBtn item2">편의시설안내</label></li>
+                    <li><label for="ra23" class="raBtn item3">주변약국안내</label></li>
+                
+                </ul>
+                <ul class="conFrame">
+                    <li class="itemFrame item1">
+                        <input type="radio" class="raItem conRa1" id="ra201" name="conRaOne" checked>
+                        
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/sub-b.png" alt="배너이미지1" class="imgItem">
+                            </li>
+                        </ul>
+                        <div class="titBox">
+                            <h3 class="tbTitle">대전병원건물배치및병동안내</h3>
+                            <p class="tbComent">①본관병동<br>
+                                                ②신관동<br>
+                                                ③별관1 (A동)<br>
+                                                ④건강관리센터<br>
+                                                ⑤중앙요양병원<br>
+                                                ⑥중앙요양병원<br></p>
+                        </div>      
+                    </li>
+                    <li class="itemFrame item2">
+                        <input type="radio" class="raItem conRa1" id="ra221" name="conRaTwo" checked>
+                        <input type="radio" class="raItem conRa2" id="ra222" name="conRaTwo">
+                        <input type="radio" class="raItem conRa3" id="ra223" name="conRaTwo">
+                        <input type="radio" class="raItem conRa4" id="ra224" name="conRaTwo">
+                        <input type="radio" class="raItem conRa5" id="ra225" name="conRaTwo">
+                        <input type="radio" class="raItem conRa6" id="ra226" name="conRaTwo">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/thum.png" alt="배너이미지1" class="imgItem">
+                            </li>
+                            <li class="raCon2">
+                                <img src="./img/thum1.png" alt="배너이미지2" class="imgItem">
+                            </li>
+                            <li class="raCon3">
+                                <img src="./img/thum2.png" alt="배너이미지3" class="imgItem">
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    <li class="itemFrame item3">
+                        <input type="radio" class="raItem conRa1" id="ra241" name="conRaThree" checked>
+                        <input type="radio" class="raItem conRa2" id="ra242" name="conRaThree">
+                        <input type="radio" class="raItem conRa3" id="ra243" name="conRaThree">
+                        <ul class="tbImgFrm">
+                            <li class="raCon1">
+                                <img src="./img/thum3.png" alt="배너이미지1" class="imgItem">
+                            </li>
+                            <li class="raCon2">
+                                <img src="./img/thum4.png" alt="배너이미지2" class="imgItem">
+                            </li>
+                            <li class="raCon3">
+                                <img src="./img/thum5.png" alt="배너이미지3" class="imgItem">
+                            </li>
+                        </ul>                        
+                        <div class="titBox">
+                            <h3 class="tbTitle">주변약국안내</h3>
+                            <p class="tbComent">병원주변에 있는 약국 안내입니다. </p>
+                        </div>
+                        <ul class="thumBox">
+                            <li class="thumBtn1">
+                                <label for="ra241">
+                                    <img src="./img/thum3.png" alt="썸네일버튼1">
+                                </label>
+                            </li>
+                            <li class="thumBtn2">
+                                <label for="ra242">
+                                    <img src="./img/thum4.png" alt="썸네일버튼2">
+                                </label>
+                            </li>
+                            <li class="thumBtn3">
+                                <label for="ra243">
+                                    <img src="./img/thum5.png" alt="썸네일버튼3">
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <a href="#page3" class="btn1 item3">부서별 연락처</a>
+        <div class="con">
+            <h1 class="pageTitle">부서별 연락처</h1>
+            <div class="subBox">
+                <h2 class="subTit">대전병원 전화번호 안내입니다.</h2>
+                <p class="subCom">대전병원에 대한 문의사항이 있으시면 아래번호로 연락을 주시기 바랍니다.</p>
+                <ul class="subLst">
+                    <li class="col6">
+                        <h3 class="subConTit">본관</h3>
+                        <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                               670-5114
+                            </dd>
+                            <dt>FAX</dt>
+                            <dd>042)631-8250, 8260</dd>
+                        </dl>
+                    </li>
+                    <li class="col6">
+                        <h3 class="subConTit">응급실</h3>
+                        <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                                670-5119
+                            </dd>
+                            <dt>FAX</dt>
+                            <dd>042)631-8250, 8260</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <div class="subBox" style="height:540px;">
+                <h2 class="subTit">대전병원 진료부 전화번호 안내입니다.</h2>
+                <p class="subCom">대전병원 진료부에 대한 문의사항이 있으시면 아래번호로 연락을 주시기 바랍니다.</p>
+                <ul class="subLst">
+                    <li class="col6">
+                        <h3 class="subConTit">외과</h3>
+                        <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                                670-5414
+                                <span class="rtxt">(직통)</span>
+                            </dd>
+                            <dt>FAX</dt>
+                            <dd>042)631-8250, 8260</dd>
+                        </dl>
+                    </li>
+                    <li class="col6">
+                        <h3 class="subConTit">재활의학과</h3>
+                        <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                               670-5126
+                                <span class="rtxt">(직통)</span>
+                            </dd>
+                            <dt>FAX</dt>
+                            <dd>042)631-8250, 8260</dd>
+                        </dl>
+                    </li>
+                    <li class="col6">
+                        <h3 class="subConTit">신경과</h3>
+                        <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                               670-5104
+                                <span class="rtxt">(직통)</span>
+                            </dd>
+                            <dt>FAX</dt>
+                            <dd>042)631-8250, 8260</dd>
+                        </dl>
+                    </li>
+                    <li class="col6">
+                        <h3 class="subConTit">접수수납</h3>
+                        <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                                670-5413,4
+                                <span class="rtxt">(직통)</span>
+                            </dd>
+                            <dt>FAX</dt>
+                            <dd>042)631-8250, 8260</dd>
+                        </dl>
+                    </li>
+                </ul>
+                <p class="subLastCom">
+                전화번호는 통화량이 많거나 부재중일시 연결이 어려울 수 있으니,언제든 042)631-8250, 8260으로 전화하시면 친절하고 빠르게 상담받으실 수 있습니다.
+                <br>
+                (근로복지공단 대전병원 대표전화는 <span class="rtxt">042)631-8250, 8260</span> 입니다)
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="page" id="page4">
+        <a href="#page4" class="btn1 item4">오시는길</a>
+     <div class="con">
+            <h1 class="pageTitle">오시는길</h1>
+            <ul class="btnFrame">
+                <li class="col6"><a href="intro.html#page4" class="raBtn on">오시는 길</a></li>
+                <li class="col6"><a href="https://map.naver.com/?searchCoord=650a0eeddda9946e625e70ed4b81ab2cf4aa57b7b94d6cad37bc3e0b29661e2d&query=6re866Gc67O17KeA6rO164uoIOuMgOyghOuzkeybkA%3D%3D&menu=location&tab=1&lng=be2e4d18d6402ffbe74692f3bab15438&mapMode=0&mpx=3cc9e983bd6bbb47fefa95e84ba0e6c9168c542e5ef5f3bf970a9f2b10681b67b95a4194d930ec75630fd1e52c104c04367936487c626c2032c9e58acf8b3bd0&lat=8f9fab67c671d3a0a29ad78ec2676f67&dlevel=12&enc=b64" class="raBtn" target="_blank">빠른 길 찾기</a></li>
+            </ul>
+            <div class="subBox" style="height:auto">
+                <h2 class="subTit">근로복지공단 대전병원</h2>
+                <table class="subTable1">
+                    <tr>
+                        <th class="col2">주소안내</th>
+                        <td class="col10">대전광역시 대덕구 계족로 637 우 : 34384</td>
+                    </tr>
+                    <tr>
+                        <th class="col2">전화번호</th>
+                        <td class="col10">042)631-8250, 8260</td>
+                    </tr>
+                    <tr>
+                        <th class="col2">FAX</th>
+                        <td class="col10">042)631-8250, 8260</td>
+                    </tr>
+                </table>
+                <div class="blank2"></div>
+                <div class="imgFrame" style="height:450px;">
+                    <img src="./img/map2.png" alt="지도">
+                </div>
+            </div>
+            <div class="subBox" style="height:auto">
+                <h2 class="subTit">교통편 안내</h2>
+                <p class="subCom">
+                근로복지공단 대전병원이나 볍동전통시장을 검색하여 오시면 됩니다, </p>
+                <table class="subTable1">
+                    <tr>
+                        <th class="col2">
+                            <p>버스,도보</p>
+                            <p>&nbsp;</p>
+                        </th>
+                        <td class="col10">
+                            <p><span class="tdItem data1">급행</span>2번</p>
+                            <p><span class="tdItem data2">도보</span>4분</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="col2">
+                            <p>버스</p>
+                            <p>&nbsp;</p>
+                        </th>
+                        <td class="col10">
+                            <p><span class="tdItem data3">지선버스</span>614
+                            <p><span class="tdItem data4">간선버스</span>611, 615 701, 706, 617, 711,</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+    </div>
+    <div class="page" id="page5">
+        <a href="#page5" class="btn1 item5">비급여 안내</a>
+        <div class="con">
+            <h1 class="pageTitle">비급여 안내</h1>
+            <div class="subBox" style="height: auto; border-top:1px solid #666;">
+                <h2 class="subTit" style="padding-bottom:20px;">기본항목</h2>
+                <table class="subTable2">
+                    <thead>
+                        <tr>
+                            <th class="col2">구분</th>
+                            <th class="col7">기본항목</th>
+                            <th class="col3">가격 (단위 : 원)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col2">검사</td>
+                            <td class="col7">초음파 검사 - 1 부위</td>
+                            <td class="col3">80,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">검사</td>
+                            <td class="col7">초음파 검사 - 2 부위</td>
+                            <td class="col3">120,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">검사</td>
+                            <td class="col7">초음파 검사 - 3 부위 이상</td>
+                            <td class="col3">160,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">도수치료 - 10분</td>
+                            <td class="col3">30,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">도수치료 - 40분</td>
+                            <td class="col3">80,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">도수치료 - 80분</td>
+                            <td class="col3">160,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">체외충격파 치료 - 1부위</td>
+                            <td class="col3">80,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">체외충격파 치료 - 2부위</td>
+                            <td class="col3">120,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">체외충격파 치료 - 3부위 이상</td>
+                            <td class="col3">160,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">플라센텍스주</td>
+                            <td class="col3">100,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">증식치료 (prolotherapy) - 사지관절부위</td>
+                            <td class="col3">50,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">증식치료 (prolotherapy) - 척추관절부위</td>
+                            <td class="col3">100,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">이온토포레시스</td>
+                            <td class="col3">15,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">Hylase 150u</td>
+                            <td class="col3">27,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">통증치료</td>
+                            <td class="col7">Hylase 1500u</td>
+                            <td class="col3">88,000</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            <div class="subBox" style="height: auto;">
+                <h2 class="subTit" style="padding-bottom:20px;">제증명료</h2>
+                <table class="subTable2">
+                    <thead>
+                        <tr>
+                            <th class="col2">구분</th>
+                            <th class="col7">기본항목</th>
+                            <th class="col3">가격 (단위 : 원)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">일반진단서 - 원본</td>
+                            <td class="col3">20,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">의사 소견서</td>
+                            <td class="col3">10,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">소견서 (영문)</td>
+                            <td class="col3">20,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">진단서 (영문)</td>
+                            <td class="col3">40,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">의무기록사본복사 (기본 5장까지)</td>
+                            <td class="col3">2,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">의무기록사본복사 (6매부터 추가 1장당)</td>
+                            <td class="col3">200</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">CD 복사</td>
+                            <td class="col3">10,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">입, 퇴원 확인서</td>
+                            <td class="col3">3,000</td>
+                        </tr>
+                        <tr>
+                            <td class="col2">제증명료</td>
+                            <td class="col7">진단확인서</td>
+                            <td class="col3">20,000</td>
+                        </tr>
+                    </tbody>
+                </table>    
+            </div>
+                     
+                       
+        </div>
+    </div>
+    <div class="page" id="page6">
+        <a href="#page6" class="btn1 item6">협력기관</a>
+        <div class="con">
+            <h1 class="pageTitle">협력기관</h1>
+            <div class="subBox" style="height:auto; ">
+                <ul class="linkLst">
+                    <li class="col3">
+                        <a href="https://www.brmh.org/home.do" target="_blank">
+                            <img src="./img/intro07_1.jpg" alt="이미지아이콘">
+                            <span class="linkTit">보라매병원</span>
+                        </a>
+                    </li>
+                    <li class="col3">
+                        <a href="http://ch.cauhs.or.kr/" target="_blank">
+                            <img src="./img/intro07_2.jpg" alt="이미지아이콘">
+                            <span class="linkTit">중앙대학교병원</span>
+                        </a>
+                    </li>
+                    <li class="col3">
+                        <a href="https://m.cmcseoul.or.kr/" target="_blank">
+                            <img src="./img/intro07_3.jpg" alt="이미지아이콘">
+                            <span class="linkTit">서울성모병원</span>
+                        </a>
+                    </li>
+                    <li class="col3">
+                        <a href="https://www.snubh.org/" target="_blank">
+                            <img src="./img/intro07_4.jpg" alt="이미지아이콘">
+                            <span class="linkTit">세브란스병원</span>
+                        </a>
+                    </li>
+                    <li class="col3">
+                        <a href="https://www.snubh.org/" target="_blank">
+                            <img src="./img/intro07_5.jpg" alt="이미지아이콘">
+                            <span class="linkTit">분당 서울대학교병원</span>
+                        </a>
+                    </li>
+                    <li class="col3">
+                        <a href="http://www.snuh.org/" target="_blank">
+                            <img src="./img/intro07_6.jpg" alt="이미지아이콘">
+                            <span class="linkTit">서울대학교병원</span>
+                        </a>
+                    </li>
+                    <li class="col3">
+                        <a href="http://bundang.chamc.co.kr/" target="_blank">
+                            <img src="./img/intro07_7.jpg" alt="이미지아이콘">
+                            <span class="linkTit">분당 차병원</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="page" id="lastPage">
+        <div class="wrap">
+            <ul>
+                <li class="col4 item1 first">
+                    <h2 class="itemTitle">근로복지공단 대전병원</h2>
+                    <h1 class="telTxt">042.670.5114</h1>
+                    <p class="itemData">
+                        대전광역시 대덕구 계족로 637 우 : 34384 
+                    </p>
+                    <p class="itemData" style="padding-bottom:40px;">
+                        Fax.042)631-8250,8260
+                    </p>
+                </li>
+                <li class="col4 item2">
+                    <h2 class="itemTitle">진료시간</h2>
+                    <p class="itemData">
+                         평일 : 08:30 ~ 17:30 <br>
+                       토요일 : 08:30 ~ 12:30 <br>
+                       휴무 : 일요일,공휴일 <br>
+                    </p>
+                                       
+                </li>
+                <li class="col4 item3">
+                    <h2 class="itemTitle">찾아오시는 길</h2>
+                    <div id="mapFrame">
+                        <div id="map_canvas" style="width:360px; height:180px"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer id="ft">
+    <div class="wrap">
+        <p class="copyright">Copyright (c) 근로복지공단 대전병원. All Rights Reserved.</p>
+        <div class="ftLogo"></div>
+    </div>
+</footer>
+<input type="checkbox" id="ck">
+<div id="popFrm">
+    <label for="ck" class="closeBtn">닫기</label>
+    <div class="popBox">
+        <ul class="item1">
+            <li>
+                <h2>
+                    <a href="intro.html#page1">병원안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="intro.html#page1">병원소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page2">병원장인사말</a>
+            </li>
+            <li>
+                <a href="intro.html#page3">병원이용안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page4">부서별전화번호</a>
+            </li>
+            <li>
+                <a href="intro.html#page5">오시는 길</a>
+            </li>
+        </ul>
+        <ul class="item2">
+            <li>
+                <h2>
+                    <a href="physical.html#page1">진료안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="physical.html#page1">종합검진안내</a>
+            </li>
+            <li>
+                <a href="physical.html#page2">전문화 특화안내</a>
+            </li>
+            <li>
+                <a href="physical.html#page3">재활전문센터안내</a>
+            </li>
+        </ul>
+        <ul class="item3">
+           <li>
+                <h2>
+                    <a href="ward.html#page1">입.퇴원안내</a>
+                </h2>
+            </li>
+            <li>
+                <a href="ward.html#page1">입원안내</a>
+            </li>
+            <li>
+                <a href="ward.html#page2">퇴원안내</a>
+            </li>
+            <li>
+                <a href="ward.html#page3">병문안안내</a>
+            </li>
+        </ul>
+        <ul class="item4">
+            <li>
+                <h2>
+                    <a href="news.html#page1">정보공개</a>
+                </h2>
+            </li>
+            <li>
+                <a href="news.html#page1">공지사항/새소식</a>
+            </li>
+            <li>
+                <a href="news.html#page2">보도자료</a>
+            </li>
+            <li>
+                <a href="news.html#page3">홍보동영상</a>
+            </li>
+            <li>
+                <a href="news.html#page4">자원봉사단</a>
+            </li>
+        </ul>
+        <ul class="item5">
+            <li>
+                <h2>
+                    <a href="speech.html#page1">의료영상정보</a>
+                </h2>
+            </li>
+            <li>
+                <a href="speech.html#page1">pacs의 필요성</a>
+            </li>
+            <li>
+                <a href="speech.html#page2">web pacs연결</a>
+            </li>
+        </ul>
+    </div>
+</div>        
+<aside id="quick">
+    <div class="qWrap">
+        <ul class="top">
+            <li>
+                <a href="" class="qlogo"></a>
+            </li>
+            <li>
+                <a href="joinForm.html" class="hv">회원가입</a>
+            </li>
+            <li>   
+                <a href="loginForm.html" class="hv">로그인</a>
+            </li>
+            <li>       
+                <a href="intro.html#page5" class="hv">비급여안내</a>
+            </li>
+            <li>       
+                <a href="intro.html#page4" class="hv">오시는길</a>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li>
+                <a href="speech.html#page1" class="yellow">pacs의 필요성</a>
+            </li>
+            <li>
+                <a href="speech.html#page2" class="cyan">web pacs연결</a>
+            </li>
+            <li><a href="#page1" class="toTop">위로</a></li>
+        </ul>
+    </div>
+</aside>
+</body>
+</html>
