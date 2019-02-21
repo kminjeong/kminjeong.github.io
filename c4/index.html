@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>수원시 홈페이지:HOME</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/logo16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/logo32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./img/logo57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./img/logo72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./img/logo114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="수원">
+    <meta name="author" content="kitae Kim">
+    <meta name="description" content="수원시청">
+    <meta name="keywords" content="수원,시청,민원,정보">
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- 적응형 미디어 스크립트 연결 -->
+    <script src="media.js"></script>
+    <link rel="stylesheet" href="reste.css">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <script src="./script/main.js"></script>
+
+    <style>
+        * {margin: 0; padding: 0;}
+        body, html {width: 100%; height: 100%;}
+        ul {list-style: none;}
+        a {text-decoration: none; }
+        .wrap{width: 1300px; margin: 0 auto; padding: 0;}
+        .wrapmain { width: 100%; height: 1000px; position:relative;}
+        /*닫기버튼*/
+        .banner {position: relative; height: 91px; text-align: center; background: #fff; border-bottom: 1px solid #dbdbdb; box-sizing: border-box; z-index: 1; }
+        .banner .img {position: relative; width: 100%; height: 100%; overflow: hidden;}
+        #hd {background: #fff; height: auto; width: 1000px; height: 150px;margin: 0 auto; }
+        /*로고*/
+        .logo {display: block; width: 410px; height: 27px; background-image: url(img/logo.png); background-repeat: no-repeat;  background-position: center  center; position: absolute; top: 100px; left: 150px; text-indent: -999px;}
+        .logging {display: block; width: 144px; height: 32px; background-image: url(img/logging.png); background-repeat: no-repeat; background-position: center  center; position: absolute; top: 170px; left: 300px; text-indent: -999px;}
+        
+        .gnb {float: left; }
+        .gnb ul {float: left;}
+        .gnb ul li{float: left; margin-left: 20px;}
+        .gnb ul li a {font-size: 16px; height: 48px; line-height: 48px; font-weight: 700; left: -180px;}
+        .other {position: absolute; right: 220px;; top: 0; padding: 90px; }
+        .gnb ul.other li a{font-size: 14px;}
+        
+        /*검색창*/
+        .line .search{width: 460px; height: 42px; border: 3px solid #4993d7; position: absolute; left: 710px; top: 170px; margin-left: -200px; margin-top: 0; box-sizing: border-box;}
+        .on1y {position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; }
+        .search #topsearch {border: 0; padding: 0 10px; height: 38px; line-height: 38px; font-size: 16px;}
+        .search img {margin-left: 3px; vertical-align: middle; cursor: pointer; position: absolute; top: 12px; right: 42px;}
+        #topsearch {width: 300px; height: 30px;}
+        .search button {display: inline-block; width: 36px; height: 36px; padding: -60px;; background-image: url(icon/magnifier.png); float: right;  background-repeat: no-repeat;}
+        .lang_site {width: 110px; height: 21px; position: absolute; right: 310px; top:140px; text-indent: -999px;}
+        .lang_site select {float: left; width: 80px; height: 21px; border-color: #afcfea; color: #6ea7d8; font-size: 12px; padding: 0, 0, 0, 2px; box-sizing: border-box; line-height: 21px; } 
+        .lang_site input {float: left; width: 30px; font-size: 18px; color: #fff; background-color: #1e6cb3; border: 0; display: inline-flex; padding: 0; background-size: 30px;}
+       
+        /*슬라이드 이미지*/
+        .inner_wrap {position: relative; display: block; overflow: hidden; width: 760px; height:350px; clear: both; left: -270px;margin: auto;}
+        .inner_wrap .slide {position: relative; overflow: hidden; width: 760px; height: 350px; }
+        .banFrame { width:200%; min-width:760px;  min-height: 350px;}
+        .banFrame li { float:left; width: 760px; height:350px; }
+        .btnFrame { position:absolute; top:50%; z-index:90; width:100%; }
+        .btnFrame .left { float: left; margin-left: 0px auto; }
+        .btnFrame .right { float: right; margin-right:0px auto;}
+        .btnFrame .banBtn { display:block; width: 39px; height:53px;  text-indent:-9999px;  background-size:39px 53px; cursor:pointer; background-repeat:no-repeat; background-color: transparent;}
+        .prevBtn { background-image:url("./icon/btn.png"); background-position: left;}
+        .nextBtn { background-image:url("./icon/btn1.png"); background-position: right;}
+        .item{position: absolute; right: 350px; top: 244px; width: 360px; height: 500px;}
+        .item li{clear: both; width: 360px; height: 120px; overflow: hidden;}
+        .item li a {display: block; text-align: center;}
+        .item li a img {width: 100%;}
+       
+    </style>
+
+    <style>
+        .inner3{height: 155px; padding-top: 35px;}
+        .inner3 ul{padding: 0 27px; margin-left: -90px; box-sizing: border-box;}
+        .inner3 li{float: left; width: 85px; height: 130px; margin-left: 80px;}
+        .inner3 li p a {width: 100px; display: inline-block; text-align: center; font-size: 16px; padding-top: 100px; }
+        .inner3 li.Education {background-image: url("./icon/icon.png");background-repeat: no-repeat;}
+        .inner3 li.Economy {background-image: url("./icon/icon1.png");background-repeat: no-repeat;}
+        .inner3 li.traffic {background-image: url("./icon/icon2.png");background-repeat: no-repeat;}
+        .inner3 li.Environment{background-image: url("./icon/icon7-1.png");background-repeat: no-repeat;}
+        .inner3 li.Welfare {background-image: url("./icon/icon4.png");background-repeat: no-repeat;}
+        .inner3 li.safety {background-image: url("./icon/icon5.png");background-repeat: no-repeat;}
+        .inner3 li.Culture {background-image: url("./icon/icon6.png");background-repeat: no-repeat;}
+        .inner3 li.Newsportal {background-image: url("./icon/icon7.png");background-repeat: no-repeat;}
+    </style>
+
+    <style>
+        .inner4 .boardar1{float: left; width: 780px; height: 100px;}
+        .inner4 .boardar1 h2{padding-bottom: 15px; font-size: 24px; font-weight: 700;}
+        .inner4 .boardar1 .imgarea {float: left; width: 237px; height: 136px;position: relative; overflow: hidden;}
+        .inner4 .boardar1 .imgarea img{width: 100%; height: 100%; transform: scale(1.0); transform: transform 0.3s;}
+        .inner4 .boardar1 .txt {background-color: rgba(0,0,0,.5); padding: 11px 20px; position: absolute; left: 0; bottom: 0; width: 100%; box-sizing: border-box;}
+        .inner4 .boardar1 .txt a {color: #fff; font-size: 16px; font-weight: 700; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; vertical-align: middle;}
+        
+        .inner4 .txtarea {width: 465px; float: right; margin: 0 0 0 35px; }
+        .inner4 .txtarea b{font-size: 17px; color: #3884c5; margin-right: 15px;}
+        .inner4 .txtarea li{padding: 6px; width: 100%; white-space: nowrap; overflow: hidden;text-overflow: ellipsis; font-style: 16px; }
+        .inner4 .txtarea ul{float:right; padding-right: 25px; top: auto; }
+        .inner4 .mayorlink {padding: 0; float: right; width: 360px; height: 178px; margin-top: 5px; background-image: url(main/img.png);background-repeat: no-repeat; position: relative; box-sizing: border-box;}
+        /*.inner4 .mayorlink h2 {font-size: 26px; font-weight: bold; color: #0158a8;}
+        .inner4 .mayorlink span {display: block; margin-top: 3px; font-weight: bold; font-size: 16px;}*/
+        
+        .inner4 .mayorlink ul {position: absolute; left: 24px; bottom: 20px; margin-top: 0;  width: auto; z-index: 2;}
+        .inner4 .mayorlink ul li {position: relative; float: left; margin-right: 5px;}
+        .inner4 .mayorlink ul li a {display: inline-block; width: 24px; height: 24px; text-indent: -999999em;}
+        .inner4 li.f{background-image: url(icon/sns1.png);background-repeat: no-repeat;}
+        .inner4 li.i{background-image: url(icon/sns2.png);background-repeat: no-repeat;}
+        .inner4 li.k{background-image: url(icon/sns3.png);background-repeat: no-repeat;}
+        .inner4 li.t{background-image: url(icon/sns4.png);background-repeat: no-repeat;}
+        .inner4 li.nb{background-image: url(icon/sns.png);background-repeat: no-repeat;}
+        .inner4 li.u{background-image: url(icon/sns6.png);background-repeat: no-repeat;}
+    </style>
+
+    <style>
+        .inner5 {position: relative; width: 1300px; height: 370px; margin: 0 auto; padding-top: 300px;  border-bottom: 2px solid #333;} 
+        .inner5 h1 {font-size: 20px; padding-bottom: 30px; font-weight:bold;}
+        .mservice1 {width: 60%; display: block; height: 500px; position: absolute; }
+        .mservice1 li { width: 50px; height: 70px; float: left; position: relative; padding-bottom: 10px; margin-left: 40px}
+        .mservice1 li a { width: 100%; height: 100%; display: block; text-align: center; padding-top: 100px}
+        .mservice2 { width: 40%; height:300px; position:absolute; right: 0;}
+        .inner5 li.answer{height: 90px; width: 100px; background-image: url(./icon/icon8.png); background-repeat: no-repeat;background-position: center center; padding-bottom:0; }
+        .inner5 li.jpi{height: 90px; width: 100px;  background-image: url(./icon/icon9.png); background-repeat: no-repeat; background-position: center center; padding-bottom:0;}
+        .inner5 li.portal{height: 90px; width: 100px; background-image: url(./icon/icon10.png); background-repeat: no-repeat;background-position: center center; padding-bottom:0; }
+        .inner5 li.care{height: 90px; width: 100px;  background-image: url(./icon/icon11.png); background-repeat: no-repeat; background-position: center center; padding-bottom:0;}
+        .inner5 li.reales{height: 90px; width: 100px;  background-image: url(./icon/icon12.png); background-repeat: no-repeat; background-position: center center; padding-bottom:0;}
+        .inner5 li.nuri{height: 90px; width: 100px;  background-image: url(./icon/icon13.png); background-repeat: no-repeat; background-position: center center; padding-bottom:0; margin-top: 50px;}
+        .inner5 li.public{height: 90px; width: 100px;  background-image: url(./icon/icon14.png); background-repeat: no-repeat;background-position: center center; padding-bottom:0; margin-top: 50px;}
+        .inner5 li.tour{height: 90px; width: 100px;  background-image: url(./icon/icon15.png); background-repeat: no-repeat; background-position: center center; padding-bottom:0;margin-top: 50px;}
+        .inner5 li.park{height: 90px; width: 100px;  background-image: url(./icon/icon16.png); background-repeat: no-repeat;background-position: center center; padding-bottom:0;margin-top: 50px; }
+        .inner5 li.council{height: 90px; width: 100px;  background-image: url(./icon/icon17.png); background-repeat: no-repeat; background-position: center center; padding-bottom:0;margin-top: 50px;}
+        .mservice2 .btm {display: block; width: 90px; height: 20px; background-image: url(./img/kk.png); background-repeat: no-repeat;  background-size: 25px 20px; background-position: right; position: absolute; right: 0;}
+        #indvd1 { width: 100%; height: 100%; display: block;}
+        #indvd1 a {line-height: 30px; font-size: 16px; }
+        #indvd1 li {width: 400px; height: 100%; padding-top:20px; margin-left: 120px; border-bottom: 1px solid #b6b6b6;}
+        
+        /*.inner5 h2 {margin-bottom: 20px; font-size: 24px; font-weight: 700; width: 200px; margin-top: 250px;}
+        .inner5 .mservice1{float: left; width:60%; height: 400px; position:absolute; }
+        .inner5 ul {width: 1000px; height: 270px; padding-top: 10px; }
+        .inner5 ul li {padding-bottom: 40px;  float: left;}
+        
+        .inner5 li.answer{height: 90px; width: 20%; background-image: url(./icon/icon8.png); background-repeat: no-repeat; }
+        .inner5 li.jpi{height: 90px; width: 20%; background-image: url(./icon/icon9.png); background-repeat: no-repeat; }
+        .inner5 li.portal{height: 90px; width: 20%; background-image: url(./icon/icon10.png); background-repeat: no-repeat; }
+        .inner5 li.care{height: 90px; width: 20%;  background-image: url(./icon/icon11.png); background-repeat: no-repeat; }
+        .inner5 li.reales{height: 90px; width: 20%;  background-image: url(./icon/icon12.png); background-repeat: no-repeat; }
+        .inner5 li.nuri{height: 90px; width: 20%;  background-image: url(./icon/icon13.png); background-repeat: no-repeat; }
+        .inner5 li.public{height: 90px; width: 20%;  background-image: url(./icon/icon14.png); background-repeat: no-repeat; }
+        .inner5 li.tour{height: 90px; width: 20%;  background-image: url(./icon/icon15.png); background-repeat: no-repeat; }
+        .inner5 li.park{height: 90px; width: 20%;  background-image: url(./icon/icon16.png); background-repeat: no-repeat; }
+        .inner5 li.council{height: 90px; width: 20%;  background-image: url(./icon/icon17.png); background-repeat: no-repeat; }
+        .inner5 .mservice1 li a { display: inline-block; text-align: center; font-size: 15px; margin-top: 100px; }
+        
+        .inner5 .mservice2 {right:0; width:40%; position: absolute;}
+        .inner5 .mservice2 ul{float: right; top: auto;}
+        .inner5 .mservice2 li {border-top: 0; height: 37px; position: relative; border-top: 1px solid #e6e6e6; line-height: 80px; right: 10px; top: 50%}
+        .inner5 .mservice2 li a {font-size: 16px; padding-left: 9px; text-align: center;}
+        .inner5 .btnopenpop {width: 100px; height: 30px; position: absolute; right: 0px; top: 54px; border-width: 0 0 1px 0;  border-color: #c8c8c8;color: #7d7d7d; padding: 10px; font-size: 15px; border-style: solid; float: right; }
+        .inner5 .btnopenpop li{ background-image: url(img/kk.png);  background-repeat: no-repeat;  }*/
+    </style>
+
+</head>
+
+<body>
+    <div class="banner">
+        <figure class="img">
+            <a href="http://www.suwon.go.kr/sw-www/www06/www06-01/www06-01-01.jsp">
+                <img src="./main/main.png" alt="2019수원">
+            </a>
+        </figure>
+    </div>
+    <div class="wrap main">
+        <header id="hd">
+            <div class="top">
+                <div class="inner">
+                    <h1 class="logo">
+                        <a href="index.html">수원시청 홈으로 이동</a>
+                        <span class="Suwon">수원</span>
+                    </h1>
+                    <div class="gnb">
+                        <ul>
+                            <li><a href="mysuwon">나의수원</a></li>
+                            <li><a href="citizen">전자우편</a></li>
+                            <li><a href="suwon">수원소개</a></li>
+                            <li><a href="participation">시민참여</a></li>
+                            <li><a href="org">부서안내</a></li>
+                            <li><a href="newo">청사안내</a></li>
+                        </ul>
+                        <ul class="other">
+                            <li><a href="list">수원소식</a></li>
+                            <li><a href="reply">응답소</a></li>
+                            <li><a href="opengov">정보공개</a></li>
+                            <li><a href="cate">분야정보</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <ul class="inner1">
+                    <h1>
+                        <a href="index.html" class="logging">로고</a>
+                    </h1>
+
+                    <div class="search">
+                        <labe1 class="on1y">검색</labe1>
+                        <input type="text" id="topsearch" name="kwd" placeholder="검색어를 입력해 주세요">
+                        <img src="./icon/keyboard.png" alt="키보드자판">
+                        <button id="btn" type="button" class="b"></button>
+                    </div>
+                    <div class="lang_site">
+                        <label for="cityLang" class="only"></label>
+                        <select name="cityLang" id="cityLang">
+                            <option value="http://trans.suwon.go.kr:7000/etgi/">ENGLISH</option>
+                            <option value="http://trans.suwon.go.kr:7000/etgi/">CHINESE</option>
+                            <option value="http://trans.suwon.go.kr:7000/etgi/">日本語</option>
+                        </select>
+                        <input type="button" id="cityLang" value="GO" title="수원시 다국어 홈페이지로 이동-새창" class="Language">
+                    </div>
+                </ul>
+            </div>
+        </header>
+        <div class="inner_wrap">
+            <div class="inner2">
+                <div class="slide">
+                    <ul class="banFrame">
+                        <li><img src="./main/hotissue.png" alt="배너1"></li>
+                        <li><img src="./main/hotissue1.png" alt="배너2"></li>
+                        <li><img src="./main/hotissue2.png" alt="배너3"></li>
+                        <li><img src="./main/hotissue3.png" alt="배너4"></li>
+                        <li><img src="./main/hotissue4.png" alt="배너5"></li>
+                        <li><img src="./main/hotissue5.png" alt="배너6"></li>
+                    </ul>
+                    <ul class="btnFrame">
+                        <li class="left">
+                            <button class="banBtn prevBtn">&lt;</button>
+                        </li>
+                        <li class="right">
+                            <button class="banBtn nextBtn">&gt;</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="item">
+            <li>
+                <a href="" class="item1">
+                    <img src="./img/img.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="" class="item2">
+                    <img src="./img/img1.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="" class="item3">
+                    <img src="./img/img2.png" alt="">
+                </a>
+            </li>
+        </ul>
+
+        <div class="inner3">
+            <section class="shorcut">
+                <ul>
+                    <li class="Education">
+                        <p class="m_tit">
+                            <a href="">교육</a>
+                        </p>
+                    </li>
+                    <li class="Economy">
+                        <p class="m_tit">
+                            <a href="">경제</a>
+                        </p>
+                    </li>
+                    <li class="traffic">
+                        <p class="m_tit">
+                            <a href="">교통</a>
+                        </p>
+                    </li>
+                    <li class="Environment">
+                        <p class="m_tit">
+                            <a href="">환경</a>
+                        </p>
+                    </li>
+                    <li class="Welfare">
+                        <p class="m_tit">
+                            <a href="">복지</a>
+                        </p>
+                    </li>
+                    <li class="safety">
+                        <p class="m_tit">
+                            <a href="">안전</a>
+                        </p>
+                    </li>
+                    <li class="Culture">
+                        <p class="m_tit">
+                            <a href="">문화</a>
+                        </p>
+                    </li>
+                    <li class="Newsportal">
+                        <p class="m_tit">
+                            <a href="">뉴스포털</a>
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="inner4">
+            <section class="boardar1">
+                <h2>수원은 지금</h2>
+                <div class="imgarea">
+                    <p class="img">
+                        <a href=""></a>
+                        <img src="./img/main.png" alt="">
+                    </p>
+                    <p class="txt">
+                        <a href="">살기 좋은 도시</a>
+                    </p>
+                </div>
+                <div class="txtarea">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <b>고시공고</b>
+                                <a href="">주민등록법 제 20조(사실조사와 직권조치)에 의거하였다.</a>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <b>공고(일반공고)</b>
+                                <a href="">쓰레기 무단투기 이동식 감시카메라(CCTV)설치 확대</a>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <b>채용정보</b>
+                                <a href="">2019년 제1회 수원시 지방임기체공무원 채용시험 안내입니다.</a>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <b>보도자료</b>
+                                <a href="">인구100만 도시 특성에 맞게 대도시 특례 부여해야 한다고</a>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="mayorlink">
+                <a href="" title="새창열림">
+                    <!--<h2>소셜시장실</h2>
+                    <span>시대와 나란히 시민과 나란히</span>-->
+                </a>
+                <ul>
+                    <li class="f">
+                        <a href="https://www.facebook.com/suwonloves" title="새창열림">페이스북</a>
+                    </li>
+                    <li class="i">
+                        <a href="https://www.instagram.com/suwon_city/" title="새창열림">인스타그램</a>
+                    </li>
+                    <li class="k">
+                        <a href="https://story.kakao.com/ch/suwonloves" title="새창열림">카카오스토리</a></li>
+                    <li class="t">
+                        <a href="https://twitter.com/suwonloves" title="새창열림">트위터</a></li>
+                    <li class="nb">
+                        <a href="https://blog.naver.com/suwonloves" title="새창열림">네이버블로그</a></li>
+                    <li class="u">
+                        <a href="https://www.youtube.com/user/suwonloves" title="새창열림">유튜브</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <section class="inner5">
+            <h1>주요 서비스</h1>
+            <div class="mservice1">
+                <ul>
+                    <li class="answer">
+
+                        <a href="">정부24</a>
+                        </li>
+
+                    
+                    <li class="jpi">
+
+                        <a href="">민원안내</a>
+
+                    </li>
+                    <li class="portal">
+
+                        <a href="">민원서식</a>
+
+                    </li>
+                    <li class="care">
+
+                        <a href="">무인민원</a>
+
+                    </li>
+                    <li class="reales">
+
+                        <a href="">대형폐기물</a>
+
+                    </li>
+                    <li class="nuri">
+                        <p class="mtit">
+                            <a href="">세금안내</a>
+                        </p>
+                    </li>
+                    <li class="public">
+
+                        <a href="">민방위</a>
+
+                    </li>
+                    <li class="tour">
+
+                        <a href="">일자리</a>
+
+                    </li>
+                    <li class="park">
+
+                        <a href="">세금</a>
+
+                    </li>
+                    <li class="council">
+
+                        <a href="">도시</a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="mservice2">
+               <a href="" class="btm">설정하기</a>
+               <div class="Wrap">
+                <ul id="indvd1">
+                    <li>
+                        <a href="">&#8226; 기업 SOS지원센터
+                        </a>
+                    </li>
+                    <li>
+                       <a href="">
+                            &#8226; 수원시 화상영어
+                        </a>
+                    </li>
+                    <li>
+                       <a href="">
+                            &#8226; 공공시설물 예약하기
+                        </a>
+                    </li>
+                    <li>
+                       <a href="">
+                       &#8226; 사회복지정보
+                        </a>
+                    </li>
+                    <li>
+                       <a href="">
+                        &#8226; 복지
+                        </a>
+                    </li>
+                    
+                </ul>
+                </div>
+            </div>
+            
+        </section>
+
+    </div>
+</body>
+
+</html>
