@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3EC</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./icon/icon57.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./icon/icon114.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <script src="js/jquery-1.11.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <!--헤더부분-->
+    <style>
+        .hd {width: 100%; height: 60px; background: #222; position: absolute; top: 0; left: 0; z-index: 80;}
+        .logo {display: block; width: 50%; height: 60px; background-repeat: no-repeat; background-image: url(./icon/logo.png); background-position: 0px center; float: left; background-repeat: 1px solid #000;}
+        
+        .manubtn {display: block; width: 60px; height: 60px; float: right; position: relative; top: 20px; }
+        .manu1 {display: block; width: 28px; height: 2px; clear: both; right: 15px; float: right; background: #fff; position: absolute;}
+        .manu2 {display: block; width: 28px; height: 2px; clear: both; right: 15px; float: right; background: #fff; position: absolute;margin-top: 10px;}
+        .manu3 {display: block; width: 28px; height: 2px; clear: both; right: 15px; float: right; background: #fff; position: absolute;margin-top: 20px;}
+        #gnb {width:100%; height: 81.3%; background-color:rgba(0,0,0,0.7); position:fixed; top:60px; z-index: 80; transition: 0.6s; display: none; clear: both; }
+        .manulest {clear: both; width: 100%; list-style: none; }
+        .manulest li {line-height: 3.6; border-top: 1px solid #fff;}
+        .manulest li a {display: block; text-indent: 2em; color: #fff; font-size: 1.1em; text-align: left;}
+        #manu:checked ~ #gnb{display:block;}
+        .ckbox {display: none;}
+    </style>
+    <!--메인슬라이드-->
+    <style>
+        .main {width: 100%; display: block;}
+        .visual {padding-top: 60px;}
+        .VisualSlide {position: relative; width: 100%; height: 100%; overflow: hidden;}
+        .imgBox {width: 500%; height: 100%; position: relative;}
+        .imgBox li {width:20%; float:left; }
+        .imgBox li img { display:block; width:100%; height: auto; margin:0 auto; }
+    </style>
+    <!--page1-->
+    <style>
+        .page {clear: both; width: 100%; height: 100%; padding-bottom: 30px;}
+        .pageTit {font-size: 1.6em; padding: 1em; text-align: center; color: #444; padding-top: 1.2em; }
+        .pageTit .up {border-top: 1px solid #444;}
+        .page ul li {width: 45%; height: 100%; float: left;}
+        .page ul .sub1 {display: block; top: 50px; float: right; margin-right: 15px;}
+    </style>
+    <!--page2-->
+    <style>
+    .page1{clear: both; width: 100%; height: 100%; padding-bottom: 30px;}
+    .pageTit1 {font-size: 1.6em; padding: 1em; text-align: center; color: #444; padding-top: 1.2em; }
+    .pageTit1 .up1 {border-top: 1px solid #444;} 
+    .page1 ul li {width: 45%; height: 100%; float: left;}
+    .page1 ul  .sub2{display: block; top: 50px; float: right; margin-right: 15px;}
+    </style>
+    
+    <!--page3-->
+    <style>
+    .page2{clear: both; width: 100%; height: 100%; padding-bottom: 30px;}
+    .pageTit2 {font-size: 1.6em; padding: 1em; text-align: center; color: #444; padding-top: 1.2em; }
+    .pageTit2 .up2 {border-top: 1px solid #444;}
+    .page2 ul li {width: 45%; height: 100%; float: left;}
+    .page2 ul  .sub3 {display: block; top: 50px; float: right; margin-right: 15px;}
+    </style>
+    
+    
+    <style>
+    .page3{clear: both; width: 100%; height: 100%; padding-bottom: 30px;}
+    .pageTit3 {font-size: 1.6em; padding: 1em; text-align: center; color: #444; padding-top: 1.2em; }
+    .pageTit3 .up3 {border-top: 1px solid #444;}
+    .page3 ul li {width: 45%; height: 100%; float: left;}
+    .page3 ul  .sub4 {display: block; top: 50px; float: right; margin-right: 19px;}
+     /*   .page3 h3 {font-size: 1px; } */
+    </style>
+    
+    <style>
+        .mainBenefit {background: #f2f2f2; padding: 0 10px; margin-top: 70px;}
+        .mainBenefit p {font-size: 12px; padding: 15px 0;}
+        .mainBenefit ul li {border-top: 1px solid #ccc;}
+        .mainBenefit ul li a {display: block; padding: 10px 0px; font-size: 11px; color: inherit;}
+        .mainBenefit ul li img {width: 20%; display: inline-block; margin-right: 5px; float: left;}
+        .mainBenefit ul li a span {color: #dd827f;}
+    </style>
+    
+    <style>
+        .callbtn .snsCall {padding: 20px; flex: 1; color: #525252; position: relative;}
+        .snsBottom {width: 100%; display: flex; border-top: 1px solid #dedede; text-align: center; box-sizing: border-box;}
+        .snsCall {padding-bottom:70px; padding-top: 30px; border-right: 1px solid #dedede; width: 50%; }
+        .snsCall .snstit{font-size: 15px; font-weight: bold; color: #222; margin: 0 0 20px 0;}
+        .snsCall .call{font-size: 18px;}
+        .snsCall span {font-size: 11px; display: block; line-height: 18px; letter-spacing: -0.5px;}
+        
+        .snsCall a { padding: 0 20px ; position: relative; }
+        .snsCall a span {display: block; border: 1px solid #ccc; width: 70px;text-align: center;}
+        .snsCall a span img {display: inline-block; margin-left: 8px;}
+    </style>
+    
+    
+    <style>
+        .bf {width: 100%; display: flex; border-top:1px solid #dedede;}
+        .snsbf{padding: 20px; flex: 1; color: #222; position: relative;}
+        .snsbf .bftit{font-size: 15px; font-weight: bold; color: #000; margin: 0 0 20px 0; }
+        .snsbf p {font-size: 11px; letter-spacing: -0.5px; line-height: 18px;}
+        .snsbf p a {color: inherit; text-decoration: none;}
+        .snsbf span {font-size: 11px; display: block; line-height: 18px; letter-spacing: -0.5px;}
+    </style>
+    
+    <!--푸터영역-->
+    <style>
+        .ft {padding: 20px; overflow: hidden;}
+        .footerWrap {text-align: left; margin: 15px 0 25px;}
+        .footerWrap a{display: block; font-size: 24px; color: #222; line-height: 24px; width: 100%; text-decoration: none; letter-spacing: 0.5px; margin-bottom: 10px;}
+        .footertxt {margin: 20px 0;}
+        .footertxt li {line-height: 16px; font-size: 11px; color: #222; font-weight: normal;}
+        .body ul li{list-style: none;}
+        .body li {line-height: 16px; font-size: 11px; font-weight: normal; color: #222;}
+        .foottitle {background: #edc2b8;width: 100%; height: 20%; line-height: 0;}
+        .foottitle h6 {line-height: 22px;text-align: center; margin: 0 auto; font-size: 12px; letter-spacing: 1px; padding-top: 20px;}
+        .foottitle ul li {margin-right: 80px}
+        .foottitle ul li a {display: block; text-decoration: none; float: right;}
+        .foottitle ul li img {height: 15px; vertical-align: middle; padding: 0 10px; margin-top: 20px;}
+    </style>
+    <!--비디오-->
+    <style>
+    .videoWrap {width: 100%; height: 580px; overflow: hidden; opacity: 1; position: relative; clear: both; padding-top: 80px}
+     .videoWrap video {display: block; width: auto; height: 100%;  margin-left: -300px; position: relative;} 
+    </style>
+    
+    <!--슬라이드-->
+    <script>
+     $(document).ready(function(){
+        var wd = $(window).width();
+        var intv = setInterval(function(){ nextAni();
+        },5000);
+        
+        function nextAni(){
+                $(".imgBox").not(":animated").animate({"margin-left":-wd+"px"}, 800, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-left", "0px");
+                $(".btnSide li").eq(0).appendTo($(".btnSide"));
+                $(".btnSide li").removeClass("on");
+                $(".btnSide").eq(0).find("li").addClass("on");
+            });
+        }
+    })
+    </script>
+</head>
+
+<body>
+    <header class="hd">
+    <a href="" class="logo"></a>
+    <input type="checkbox" id="manu" class="ckbox">
+    <label for="manu" class="manubtn">
+        <span class="manu1"></span>
+        <span class="manu2"></span>
+        <span class="manu3"></span>
+    </label>
+    <nav id="gnb">
+        <ul class="manulest">
+            <li><a href="#Acc">Acc</a></li>
+            <li><a href="#cheek">Cheek</a></li>
+            <li><a href="#edition">Edition</a></li>
+            <li><a href="#eye">Eye</a></li>
+            <li><a href="#face">Face</a></li>
+            <li><a href="#lip">Lip</a></li>
+            <li><a href="#nail">Nail</a></li>
+            <li><a href="#tool">Tool</a></li>
+        </ul>
+    </nav>
+    </header>
+    <div class="main">
+    <div class="visual">
+        <figure class="VisualSlide">
+            <ul class="imgBox">
+                <li><img src="./img/main.png" alt=""><span class="more"></span></li>
+                <li><img src="./img/main1.png" alt=""><span></span></li>
+                <li><img src="./img/main2.png" alt=""><span></span></li>
+                <li><img src="./img/main3.png" alt=""><span></span></li>
+                <li><img src="./img/main4.png" alt=""><span></span></li>
+            </ul>
+        </figure>
+    </div>
+    </div>
+    <section class="page">
+        <h2 class="pageTit">
+            <span class="up">Acc</span>
+        </h2>
+        <ul>
+            <li>
+                <a href="">
+                    <img src="./img/acc.png" alt="">
+                </a>
+            </li>
+            <li class="sub1">
+            <a href="">
+            <img src="./img/acc1.png" alt="">
+            </a>
+            </li>
+            <li>
+            <a href="">
+            <img src="./img/acc2.png" alt="">
+            </a>
+            </li>
+            <li class="sub1">
+            <a href="">
+            <img src="./img/acc3.png" alt="">
+            </a>
+            </li>
+            <li>
+            <a href="">
+            <img src="./img/acc4.png" alt="">
+            </a>
+            </li>
+            <li class="sub1">
+            <a href="">
+            <img src="./img/acc5.png" alt="">
+            </a>
+            </li>
+            <li>
+            <a href="">
+            <img src="./img/acc6.png" alt="">
+            </a>
+            </li>
+            <li class="sub1">
+            <a href="">
+            <img src="./img/acc7.png" alt="">
+            </a>
+            </li>
+            <li>
+            <a href="">
+            <img src="./img/acc8.png" alt="">
+            </a>
+            </li>
+            <li class="sub1">
+            <a href="">
+            <img src="./img/acc9.png" alt="">
+            </a>
+            </li>
+        </ul>
+    </section>
+    
+    <section class="page1">
+        <h2 class="pageTit1">
+            <span class="up1">Cheek</span>
+        </h2>
+        <ul>
+            <li>
+                <a href="">
+                    <img src="./img/Cheek.png" alt="">
+                </a>
+            </li>
+            <li class="sub2">
+                <a href="">
+                    <img src="./img/Cheek1.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/Cheek2.png" alt="">
+                </a>
+            </li>
+            <li class="sub2">
+                <a href="">
+                    <img src="./img/Cheek3.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/Cheek4.png" alt="">
+                </a>
+            </li>
+            <li class="sub2">
+                <a href="">
+                    <img src="./img/Cheek5.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/Cheek6.png" alt="">
+                </a>
+            </li>
+            <li class="sub2">
+                <a href="">
+                    <img src="./img/Cheek7.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/Cheek8.png" alt="">
+                </a>
+            </li>
+            <li class="sub2">
+                <a href="">
+                    <img src="./img/Cheek9.png" alt="">
+                </a>
+            </li>
+        </ul>
+    </section>
+    
+     <section class="page2">
+        <h2 class="pageTit2">
+            <span class="up2">Edition</span>
+        </h2>
+        <ul>
+            <li>
+                <a href="">
+                    <img src="./img/Edition.png" alt="">
+                </a>
+            </li>
+            <li class="sub3">
+                <a href="">
+                    <img src="./img/Edition1.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/Edition2.png" alt="">
+                </a>
+            </li>
+            <li class="sub3">
+                <a href="">
+                    <img src="./img/Edition3.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/Edition4.png" alt="">
+                </a>
+            </li>
+            <li class="sub3">
+                <a href="">
+                    <img src="./img/Edition5.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/Edition6.png" alt="">
+                </a>
+            </li>
+            <li class="sub3">
+                <a href="">
+                    <img src="./img/Edition7.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/Edition8.png" alt="">
+                </a>
+            </li>
+            <li class="sub3">
+                <a href="">
+                    <img src="./img/Edition9.png" alt="">
+                </a>
+            </li>
+        </ul>
+    </section>
+    
+    <!--비디오-->
+    <div class="videoWrap">
+        <video autoplay loop muted>
+            <source src="./video/3CE%20MINI%20MAKEUP%20BRUSH%20KIT%20_%201MINUTE%20MAKEUP%20TUTORIAL.mp4">
+        </video>
+    </div>
+      
+        
+    <section class="page3">
+        <h2 class="pageTit3">
+            <span class="up3">Eye</span>
+        </h2>
+        <ul>
+            <li>
+               
+                <a href="">
+                    <img src="./img/eye.png" alt="">
+                    <!--<h3>3CE PRO MULTI EYE COLOR PALETTE #MUSEDAY</h3>-->
+                </a>
+            </li>
+            <li class="sub4">
+                <a href="">
+                    <img src="./img/eye1.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/eye2.png" alt="">
+                </a>
+            </li>
+            <li class="sub4">
+                <a href="">
+                    <img src="./img/eye3.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/eye4.png" alt="">
+                </a>
+            </li>
+            <li class="sub4">
+                <a href="">
+                    <img src="./img/eye5.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/eye6.png" alt="">
+                </a>
+            </li>
+            <li class="sub4">
+                <a href="">
+                    <img src="./img/eye7.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/eye8.png" alt="">
+                </a>
+            </li>
+            <li class="sub4">
+                <a href="">
+                    <img src="./img/eye9.png" alt="">
+                </a>
+            </li>
+        </ul>
+    </section>
+    
+    <!--이벤트-->
+    <div class="mainBenefit">
+        <p><strong>혜택</strong>"스타일난다 회원 혜택을 한 눈에!"</p>
+        <ul>
+            <li><a href="#"><img src="./img/main_bt01_.jpg" alt=""><p><span>'매주 수요일'</span>"베스트 리뷰어를 선정합니다."</p></a></li>
+            <li><a href="#"><img src="./img/main_bt02_.jpg" alt=""><p>"신규회원 가입 시 누릴 수 있는" <span>다양한 혜택</span></p></a></li>
+            <li><a href="#"><img src="./img/main_bt03_.jpg" alt=""><p>"스타일난다"<span>카드 무이자 할부</span>이벤트</p></a></li>
+        </ul>
+    </div>
+    
+    <div class="snsBottom">
+        <div class="snsCall">
+            <h6 class="snstit">CALL CENTER</h6>
+            <p class="call">0502-707-8888</p>
+            <span>MON-FRI 9:30AM ~ 6PM</span>
+            <span>LUNCH 12PM ~ 1PM</span>
+            <span>WEEKEND,HOLIDAY OFF</span>
+            <!--<a href="#">
+                <span>바로연결
+                <img src="./img/f_call.png" alt="전화연결">
+                </span>
+            </a>-->
+        </div>
+        <div class="snsCall">
+           <h6 class="snstit">BANK INFO</h6>
+            <span>신한 140-007-646350</span>
+            <span>국민 392001-04-066016</span>
+            <span>농협 130011-55-003804</span>
+            <span>기업 123-132282-01-011</span>
+            <span>예금주 : (주)난다 </span>
+           <!-- <a href="#">
+                <span>문의하기
+                <img src="./img/f_qna.png" alt="문의">
+                </span>
+            </a>-->
+        </div>
+    </div>
+    
+    <div class="bf">
+        <div class="snsbf">
+            <h6 class="bftit">DELIVERY</h6>
+                <p><a href="">Track your order>></a></p>
+                <span>반품주소</span>
+                <span>인천광역시 계양구 계산4동 계양우체국 사서함 1117호</span>
+                <span>반드시 우체국택배 이용</span>
+        </div>
+    </div>
+    <footer class="ft">
+        <div class="footerWrap">
+            <a href="">ABOUT US</a>
+            <a href="">CONTACT US</a>
+            <a href="">NANDA TV</a>
+            <a href=""> STORE LOCATOR</a>
+        </div>
+        <div class="footertxt">
+            <div class="infobody">
+                <ul>
+                    <li>회사명 : (주)난다</li>
+                    <li>대표이사 : 신지은</li>
+                    <li>주소 : 서울특별시 마포구 잔다리로 32 서문빌딩 3,4F</li>
+                    <li>사업자등록번호 : 130-86-24632 [사업자정보확인]</li>
+                    <li>통신판매업신고번호 : 2014-서울마포-0835</li>
+                    <li>개인정보보호책임자 : 강숙현</li>
+                    <li>전화 : 0502-707-8888</li>
+                    <li>팩스 : 02-335-5274</li>
+                    <li>이메일 : nanda@stylenanda.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="body">
+            <ul>
+                <li>COPYRLGHT ⓒ 2017 NANDA ALL RIGHTS RESERVED.</li>
+            </ul>
+        </div>
+    </footer>
+    
+    <!--sns영역-->
+     <div class="foottitle">
+            <h6>@stylenanda_korea</h6>
+            <ul>
+                <li><a href=""><img src="./img/sns.png" alt=""></a></li>
+                <li><a href=""><img src="./img/sns1.png" alt=""></a></li>
+                <li><a href=""><img src="./img/sns2.png" alt=""></a></li>
+                <li><a href=""><img src="./img/sns3.png" alt=""></a></li>
+                <li><a href=""><img src="./img/sns4.png" alt=""></a></li>
+                <li><a href=""><img src="./img/sns5.png" alt=""></a></li>
+            </ul>
+        </div>
+</body>
+</html>
