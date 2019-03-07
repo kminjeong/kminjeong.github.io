@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>하나투어</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./icon/icon57.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./icon/icon114.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <script src="./js/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="./web/css/all.css">
+    
+    <!--초기화-->
+    <style>
+        * {margin: 0; padding: 0;}
+        body, html {width: 100%; height: 100%;}
+        ul {list-style: none;}
+        a {text-decoration: none;}
+        button, label, input, select {border: 0; outline: 0;}
+    </style>
+    
+    <!--헤더-->
+    <style>
+        .ck {display: none;}
+        .wrap {width: 100%; height: 100%; margin-left: 0; transform: 0.6s;}
+        .wrap .hd {position: fixed; width: 100%; height: 60px; z-index: 90; top: 0; left: 0; background:#a2a2a2; background-color: rgba(0,0,0,0.3);}
+        .logo {display: block;}
+        .logo img {display: block; width: auto; height: 32px; margin-left: 20px; margin-top: 15px;}
+        /*메뉴체크*/
+        .menuBtn { display:block; width:62px; height:62px; position:absolute; right:0; top:0; text-indent:-9999px; }    
+        .menuLst { display:block; width:30px; height:3px; background:#fff; 
+         margin:0 auto; margin-top:5px; clear:both; }
+        .menuBtn:before { content:""; display:block; width:30px; height:3px; background:#fff; margin:0 auto; margin-top:20px; clear:both;} 
+        .menuBtn:after { content:""; display:block; width:30px; height:3px; background:#fff; margin:0 auto; margin-top:5px; clear:both; } 
+        
+        #menuCk:checked ~ .wrap .menuBtn .menuLst { display:none; }    
+        #menuCk:checked ~ .wrap .menuBtn:after { transform:rotate(45deg); margin-top:-2px; }    
+        #menuCk:checked ~ .wrap .menuBtn:before { transform:rotate(135deg); margin-top:25px; }
+     
+        /*이미지*/
+        .main{ width: 100%; height: 100%; overflow: hidden; }
+        .imgFrame {width: 100%; height: 100%; position: relative;}
+        .imgFrame li { width:100%; height: 100%; 
+        background-repeat: no-repeat; background-size:200% auto;
+        background-position:center center; opacity:0; width:0px; transition:1s; transition-property:width, opacity, background-size;
+        transition-delay:0s, 0.3s, 0.7s; margin:0 auto; }
+        .imgFrame li.on { opacity:1; background-size:cover; width:100%; }
+        .imgFrame li.img1 {background-image: url(img/main.png);}
+        .imgFrame li.img2 {background-image: url(img/main1.png);}
+        .imgFrame li.img3 {background-image: url(img/main2.png);}
+        .imgFrame li.img4 {background-image: url(img/main3.png);}
+        .imgFrame li.img5 {background-image: url(img/main4.png);}
+        .imgFrame li.img6 {background-image: url(img/main5.png);}
+        .imgFrame li.img7 {background-image: url(img/main6.png);}
+        .imgFrame li.img8 {background-image: url(img/main7.png);}
+        .imgFrame li.img9 {background-image: url(img/main8.png);}
+        .imgFrame li.img10 {background-image: url(img/main9.png);}
+    </style>
+    <style>
+        .BtnBox {position:absolute; top: 35%; right: 15px; width: 62px; height: 205px; z-index: 9; background: rgba(0,0,0,0.4); display: block;}
+        .BtnBox li button {display: block; text-align: center; line-height: 60px; color: #fff; background-color: transparent; border: 0;}
+        .BtnBox li button i{display: block; width: 60px; line-height: 50px;}
+        .sldswiper { position:fixed; bottom:72px; left:5%; width: 90%; height:10px; z-index:100; overflow:hidden; }
+        .ft { position:fixed; width:100%; height:62px; z-index:90; left:0; bottom:0; background:rgba(0,0,0,0.5); color:#fff; text-align:center; line-height:62px; font-size:0.9em; }
+
+        .loginBtn { display:block; color:#fff; float:right; margin-right: 20px; margin-top:7px;font-size: 35px} 
+    
+        .gnb {position:fixed; border-top: 1px solid #222; width: 100%; height: 100%; z-index: 900; left: -100% ;background:#222;  display: block; top: 0;}
+        .gnb li { line-height: 42px; font-size:16px; 
+        border-top:1px solid #444;  border-bottom:1px solid #000; width:80%; margin:0 auto; transition:0.3s; transition-delay:0s; }
+    
+        .gnb li a { display:block; line-height:40px; color:#cacaca;transition:0.5s; transition-delay:0.5s;  }  
+        .gnb li a i.fas { display:block; float:right; margin-right:12px; margin-top:10px;}
+        .far {margin-top: 20px; margin-right: 20px;}
+        .gnb li .sub { display:none; }   
+        .gnb .mainmenu {margin-top: 60px; position: relative; padding-top: 40px}
+        .gnbtop {background-image: url(./icon/logo1.png); background-repeat: no-repeat; background-position: center center; background-size: auto 32px;}
+        .gnbtop span .fas {font-size: 35px; color: #fff;}
+        .gnbtop .menuLst1 {position: absolute; top: 26px; float: left; left: 35px;}
+        #menuCk:checked ~ .gnb { left:0%; } 
+        
+    </style>
+    
+    <style>
+        
+    .slid {position: fixed; bottom: 60px; left: 5%; width: 90%;height: 10px; z-index: 100; overflow: hidden;}
+        
+    .sld {display:block; width:120px; height:10px; background-image:url("./img/lighting2.png"); background-repeat:no-repeat; background-size:450px 4px; position: fixed;z-index: 99999;}
+    
+    
+    
+    </style>
+    
+    
+    <script>
+    $(document).ready(function(){
+        var wd = parseInt($(".main").width());
+        var len = $(".imgFrame li").length;
+        var sw1 = true;
+        var sw2 = true;
+        function nextAni(){
+            $(".imgFrame").not(":animated").animate({"opacity":"1"}, 900, function(){
+                $(".imgFrame li").removeClass("on");
+                $(".imgFrame li").eq(0).appendTo($(".imgFrame"));
+                $(".imgFrame li").eq(0).addClass("on");
+            });
+        }
+        function prevAni(){
+            $(".imgFrame li").removeClass("on");
+            $(".imgFrame").not(":animated").animate({"opacity":"1"}, 400, function(){
+                $(".imgFrame li").eq(len-1).prependTo($(".imgFrame"));
+                $(".imgFrame li").eq(0).addClass("on");
+            });
+        }
+        var intv = setInterval(function(){
+            nextAni();
+        }, 3500); 
+        $(".right").click(function(){
+            clearInterval(intv);
+            nextAni();
+            intv = setInterval(function(){ nextAni(); }, 3500); 
+        });
+        $(".left").click(function(){
+            clearInterval(intv);
+            prevAni();
+            intv = setInterval(function(){ nextAni(); }, 3500); 
+        });
+        $(".playback").click(function(){
+            if(sw1==true){
+                clearInterval(intv);
+                $(this).find("i").removeClass("fa-stop").addClass("fa-play");
+            } else {
+                intv = setInterval(function(){ nextAni(); }, 3500);
+                $(this).find("i").removeClass("fa-play").addClass("fa-stop");
+            }
+            sw1=!sw1;
+        });
+        $(".zoom").click(function(){
+           if(sw2==true){
+               $(".wrap .hd").fadeOut();
+               $(".wrap .ft").fadeOut();
+               $(this).find("i").removeClass("fa-arrows-alt").addClass("fa-expand");
+           } else {
+               $(".wrap .hd").fadeIn();
+               $(".wrap .ft").fadeIn();
+               $(this).find("i").removeClass("fa-expand").addClass("fa-arrows-alt");
+           }
+           sw2=!sw2;
+        });
+        function sld1(){
+            $(".sld").animate({"margin-left":"200px"}, 2500);
+        }
+        function sld2(){
+            $(".sld").animate({"margin-left" : "-120px"}, 20);
+        }
+        
+        var intv2 = setInterval(function(){
+            sld1();
+            sld2();
+        }, 3500);
+    });    
+    </script>
+    <script>
+    $(document).ready(function(){
+       var lsw = [ true, true, true, true ];
+       console.log(lsw[0], lsw[1], lsw[2], lsw[3]);
+       var idx;    
+       $(".gnb .List i.fas").click(function(){
+           idx = $(this).parents("li.List").index();
+           console.log(idx);
+           if(lsw[idx]==true){
+               $(this).removeClass("fa-angle-down").addClass("fa-angle-up");
+               $(this).parents(".List").find(".sub").slideDown();
+           } else {
+               $(this).removeClass("fa-angle-up").addClass("fa-angle-down");
+               $(this).parents(".List").find(".sub").slideUp();
+           }
+           lsw[idx]=!lsw[idx];
+       }); 
+    });    
+    </script>
+</head>
+<body>
+
+    <div class="wrap">
+        <header class="hd">
+            <a href="index.html" class="logo">
+                <img src="./icon/logo.png" alt="로고">
+            </a>
+             <input type="checkbox" id="menuCk" class="ck">
+            <label for="menuCk" class="menuBtn">
+                <span class="menuLst"></span>
+            </label>
+            <nav class="gnb">
+                 <div class="gnbtop">
+                 <input type="checkbox" id="menuCk" class="ck">
+                 <label for="menuCk" class="menuBtn1">
+                <span class="menuLst1">
+                <i class="fas fa-times"></i>
+                </span>
+                </label>
+               <a href="" class="loginBtn big">
+                   <i class="far fa-address-book"></i>
+                </a>
+                 </div>
+        <ul class="mainmenu">
+            <li class="List">
+                <a class="Menu">해외여행
+                    <i class="fas fa-angle-down"></i>
+                </a>
+                <ul class="sub">
+                    <li><a href="">패키지여행</a></li>
+                    <li><a href="">자유여행</a></li>
+                    <li><a href="">테마여행</a></li>
+                    <li><a href="">영유아동반여행</a></li>
+                    <li><a href="">슬림허니문</a></li>
+                </ul>
+            </li>
+            <li class="List">
+                <a class="Menu">국내여행
+                    <i class="fas fa-angle-down"></i>
+                </a>
+                <ul class="sub">
+                    <li><a href="">내륙여행</a></li>
+                    <li><a href="">자유여행</a></li>
+                    <li><a href="">제주여행</a></li>
+                    <li><a href="">앨범</a></li>
+                    <li><a href="">웹진</a></li>
+                </ul>
+            </li>
+            <li class="List">
+                <a class="Menu">연계서비스
+                   <i class="fas fa-angle-down"></i>
+                </a>
+                <ul class="sub">
+                    <li><a href="">공연/전시</a></li>
+                    <li><a href="">기업출장/단체</a></li>
+                    <li><a href="">여행 용품샵</a></li>
+                    <li><a href="">비자 수속</a></li>
+                    <li><a href="">하나투어 면세점</a></li>
+                    <li><a href="">VIP 의전 서비스</a></li>
+                </ul>
+            </li>
+            <li class="List">
+                <a class="Menu">여행정보
+                   <i class="fas fa-angle-down"></i>
+                </a>
+                <ul class="sub">
+                    <li><a href="">패키지피플</a></li>
+                    <li><a href="">인기여행도시</a></li>
+                    <li><a href="">전문가여행기</a></li>
+                    <li><a href="">테마여행 동영상</a></li>
+                    <li><a href="">오디오가이드</a></li>
+                </ul>
+            </li>
+            <li class="List">
+                <a href="" class="Menu">이벤트</a>
+            </li>
+            <li class="lastBox"></li>
+        </ul>
+    </nav>
+        </header>
+        <div class="main">
+            <ul class="imgFrame">
+                <li class="img1 on"></li>
+                <li class="img2"></li>
+                <li class="img3"></li>
+                <li class="img4"></li>
+                <li class="img5"></li>
+                <li class="img6"></li>
+                <li class="img7"></li>
+                <li class="img8"></li>
+                <li class="img9"></li>
+                <li class="img10"></li>
+            </ul>
+        </div>
+    <div class="sldswiper">
+        <span class="swiper"></span>
+    </div>
+    <footer class="ft">
+        <p class="copyright">©COPYRIGHT(C) HANATOUR SERVICE INC. ALL RIGHTS RESERVED</p>
+    </footer>
+    <ul class="BtnBox">
+        <li>
+            <button class="zoom">
+                 <i class="fas fa-arrows-alt"></i>
+            </button>
+        </li>
+        <li>
+            <button class="left">
+                 <i class="fas fa-angle-double-left"></i>
+            </button>
+        </li>
+        <li>
+            <button class="right">
+              <i class="fas fa-angle-double-right"></i>
+            </button>
+        </li>
+        <li>
+            <button class="playback">
+             <i class="fas fa-stop"></i>
+            </button>
+        </li>
+    </ul>
+    </div>
+    <div class="slid">
+        <span class="sld" style="margin-left:"></span>
+    </div>
+  
+</body>
+</html>
