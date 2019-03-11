@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자연별곡</title>
+     <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon32.png">
+    <link rel="apple-touch-icon" size="57x57" href="./icon/icon57.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./icon/icon114.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <script src="js/jquery-1.11.1.js"></script>
+    
+    
+    <style>
+        *{margin: 0; padding: 0}
+        body, html {width: 100%; height: 100%;}
+        ul{list-style: none;}
+        a{ text-decoration: none;}
+    </style>
+    <!--헤더영역-->
+    <style>
+        .hd {width: 80%; height: 60px; background: #ffdeab; position: absolute; top: 0; right: 0; z-index: 80;}
+        .logo {display: block; width: 85%; height: 60px; background-repeat: no-repeat; background-image: url(./img/logo.png); background-position: 0px center; float: right; background-repeat: 1px solid #000; }
+        
+        .manubtn {display: block; width: 60px; height: 60px; float: left; position: relative; top: -40px; }
+        .manu1 {display: block; width: 28px; height: 2px; clear: both; right: 85px; float: left; background: #222; position: absolute;}
+        .manu2 {display: block; width: 28px; height: 2px; clear: both; right: 85px; float: left; background: #222; position: absolute;margin-top: 10px;}
+        .manu3 {display: block; width: 28px; height: 2px; clear: both; right: 85px; float: left; background: #222; position: absolute;margin-top: 20px;}
+        
+        .gnb {position: fixed; border-top: 1px solid #fff; width:250px; height:283px; z-index: 100; left: 0; background: #fff; display: none; top: 60px;}
+        .gnb li{line-height: 70px; font-size: 18px; border-bottom: 1px solid #9b9b9b; margin: 0 auto; transition: 0.5s; transition-delay: 0s;}
+        .gnb li a {color: #9b9b9b; display: block; text-align: center;}
+        
+        
+        #manu:checked ~ .gnb{display:block;}
+        .ckbox {display: none;}
+        
+        .main {width: 100%; display: block;}
+        .visual {padding-top: 39px;}
+        .VisualSlide {position: relative; width: 100%; height: 100%; overflow: hidden;}
+        .imgBox {width: 500%; height: 100%; position: relative;}
+        .imgBox li {width:20%; float:left; }
+        .imgBox li img { display:block; width:100%; height: auto; margin:0 auto; }
+        .page .pageTit {font-size: 25px; text-align: center; top: 0; margin-top: 40px;} 
+        .page ul {margin-top: 20px;}
+        .page ul li{float: left; width: 160px;height: 100px; margin: 10px}
+        .page ul .img1{float: right; margin-right:  right: 25px; display: block; margin: 10px}
+        
+        
+        .ft{clear: both; width: 100%; height: 120px; color: #848484; background: #ffdeab; text-align: center; font-size: 0.85em; margin-top:100px;}
+        .copyright {font-size: 11px; padding-top: 35px;}
+        .addr {font-size: 10px; padding-top: 6px;}
+     </style>
+    
+<script>
+     $(document).ready(function(){
+        var wd = $(window).width();
+        var intv = setInterval(function(){ nextAni();
+        },5000);
+        
+        function nextAni(){
+                $(".imgBox").not(":animated").animate({"margin-left":-wd+"px"}, 800, function(){
+                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                $(".imgBox").css("margin-lift", "0px");
+                $(".btnSide li").eq(0).appendTo($(".btnSide"));
+                $(".btnSide li").removeClass("on");
+                $(".btnSide").eq(0).find("li").addClass("on");
+            });
+        }
+    })
+    </script>
+    
+</head>
+<body>
+    <header class="hd">
+        <a href="index.html" class="logo"></a>
+        <input type="checkbox" id="manu" class="ckbox">
+        <label for="manu" class="manubtn">
+            <span class="manu1"></span>
+            <span class="manu2"></span>
+            <span class="manu3"></span>
+        </label>
+       <nav class="gnb">
+       <div class="xetnav">
+       <input type="checkbox" id="manu" class="ckbox"> 
+            <ul class="navm">
+                <li><a href="#">브랜드소개</a></li>
+                <li><a href="#">메뉴</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">매장안내</a></li>
+            </ul>
+            
+        </div>
+        </nav>
+    </header>
+    <section class="about">
+        <div class="fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="aboutimg"><img src="" alt=""><a href=""></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="main">
+    <div class="visual">
+        <figure class="VisualSlide">
+            <ul class="imgBox">
+                <li><img src="./img/main.png" alt=""><span class="more"></span></li>
+                <li><img src="./img/main1.png" alt=""><span></span></li>
+            </ul>
+        </figure>
+    </div>
+    </div>
+     <section class="page">
+        <h2 class="pageTit">
+            <span class="up">메뉴안내</span>
+        </h2>
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="./img/img.png" alt="">
+                </a>
+            </li>
+             <li class="img1">
+                <a href="#">
+                    <img src="./img/img1.png" alt="">
+                </a>
+            </li>
+             <li>
+                <a href="#">
+                    <img src="./img/img2.png" alt="">
+                </a>
+            </li>
+             <li class="img1">
+                <a href="#">
+                    <img src="./img/img3.png" alt="">
+                </a>
+            </li>
+         </ul>
+    </section>
+    <footer class="ft">
+                <p class="copyright">(주) 이랜드파크 | 서울 강남구 압구정로 152 극동스포츠센터 지하 1층 |<br>대표이사 : 김완식 | 개인정보보호 책임자 : 김완식</p>
+                    <address class="addr">E POINT 멤버쉽 관련 문의 : 1833-6439 | 매장 이용관련 문의 및 불편사항 : 1577-1259 | 이메일 : elandfood@eland.co.kr |</address>
+            </footer>
+    
+</body>
+</html>
