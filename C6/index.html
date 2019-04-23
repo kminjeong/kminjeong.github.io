@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LLOYD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="style_jestina.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./icon/icon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./icon/icon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./icon/icon114.png">
+    <script src="./js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="./js/jquery.bxslider.min.js"></script>
+    <script src="./js/fade2.js"></script>
+    <script>
+		//mode:'horizontal', 'vertical', 'fade'
+        $(document).ready(function() {
+				$('.slide').bxSlider({
+					mode:"horizontal",//슬라이드 방향
+					auto:"true",//자동 실행됨
+					controls:"false",//prev,next버튼 노출여부
+					pager:"false",//현재 위치를 알려주는 블릿(아래 똥글이버튼)노출 여부
+					easing:"easeInOutElastic",//가속도
+					speed:3000//실행시간
+				});
+			});
+    </script>
+</head>
+<body>
+   <header>   
+        <h1><a href="index.html">logo</a></h1>
+        <ul id="gnb">
+            <li><a href=""><i class="far fa-heart"></i>NEW</a></li>
+            <li><a href=""><i class="far fa-gem"></i>BEST</a></li>
+            <li><a href=""><i class="fas fa-shopping-bag"></i>기획전</a></li>
+            <li><a href=""><i class="far fa-calendar-alt"></i>EVENT</a></li>
+            <li><a href=""><i class="far fa-calendar-alt"></i>스토어안내</a></li>
+        </ul>
+        <div class="snsSet">
+            <a href=""><img src="icon/f.png" alt="facebook"></a>
+            <a href=""><img src="icon/b.png" alt="insta"></a>
+            <a href=""><img src="icon/i.png" alt="kakao"></a>
+        </div>
+    </header> 
+    <nav>
+        <a href=""><i class="fas fa-bars"></i> CATEGORY <i class="fas fa-angle-down"></i> </a>
+        <div id="gnb1">
+         <ul id="mainmenu">
+            <li class="subb"><a href="#">JEWELRY</a>
+            <ul class="submenu">
+                <li><a href="#">NECKLACE</a></li>
+                <li><a href="#">EARRING</a></li>
+                <li><a href="#">BRACELET</a></li>
+                <li><a href="#">RLNG</a></li>
+                <li><a href="#">COUPLE RLNG</a></li>
+            </ul>
+        </li>
+           <li class="subb"><a href="#">WATCH</a>
+            <ul class="submenu">
+                <li><a href="#">METAL</a></li>
+                <li><a href="#">LEATHER</a></li>
+                <li><a href="#">COUPLE</a></li>
+                <li><a href="#">MEN</a></li>
+            </ul>
+        </li>
+            <li class="subb"><a href="#">SPECIAL</a>
+            <ul class="submenu">
+                <li><a href="#">THE BASLC</a></li>
+                <li><a href="#">FOR LADY</a></li>
+                <li><a href="#">HERITAGE</a></li>
+                <li><a href="#">ADUT JEWERLY</a></li>
+            </ul>
+        </li>
+        </ul>
+       </div>
+    </nav>
+     
+        <section>
+        <article>
+            <!--div.bg.bg1>div.slideshow>img*4-->
+            <div class="bg bg1">
+                <div class="slideshow">
+                    <img src="img/main1.png" alt="">
+                    <img src="img/main2.png" alt="">
+                    <img src="img/main3.png" alt="">
+                    <img src="img/main4.png" alt="">
+                </div>
+            </div>
+        </article>
+        <!--1번박스-->
+        <article>
+            <div class="txt">
+                <i class="far fa-address-card"></i>
+                <p>
+                    <strong>로그인</strong>
+                    <em>통합회원은 한 아이디로 이랜드몰닷컴의 모든 서비스를 이용할 수 있습니다.</em>
+                </p>
+            </div>
+        </article>
+        <!--2번박스-->
+        <article>
+            <!--div.txt>p>strong+em-->
+            <div class="txt">
+               <i class="fab fa-product-hunt"></i>
+                <p>
+                    <strong>최근 본 상품</strong>
+                </p>
+            </div>
+        </article>
+        <!--3번박스-->
+        <article>
+            <!--div.bg>span-->
+            <div class="bg bg2">
+                <span>LNT19005T</span>
+            </div>
+        </article>
+        <!--4번박스-->
+        <article>
+            <div class="bg bg3">
+                <span>LL2G19401IGG</span>
+            </div>
+        </article>
+        <!--5번박스-->
+        <article>
+            <div class="txt">
+                <i class="fas fa-pencil-alt"></i>
+                <p>
+                    <strong>회원가입</strong>
+                    <em>회원님의 소중한 개인정보 보호를 위하여 본인확인이 필요합니다.</em>
+                </p>
+            </div>
+        </article>
+        <!--6번박스-->
+        <article>
+            <div class="bg bg4">
+                <span>New</span>
+                <!-- ul.slide>li*4>img-->
+                <ul class="slide">
+                    <li><img src="./img/main5.png" alt="35%세일"></li>
+                    <li><img src="./img/main6.png" alt="탄생석"></li>
+                    <li><img src="./img/main7.png" alt="부엉이반지"></li>
+                    <li><img src="./img/main8.png" alt=""></li>
+                </ul>
+            </div>
+        </article>
+        <!--7번박스-->
+        <article>
+            <div class="txt">
+                <p>
+                   <i class="fas fa-book"></i>
+                    <strong>My Page</strong>
+                    <em>
+                      회원님의 담겨진 상품을 확인할 수 있습니다.
+                    </em>
+                </p>
+            </div>
+        </article>
+        <!--8번박스-->
+        <article>
+            <div class="bg bg5">
+                <span>Event</span>
+            </div>
+        </article>
+        <!--9번박스-->
+        <article>
+            <div class="bg bg6">
+                <span>Event</span>
+            </div>
+        </article>
+        <!--10번박스-->
+        <article>
+            <div class="txt">
+                <i class="fas fa-shopping-basket"></i>
+                <p>
+                    <strong>Cart</strong>
+                </p>
+            </div>
+        </article>
+        <!--11번박스-->
+        <article>
+            <div class="bg bg7">
+            </div>
+        </article>
+        <!--12번박스-->
+    </section>
+</body>
+</html>
