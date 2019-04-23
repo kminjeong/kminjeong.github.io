@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>portfolio</title>
+    <script src="js/jquery-3.4.0.js"></script>
+    <script src="prefixfree.min.js"></script>
+    <script src="./js/jquery-1.11.1.js"></script>
+    <script src="./js/slider2.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Some ideas for hover effects with a fancy tilt effect" />
+    <meta name="keywords" content="tilt, hover, effect, demo, inspiration, animation, template" />
+    <meta name="author" content="Smart Media" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Abril+Fatface" rel="stylesheet">
+    <!--폰트어썸-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     <!--폰트-->
+    <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./icon/icon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./icon/icon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./icon/icon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+    <style>
+        * {top: 0; margin:0;padding:0; box-sizing: border-box;}
+        body,html {width: 100%; height: 100%;font: 14px "맑은 고딕", "Malgun Gothic", arial, sans-serif;}
+        img {border: 0;}
+        ul,li {list-style: none;}
+        a {text-decoration: none;color: #777;}
+        button, label, select, input { outline:0; border:0; }
+</style>
+    <style>
+    .wrop {width: 100%; height: 100%; overflow: hidden;}
+    .conter {width: 100%; height: 100%; position: relative;
+                 background: #ebf1f6; /* Old browsers */
+                 background: -moz-linear-gradient(top, #ebf1f6 0%, #abd3ee 50%, #d5ebfb 100%); /* FF3.6-15 */
+                 background: -webkit-linear-gradient(top, #ebf1f6 0%,#abd3ee 50%,#d5ebfb 100%); /* Chrome10-25,Safari5.1-6 */
+                 background: linear-gradient(to bottom, #ebf1f6 0%,#abd3ee 50%,#d5ebfb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */}
+    .ckbox {display: none;}
+        #gnb {width:60%; height: 15%; background: rgba(255,255,255,0.3); position: fixed; display: block; top: 35px; left: -100%; border-radius:100px; transition: 1.6s;}
+        .subtitle {width: 100%; height: 100%; margin: 0 auto; position: relative; line-height: 60px; text-align: center;}
+        .subtitle ul {width:90%; height: 100px; margin: 0 auto; text-align: center center; position: absolute; top: 30%; left: 5%;}
+        .subtitle li {float: left; width:25% }
+        .subtitle li a {font-size: 3em; color: #222; }
+        #ck:checked ~ #gnb {left: 10%;}
+        .on:checked ~ .off {display: block;}
+        .fas {font-size: 5em;}
+        
+        @keyframes cloud {
+            to {transform: translateY(0);}
+            50% {transform: translateY(5px);}
+            from {transform: translateY(0);}
+        }
+        .ons {position: absolute; animation:cloud 2s infinite; top: 0; left: 0; cursor: pointer;}
+    </style>
+    
+    <style>
+            @keyframes move1 {
+            to{transform: translateY(0);}
+            50% {transform: translateY(10px);}
+            from {transform: translateY(0);}
+        }
+        .img2 {position: absolute; top:700px; right: 0; animation:move1 2s infinite; z-index: ;}
+        
+        @keyframes move2 {
+            to{transform: translateY(0);}
+            50% {transform: translateY(10px);}
+            from {transform: translateY(0);}
+        }
+        .img3 {position: absolute; top: 780px; left:0; animation:move2 2s infinite; z-index: 99;}
+        
+        @keyframes move3 {
+            to{transform: translateY(0);}
+            50% {transform: translateY(10px);}
+            from {transform: translateY(0);}
+        }
+        .img4 {position: absolute; top:80%; right:0; animation:move3 2s infinite; z-index: 999;}
+        
+         @keyframes move4 {
+            to{transform: translateY(0);}
+            50% {transform: translateY(10px);}
+            from {transform: translateY(0);}
+        }
+        .img5 {position: absolute; top:750px; right:0; animation:move4 2s infinite; width: 30%; height: 30%; z-index: 9999;}
+        
+        
+        .img6 {position: absolute; top:75%; right:150px; animation:move4 2s infinite; width: 30%; height: 30%; z-index: 99999;}
+        .click {width: 2%; height: 5%; margin-top: 10%; margin-left: 4%}
+    
+    </style> 
+    
+    <!--슬라이드-->
+    <style>
+    .slider2 {width: 1450px; height: 898px; margin:0 auto; overflow:hidden; position:relative; margin-top: -100px;}
+    .imgBox {width:15000px; height:5000px;  } 
+    .imgBox li {width: 1450px; height:898px; float:left; }    
+    .imgBox li img {display:block; width: 1450px; height: 898px; } 
+    .btnBox {position:absolute; width:100%; top:400px; z-index:20;  } 
+    .btnBox li {width: 50px; height: 50px;}
+    .btnBox .prev { margin-left:100px; float:left; }
+    .btnBox .next { margin-right: 100px; float:right; }
+    .btnBox li .btn {display: block; width:50px; height:50px; color: #727272; cursor: pointer;}
+    .btn {background-color: transparent;}
+    /*슬라이드 첫 번째*/
+    .pf {position: absolute; width: 840px; height: 530px;}
+    .objs1 {width: 840px; height: 530px; margin-top: 30%; margin-left: 25%;}
+    .pf .objs1 img {width:500px; height: 300px;}
+    .objs2 {position: absolute; width: 600px; height: 240px; margin-top: 20%; margin-left:85%;}
+    .pf .objs2 img {width:600px; height: 240px;}
+    .objs3 {position: absolute; width: 600px; height: 300px; margin-top: 35%; margin-left:85%;}
+    .pf .objs3 img {width:600px; height: 300px;}
+    /*슬라이드 두 번째*/
+    .pf1 {position: absolute; width: 840px; height: 530px;}
+    .objs4 {width: 840px; height: 530px; margin-top: 30%; margin-left: 25%;}
+    .pf1 .objs4 img {width:600px; height: 300px;}
+    .objs5 {position:absolute; width: 600px; height: 240px; margin-top: 20%; margin-left:95%;}
+    .pf1 .objs5 img {width:600px; height: 240px;}
+    .objs6 {position: absolute; width: 600px; height: 300px; margin-top: 33%; margin-left:95%;}
+    .pf1 .objs6 img {width:600px; height: 300px;}
+        /*슬라이드 세 번째*/
+    .pf2 {position: absolute; width: 840px; height: 530px;}
+    .objs7 {width: 840px; height: 530px; margin-top: 30%; margin-left: 25%;}
+    .pf2 .objs7 img {width:500px; height: 300px;}
+    .objs8 {position:absolute; width: 600px; height: 240px; margin-top: 20%; margin-left:85%;}
+    .pf2 .objs8 img {width:600px; height: 240px;}
+    .objs9 {position: absolute; width: 600px; height: 159px; margin-top: 40%; margin-left:90%;}
+    .pf2 .objs9 img {width:600px; height: 159px;}
+          /*슬라이드 네 번째*/
+    .pf3 {position: absolute; width: 840px; height: 530px;}
+    .objs10 {width: 840px; height: 530px; margin-top: 30%; margin-left: 25%;}
+    .pf3 .objs10 img {width:500px; height: 300px;}
+    .objs11 {position:absolute; width: 600px; height: 240px; margin-top: 20%; margin-left:80%;}
+    .pf3 .objs11 img {width:600px; height: 240px;}
+    .objs12 {position: absolute; width: 600px; height: 300px; margin-top: 33%; margin-left:85%;}
+    .pf3 .objs12 img {width:600px; height: 300px;}
+        /*슬라이드 다섯번째*/
+    .pf4 {position: absolute; width: 840px; height: 530px;}
+    .objs13 {width: 840px; height: 530px; margin-top: 30%; margin-left: 25%;}
+    .pf4 .objs13 img {width:500px; height: 300px;}
+    .objs14 {position:absolute; width: 600px; height: 240px; margin-top: 20%; margin-left:85%;}
+    .pf4 .objs14 img {width:600px; height: 240px;}
+    .objs15 {position: absolute; width: 600px; height: 300px; margin-top: 33%; margin-left:90%;}
+    .pf4 .objs15 img {width:600px; height: 300px;}
+         /*슬라이드 여섯번째*/
+    .pf5 {position: absolute; width: 700px; height: 700px;}
+    .objs16 {width: 700px; height: 700px; margin-top: 30%; margin-left: 25%;}
+    .pf5 .objs16 img {width:500px; height: 300px;}
+    .objs17 {position:absolute; width: 600px; height: 240px; margin-top: 40%; margin-left:85%;}
+    .pf5 .objs17 img {width:600px; height: 240px;}
+
+         /*슬라이드 일곱번째*/
+    .pf6 {position: absolute; width: 840px; height: 530px;}
+    .objs19 {width: 840px; height: 530px; margin-top: 30%; margin-left: 25%;}
+    .pf6 .objs19 img {width:500px; height: 300px;}
+    .objs20 {position:absolute; width: 600px; height: 240px; margin-top: 30%; margin-left:85%;}
+    .pf6 .objs20 img {width:600px; height: 240px;}
+    </style>
+    <!--버튼-->
+    <style>
+        .but a {font-size: 14px; font-weight: 600; border: 3px solid #00479d; padding: 10px 25px; position: relative; left:100%; top:-150px; margin: 10px; cursor: pointer;}
+        .but1 a {font-size: 14px;font-weight: 600; border: 3px solid #268438; padding: 10px 25px; position: relative; left:110%; top:-200px; margin: 10px; cursor: pointer;}
+        .but2 a {font-size: 14px;font-weight: 600; border: 3px solid #009cff; padding: 10px 25px; position: relative; left:100%; top:-250px; margin: 10px; cursor: pointer;}
+        .but3 a {font-size: 14px;font-weight: 600; border: 3px solid yellow; padding: 10px 25px; position: relative; left:100%; top:-250px; margin: 10px; cursor: pointer;}
+        .but4 a {font-size: 14px;font-weight: 600; border: 3px solid #00c4aa; padding: 10px 25px; position: relative; left:100%; top:-250px; margin: 10px; cursor: pointer;}
+        .but5 a {font-size: 14px;font-weight: 600; border: 3px solid #ea68a2; padding: 10px 25px; position: relative; left:115%; top:-400px; margin: 10px; cursor: pointer;}
+        .but6 a {font-size: 14px;font-weight: 600; border: 3px solid #fdc593; padding: 10px 25px; position: relative; left:110%; top:-300px; margin: 10px; cursor: pointer;}
+    </style>  
+<body>
+    <div class="wrop">
+        <div class="conter">
+          <img src="" alt="" class="img1">
+          <img src="./img/click.png" alt="" class="click">
+          <img src="./img/cloud1.png" alt="" class="img2">
+          <img src="./img/cloud2.png" alt="" class="img3">
+          <img src="./img/cloud3.png" alt="" class="img4">
+          <img src="./img/cloud4.png" alt="" class="img5">
+          <img src="./img/cloud5.png" alt="" class="img6">
+           
+    <header class="hd">
+        <input type="checkbox" id="ck" class="ckbox">
+        <label for="ck" class="ons"><img src="./icon/s.svg" alt=""></label>
+        <nav id="gnb">
+        <label for="ck" class="off"></label>
+            <div class="subtitle">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="content.html">Works</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </div>
+        </nav>
+        </header>
+    <figure class="slider2">
+        <ul class="imgBox">
+            <li>
+                <img src="./img/div.png" alt="반응형홈페이지1">
+                <div class="pf">
+                    <div class="objs1"><img src="./img/site.png" alt=""></div>
+                    <div class="objs2"><img src="./img/title.png" alt=""></div>
+                    <div class="objs3"><img src="./img/title1.png" alt=""></div>
+                <div class="but">
+                    <a href="http://www.spo.go.kr/site/spo/main.do">기존 홈페이지</a>
+                    <a href="https://kminjeong.github.io/C5/">리뉴얼 홈페이지</a>
+                </div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/div1.png" alt="반응형홈페이지2" >
+                <div class="pf1">
+                    <div class="objs4"><img src="./img/site1.png" alt=""></div>
+                    <div class="objs5"><img src="./img/title2.png" alt=""></div>
+                    <div class="objs6"><img src="./img/title2-1.png" alt=""></div>
+                <div class="but1">
+                    <a href="http://lloyd.elandmall.com/">기존 홈페이지</a>
+                    <a href="https://kminjeong.github.io/C6/">리뉴얼 홈페이지</a>
+                </div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/div2.png" alt="반응형홈페이지3">
+                <div class="pf2">
+                    <div class="objs7"><img src="./img/site2.png" alt=""></div>
+                    <div class="objs8"><img src="./img/title3.png" alt=""></div>
+                    <div class="objs9"><img src="./img/title3-1.png" alt=""></div>
+                <div class="but2">
+                    <a href="https://www.pepsi.com/en-us/">기존 홈페이지</a>
+                    <a href="https://kminjeong.github.io/C7/">리뉴얼 홈페이지</a>
+                </div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/div3.png" alt="반응형홈페이지4">
+                <div class="pf3">
+                    <div class="objs10"><img src="./img/site3.png" alt=""></div>
+                    <div class="objs11"><img src="./img/title4.png" alt=""></div>
+                    <div class="objs12"><img src="./img/title4-1.png" alt=""></div>
+                <div class="but3">
+                    <a href="http://xy41392527.kodsys.kr/">기존 홈페이지</a>
+                    <a href="https://kminjeong.github.io/C8/">리뉴얼 홈페이지</a>
+                </div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/div5.png" alt="적응형홈페이지">
+                <div class="pf4">
+                    <div class="objs13"><img src="./img/site4.png" alt=""></div>
+                    <div class="objs14"><img src="./img/title5.png" alt=""></div>
+                    <div class="objs15"><img src="./img/title5-1.png" alt=""></div>
+                <div class="but4">
+                    <a href="http://www.gs.co.kr/">기존 홈페이지</a>
+                    <a href="https://kminjeong.github.io/c2/">리뉴얼 홈페이지</a>
+                </div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/div4.png" alt="모바일1">
+                <div class="pf5">
+                    <div class="objs16"><img src="./img/mobile.png" alt=""></div>
+                    <div class="objs17"><img src="./img/title6.png" alt=""></div>
+                <div class="but5">
+                    <a href="https://kminjeong.github.io/m1/">모바일 홈페이지</a>
+                </div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/div6.png" alt="모바일2">
+                <div class="pf6">
+                    <div class="objs19"><img src="./img/mobile1.png" alt=""></div>
+                    <div class="objs20"><img src="./img/title7.png" alt=""></div>
+                <div class="but6">
+                    <a href="https://kminjeong.github.io/m4/">모바일 홈페이지</a>
+                </div>
+                </div>
+            </li>
+        </ul>
+        <ul class="btnBox">
+            <li class="prev">
+                <button class="btn"><i class="fas fa-arrow-left"></i></button>
+            </li>
+            <li class="next">
+                <button class="btn"><i class="fas fa-arrow-right"></i></button>
+            </li>
+        </ul>
+    </figure>
+        </div>
+    </div>
+</body>
+</html>
