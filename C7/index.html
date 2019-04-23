@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PEPSI</title>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">   
+    <!--초기화-->
+    <style>
+        *{margin: 0; padding: 0;}
+        body, html {width: 100%; height: 100%;}
+        ul {list-style: none;}
+        a {text-decoration: none;}
+    </style>
+    
+    <script>
+    
+        $(document).ready(function(){
+	   scroll_move_up();
+        });
+        $(document).scroll(function(){
+	   if($(document).scrollTop() > 0){
+		$("#scroll").hide();
+	   }else{
+		$("#scroll").show();
+	   }
+        });
+        function scroll_move_up(){
+	   $('#scroll').animate({
+		bottom: "20"
+	   }, 500, scroll_move_down);
+        }
+        function scroll_move_down(){
+	   $('#scroll').animate({
+		bottom: "0"
+	   }, 500, scroll_move_up);
+        }
+
+    </script>
+    <!--3d vr--> 
+    <script>
+    $(document).ready(function(){
+        var vr_cnt=0;
+        var vr_src;
+        var vrIntv = setInterval(function(){ 
+            vr_cnt++;
+            if(vr_cnt>16){
+                vr_cnt=0;
+            }
+            vrAni(vr_cnt);
+        }, 70);
+        function vrAni(vrNum){
+            if(vrNum>=10){
+                $("#vr_con1").attr("src", "./3d/00"+vrNum+".png");
+            } else {
+                $("#vr_con1").attr("src", "./3d/000"+vrNum+".png");
+            }
+        }
+        $(".btn_box button").click(function(){
+            $(".btn_box button").removeClass("on");
+            $(this).addClass("on");
+            $(".vr_img").removeClass("on");
+            $("#vr_con1").toggleClass("on");
+        });
+        $(".btn_box .mild").click(function(){
+            $(".btn_box button").removeClass("on");
+            $(this).addClass("on");
+            $(".vr_img").removeClass("on");
+            $("#vr_con2").addClass("on");
+        });
+    });    
+    </script>
+    
+    <!--3d vr(모바일)--> 
+    <script>
+    $(document).ready(function(){
+        var vr_cnt=0;
+        var vr_src;
+        var vrIntv = setInterval(function(){ 
+            vr_cnt++;
+            if(vr_cnt>16){
+                vr_cnt=0;
+            }
+            vrAni(vr_cnt);
+        }, 70);
+        function vrAni(vrNum){
+            if(vrNum>=10){
+                $("#vr_con2").attr("src", "./3d/00"+vrNum+".png");
+            } else {
+                $("#vr_con2").attr("src", "./3d/000"+vrNum+".png");
+            }
+        }
+        $(".btn_box button").click(function(){
+            $(".btn_box button").removeClass("on");
+            $(this).addClass("on");
+            $(".vr_img").removeClass("on");
+            $("#vr_con1").toggleClass("on");
+        });
+        $(".btn_box .mild").click(function(){
+            $(".btn_box button").removeClass("on");
+            $(this).addClass("on");
+            $(".vr_img").removeClass("on");
+            $("#vr_con2").addClass("on");
+        });
+    });    
+    </script>
+    
+    <!--모바일메뉴-->
+    <style>
+        input {display: none;}
+        #mobilegnb {width: 80%; height: 80%; background-color: rgba(0,0,0,0.7); position: fixed; top: 60px; transition: 0.6s;display:none; clear: both;}
+        .fa-align-left {font-size: 30px; color:#222; content: ""; display: block; position: absolute; z-index:99; padding-left: 20px; padding-top: 25px; display: block;}
+        .fa-times-circle {font-size: 30px; color:#fff; content: ""; display: block; position: absolute; z-index:99; padding-left:240px; padding-top:30px; display: block;}
+        #mobilegnb ul li {width: 287px; height: 40px; padding-top: 50px;}
+        #mobilegnb ul li a{font-size: 20px; line-height: 60px; color: #fff; margin: 0 auto; margin-left: 20px; } 
+    
+    
+        #menu:checked ~ #mobilegnb{display: block;}
+    </style>
+    
+    <!--모바일-->
+    <style>
+        #mobile {width: 100%; height: 100%; position: relative;}
+        .mobilehd {position: fixed; width: 100%; height: 75px; line-height: 94px; text-align: center; background: #fff; z-index: 99}
+        .mblogo{position: absolute; top: 0; left: 0; margin-left: 150px; margin-top: 10px;}
+        .mblogo img {width: 60px; height: 60px;}
+        .mbcontent {background:url(./img/main.png); background-repeat: no-repeat; width:100%; height: 1287px; background-size: 100%; overflow: hidden;}
+        .vr_box1 { width: 300px; height: 300px; margin: 0 auto;padding-top: 50px;}
+        .vr_box1 img { width:60%; height:auto; margin: 0 auto; padding-top:40px; padding-left:15px;}  
+        .vr_img1 { display:none; }
+        .vr_img1.on { display:block; }
+        .mbfooter {background: #222; width: 100%; height:200px;}
+        .mbfooter p {color: #fff; text-align: center; font-size:12px; line-height: 25px; padding-top: 20px;}
+    </style>
+    
+    <!--데스크탑-->
+    <style>
+        #desktop {width: 100%; height: 100%; position: relative;}
+        #mobile {display: block;}
+        #desktop {display: none;}
+        .content {width: 100%; height: 100%;}
+        .leftside {display: block; position: fixed; left: 0; top: 0; width:calc(50% - 30px); height: 100%; min-width: 600px; background: url(./img/maindask.png) no-repeat, top, center; float: left;background-color: blue; z-index: 2; background-size: cover;}
+        
+        .couponmovie {position: absolute; top: 0 auto; left: 0px; width:100%; height: 100%;}
+        .movie {position: absolute; top: 25%; left:13%;display: block; width:70%; height: 50%;}
+        #contermanu {position: fixed; background: #fff; left: calc(50% - 80px); width: 150px; height: 100%; margin-left: -0px; z-index: 3; top: 0;}
+        .menus {position: absolute; top: 50%; margin-top: -290px; }
+        .menus a {width: 120px; height: 21px; line-height: 80px; margin-left: 15px;}
+        
+        .rightside { position: absolute; left:calc(40% - -200px);  top: 0; background:#667c90; width:calc(50% + 0px); background-color: #fff; z-index: 1;  background-image: url(./img/main_r.png); background-repeat: no-repeat; background-size: cover; height:2000px;}
+        
+        .content1 { text-align: center; top: 0; left: 0; margin-left: 80px; height:55%; }
+        
+        .vr_box { width: 600px; height: 600px; margin: 150px auto; margin-left: 330px;}
+        .vr_box img { width:60%; height:auto; }  
+        .vr_img { display:none; }
+        .vr_img.on { display:block; }
+        .ft {position:relative; width: 100%; background:#222; clear: both; height: 130px; margin-top: 47px; }
+        .fcontainer {width: 1000px; height: 100px; line-height: 30px; color: #fff; float: left; text-align: center; top: 0 auto; margin-top: 20px;}
+    </style>
+    
+    <style>
+        @media screen and (min-width:768px) and (max-width:959px){
+            #mobile {display: block;}
+            #desktop {display: none;}
+        }
+        @media screen and (min-width:960px) and (max-width:1279px){
+            #mobile{display: none;}
+
+            .movie {width:400px }
+            #desktop {display: block;}
+        }
+        @media screen and (min-width:1280px){
+            #mobile{display: none;}
+            #desktop {display: block;}
+        }
+    
+    </style>
+    
+</head>
+<body>
+   <div id="mobile">
+        <header class="mobilehd">
+            <div class="mblogo">
+                <img src="./icon/logo.png" alt="">
+            </div>
+        </header> 
+        <input type="checkbox" id="menu" class="ckbox">
+        <label for="menu" class="on"><i class="fas fa-align-left"></i>메뉴열기</label>
+        <nav id="mobilegnb">
+         <label for="menu" class="off"><i class="fas fa-times-circle"></i>메뉴닫기</label>
+            <ul>
+                <li><a href="">PEPSI</a></li>
+                <li><a href="">PACKAGE</a></li>
+                <li><a href="">MAGE:PEPSI</a></li>
+                <li><a href="">NEW NEWS</a></li>
+            </ul>
+            
+        </nav>
+        <main class="mbcontent">
+            <div class= "vr_box1">
+               <img src="./3d/0024.png" alt="펩시콜라" class="vr_img1 on" id="vr_con2">
+            </div>
+        </main>
+        <footer class="mbfooter">
+            <p>본사 : 서울특별시 송파구 신천동 7-18번지 롯데캐슬골드 4,5층</p>
+             <p>사업장소재지 : 서울특별시 서초구 서초대로 70길 15(서초동)</p>
+            <p>COPYRIGHT ⓒ 2019 LOTTECHILSUNGBEVERAGE CO.LTD.ALL RIGHTS RESERVED</p>
+        </footer>
+    </div>
+    
+    <!--데스크탑-->
+    <div id="desktop">
+        <div class="leftside">
+           <div class="couponmovie">
+               <div class="movie">
+                   <iframe src="./vidio/pepsi.mp4" frameborder="0" width="97%" height="74%" allow="autoplay; encrypted-media" allowfullscreen class="vd" ></iframe>
+                </div>
+           </div>
+        </div>
+        <nav id="contermanu">
+            <div class="menus">
+              <div>
+                <a href="index.html">
+                   <img src="./icon/manuicon.png" alt="메인">
+                </a>
+              </div>
+               <div>
+                <a href="">
+                   <img src="./icon/manuicon1.png" alt="패키지">
+                </a>
+              </div>
+               <div>
+                <a href="">
+                   <img src="./icon/manuicon2.png" alt="펩시의 역사">
+                </a>
+              </div>
+               <div>
+                <a href="">
+                   <img src="./icon/manuicon3.png" alt="펩시콜라 소식">
+                </a>
+              </div>
+            </div>
+            </nav>
+        <div class="rightside">
+           <div class="vr_box">
+               <img src="./3d/0024.png" alt="펩시콜라" class="vr_img on" id="vr_con1">
+           </div>
+            <main class="content1">
+                
+            </main>
+        <footer class="ft">
+            <div class="fcontainer">
+                   <p>본사 : 서울특별시 송파구 신천동 7-18번지 롯데캐슬골드 4,5층</p>
+                   <p>사업장소재지 : 서울특별시 서초구 서초대로 70길 15(서초동)</p>
+                   <p>COPYRIGHT ⓒ 2019 LOTTECHILSUNGBEVERAGE CO.LTD.ALL RIGHTS RESERVED</p>
+            </div>
+        </footer>
+        </div>
+        
+    </div>
+</body>
+</html>
