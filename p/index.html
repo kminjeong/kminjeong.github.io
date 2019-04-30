@@ -37,7 +37,7 @@
             from {transform: translateY(0);}
         }
         .img1 {background-image: url(./img/cloud.png); width: 100%; height: 50%; background-repeat: no-repeat; background-size: cover; animation:move 1s infinite; position: absolute; top: 550px; left: 0px;}
-        .click {position: absolute; width: 2%; height: 5%; margin-top: 10%; margin-left: 4%; z-index:999;}
+        .click {position: absolute; width: 2%; height: 5%; margin-top: 10%; margin-left: 4%; z-index:9999; background:url(click.png); }
         
         .mo {position: absolute;top: 600px; left: 1300px; width: 450px; height: 438px; background-repeat: repeat-y;  background-size:100px 100px;}
         .month {position: absolute; background-repeat: repeat-y;transition: 5s;}
@@ -86,8 +86,11 @@
         $("#mot1").addClass("on"); 
         $("#Layer_1").css("opacity","1");
         $(".rb").css("opacity","1"); 
-	$(".click").css("background","url('./img/click1.png')");
+
 	$(".tit_box").delay(5500).fadeIn(1000);
+	$(".click").click(function(){
+		$(this).css("background","url('./img/click1.png')");
+	});	
     });
     </script>
     <!--메뉴-->
@@ -213,7 +216,7 @@
         <header class="hd">
         <input type="checkbox" id="ck" class="ckbox">
         <label for="ck" class="ons"><img src="./icon/s.svg" alt=""></label>
-	<label for="ck" class="click" style="display:block"><img src="./img/click.png" alt="" class="click"></label>	
+	<label for="ck" class="click" style="display:block"></label>	
         <nav id="gnb">
         <label for="ck" class="off"></label>
             <div class="subtitle">
