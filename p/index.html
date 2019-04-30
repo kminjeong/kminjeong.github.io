@@ -87,7 +87,7 @@
         $("#Layer_1").css("opacity","1");
         $(".rb").css("opacity","1"); 
 	$(".click").css("background","url('./img/click1.png')");
-
+	$(".tit_box").delay(5500).fadeIn(1000);
     });
     </script>
     <!--메뉴-->
@@ -130,6 +130,7 @@
              to {transform: translateY(10px); }
         }
         .rdd {opacity: 1;}
+	.tit_box { position:fixed; top:20%; right:20%; width:300px; height:200px; z-index:10000; border:5px solid #333; display:none; }
     </style>
     <script>
     </script>
@@ -205,6 +206,9 @@
 	</g>
 </svg>
         <div class="rb"></div>
+	<div class="tit_box">
+		<h2>달토끼의 웹 스토리</h2>
+	</div>	
         </div> 
         <header class="hd">
         <input type="checkbox" id="ck" class="ckbox">
