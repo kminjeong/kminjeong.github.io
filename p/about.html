@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>portfolio</title>
+    <script src="js/jquery-3.4.0.js"></script>
+    <script src="prefixfree.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Some ideas for hover effects with a fancy tilt effect" />
+    <meta name="keywords" content="tilt, hover, effect, demo, inspiration, animation, template" />
+    <meta name="author" content="Smart Media" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Abril+Fatface" rel="stylesheet">
+    <!--폰트어썸-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     <!--폰트-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./icon/icon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./icon/icon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./icon/icon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+    <style>
+        * {margin:0;padding:0;}
+        body, html {width: 100%; height:100%; background-image:url(img/about1.png); background-repeat:no-repeat; background-size: 100% 100%; font-family: 'Roboto', sans-serif;}
+        img {border: 0;}
+        ul,li {list-style: none;}
+        a {text-decoration: none;color: #777;}
+        button, label, select, input {outline:0; border:0; }
+</style>
+    <style>
+    .wrop {position: relative; width: 100%; height:auto; clear: both; display: block;}
+    .hd {width: 100%; height:200px;}
+    .hd img {width:85%;}
+    .ckbox {display: none;}
+        #gnb {width:55%; height:50%; background:rgba(255,240,240); position:absolute; display: block; top:45px; left: -100%; border-radius:100px; transition: 1.6s; }
+        .subtitle {width: 100%; height: 100%; margin: 0 auto; position: relative; line-height: 60px; text-align: center;}
+        .subtitle ul {width:90%; height: 100px; margin: 0 auto; text-align: center center; position: absolute; top: 30%; left: 5%;}
+        .subtitle li {float: left; width:25%;}
+        .subtitle li a {font-size: 2.5em; color: #222; line-height:5px;}
+        #ck:checked ~ #gnb {left: 10%;}
+        .on:checked ~ .off {display: block;} 
+        .fas {font-size: 5em;}
+        @keyframes cloud {
+            to {transform: translateY(0);}
+            50% {transform: translateY(5px);}
+            from {transform: translateY(0);}
+        }
+        .ons {position: absolute; animation:cloud 2s infinite; top: 0; left: 0; cursor: pointer;}
+
+        
+        @keyframes mosi {
+            to {transform: translateY(0);}
+            50% {transform: translateY(5px);}
+            from {transform: translateY(0);}
+        }
+    </style>
+    <style>
+        .sec1 {position: relative;}
+        .raItem {display:none;}
+        .imgbox {width: 40px;margin: 0 auto; float:left; z-index:10; height:10px; margin-left:90%; margin-top: 10%;}
+        .imgbox li {float:right;}
+        .raBtn {display: block; height: 40px; line-height:50px; cursor: pointer;}
+        #ra11:checked ~ #wrop1 .sub.item1 {display: block;}
+        #ra12:checked ~ #wrop1 .sub.item2 {display: block;}
+        #ra13:checked ~ #wrop1 .sub.item3 {display: block;}
+        #ra14:checked ~ #wrop1 .sub.item4 {display: block;}
+        #wrop1 {position:relative; width:100%; height:100%; background-size: cover;}
+        .sub {position:absolute; width:90%; height:auto; text-align: center; display: none;}
+        .sub .title {color: #edc4c2; float: left; margin-left: 10%;}
+        .sub .tit {color: #222; float:left; margin-top:2%; margin-left:-9%; font-size:1.5em; font-weight: 700;}
+        .sub .txt {position:absolute; float:left; margin-top:8%; margin-left:10%;}
+        .sub .ty {font-size:1.0em; padding-top:5%; margin-right:1%; font-weight:700; clear:#ddc3c2; margin: 0 auto;}
+        .sub .ee {width:1200px; height:380px;margin-left:35%; margin-top:0.9%; }
+        .sub .go {position: absolute; float: left; margin-left:9%;;margin-top:17%;}
+        .sub .me {width:1000px; height:300px; float:left; margin-left:6%;}
+        .kafa {float: right; position: relative; width:5em; margin: 0 0 0 3em; margin-top:13%; margin-right:2%;}
+        .nav_item {position:relative; border: 0; display: block; background: none;}
+        .nav_item .inner {display: block;}
+        .sub .ag {width: 424px; height: 400px; float: left; margin-left:-13%; margin-top:15%;}
+        .sub .me1 {margin-top:5%; width: 55%; display: block; padding-left:5%;}
+        .sub .dd {width:55%; height:480px; margin-top:-3%; margin-right:-4%; }
+        .sub .m {width: 424px; height: 400px; float: left; margin-top:17%; margin-left: -16%;}
+        .sub .fr {width:1000px; height:600px; margin-left: 13%;}
+    </style>
+    <style>
+        .conter {width: 100%; height: 80%; position:relative; top:10px;}
+        .mos {position: relative; width: 500px; height: 650px; top:10%; left: 40%; padding-top: -5%;}
+        .mos img { width: 500px; height: 650px; }
+        .box {position: absolute;top:-0.5%; left:-3%; width: 100%; height: 100%;text-align: center; opacity: 0;}
+        .box .title {position: absolute; width: 400px; height: 100px; top: 15%; left: 10%; font-size: 4em;}
+        .box .title_p {position: absolute; width: 400px;  height: 150px; top: 35%; left: 10%; font-size: 1.3em; font-weight: 700;}
+        .mos:hover .box {opacity: 1;}
+        .mos1 {position:relative; width: 1200px; height:50%;  text-align: center; top:10%;}
+        .mos1 .lot{width:1200px; height: 600px;background-color:#f7e3dc; margin-left: 20%; position:relative;}
+        .mos1 .let1 {position: absolute; top: 23%; left:10%;}
+        .mos1 .let1 img {width: 350px; height: 350px;}
+        .mos1 h1 {font-size: 3em; margin-left: 10%; line-height:-50px;}
+        .op {width: 500px; height:500px; float:right; margin-right:15%; margin-top:3%}
+        /*포토샵*/
+        .skill {width: 500px; height: 30px; border: 1px solid #00607e; margin: 0 auto; margin-top:50px; position: relative; border-radius: 30px; margin-right:20%;}
+        .ch1 {width: 0; height:30px; background:#00607e; transition: 3s; border-radius: 30px;}
+        .ch1.on {width: 450px;}
+        .ch2 {position: absolute; top: -20px; left: -10px; z-index: 10; width: 100px; height: 100px; background-image: url(img/ps.png); background-size: 70px 70px; transition: 3s; background-repeat: no-repeat;}
+        .ch2.on {left: 400px;}
+        .skill h4 {float: right; margin-right: -20%; margin-top: -8%; font-size: 2em;}
+        /*일러스트*/
+        .skill1 {width: 500px; height: 30px; border: 1px solid #6b3600; margin: 0 auto; margin-top:50px; position: relative; border-radius: 30px;}
+        .ch3 {width: 0; height:30px; background:#6b3600; transition: 3s; border-radius: 30px;}
+        .ch3.on {width: 450px;}
+        .ch4 {position: absolute; top: -20px; left: -10px; z-index: 10; width: 100px; height: 100px; background-image: url(img/ai.png); background-size: 70px 70px; transition: 3s; background-repeat: no-repeat;}
+        .ch4.on {left: 400px;}
+        .skill1 h4 {float: right; margin-right: -20%; margin-top: -8%; font-size: 2em;}
+        /*html*/
+        .skill2 {width: 500px; height: 30px; border: 1px solid #f1662a; margin: 0 auto; margin-top:50px; position: relative; border-radius: 30px;}
+        .ch5 {width: 0; height:30px; background:#f1662a; transition: 3s; border-radius: 30px;}
+        .ch5.on {width: 380px;}
+        .ch6 {position: absolute; top: -20px; left: -10px; z-index: 10; width: 100px; height: 100px; background-image: url(img/html.png); background-size: 70px 70px; transition: 3s; background-repeat: no-repeat;}
+        .ch6.on {left: 350px;}
+        .skill2 h4 {float: right; margin-right: -20%; margin-top: -8%; font-size: 2em;}
+        /*css*/
+        .skill3 {width: 500px; height: 30px; border: 1px solid #33a9dc; margin: 0 auto; margin-top:50px; position: relative; border-radius: 30px;}
+        .ch7 {width: 0; height:30px; background:#33a9dc; transition: 3s; border-radius: 30px;}
+        .ch7.on {width: 330px;}
+        .ch8 {position: absolute; top: -20px; left: -10px; z-index: 10; width: 100px; height: 100px; background-image: url(img/css.png); background-size: 70px 70px; transition: 3s; background-repeat: no-repeat;}
+        .ch8.on {left: 300px;}
+        .skill3 h4 {float: right; margin-right: -20%; margin-top: -8%; font-size: 2em;}
+        /*js*/
+        .skill4 {width: 500px; height: 30px; border: 1px solid #ecb31e; margin: 0 auto; margin-top:50px; position: relative; border-radius: 30px;}
+        .ch9 {width: 0; height:30px; background:#ecb31e; transition: 3s; border-radius: 30px;}
+        .ch9.on {width: 300px;}
+        .ch10 {position: absolute; top: -20px; left: -10px; z-index: 10; width: 100px; height: 100px; background-image: url(img/js.png); background-size: 70px 70px; transition: 3s; background-repeat: no-repeat;}
+        .ch10.on {left: 280px;}
+        .skill4 h4 {float: right; margin-right: -20%; margin-top: -8%; font-size: 2em;}
+    </style>
+    <style>
+        .mos2 {position: relative; width:100%; height:200%; float: right; top:35%; background:rgba(255,255,255,0.3); background-size: cover;}
+        .mos2 .mt {font-size: 5em; text-align: center;}
+        .elementary {position: relative; width:900px; height:400px; top:7%; left:5%; margin: 0; background: #fff;}
+        .elementary .tt {text-align:left; margin: 0; margin-left: 10%; font-size: 2em; width: 300px; padding-top:7%;}
+        .elementary .ttt {width:350px;float:left; text-align:left;font-size:1em; padding:15px; margin-top:3%; margin-left:35px;}
+        .elementary img {float: right; margin-right: 2%; margin-top: -6%;}
+        .high {width:900px; height:600px; background:#fff; float: right; margin-right:5%; margin-top:-15%;}
+        .high .lo {width: 450px; font-size: 1.6em; float:right; margin-top: 5%; margin-right:-10%;}
+        .high .lop {width:350px;float:right;margin-right:-39%; margin-top:10%;}
+        .high .bi {width: 464px; height: 374px; margin-top:%; margin-left: 45%;}
+        .high .bir {width: 200px; height: 150px; float: right; margin-top:15%; margin-right:-10%; }
+        .high .li {width: 200px; height: 150px; float: right; margin-right:-45%;}
+        .high .ag {width: 500px; height: 600px; float: left; margin-left: -5%; margin-top:-66%;}
+        
+        .university {position: relative; width: 1200px; height: 500px; background: #fff; margin-top: 15%; margin-left: 5%;}
+        .university .un {position: absolute; font-size: 2em; padding-top: 10%; margin-left:5%;}
+        .university .mn {width: 400px; float: right; margin-right: 5%;}
+    </style>
+    <!--포토샵-->
+    <script>
+    $(document).ready(function(){
+       $(".skill").addClass("on"); 
+       $(".ch1, .ch2").addClass("on");    
+    });    
+    </script>
+    <!--일러스트-->
+    <script>
+    $(document).ready(function(){
+       $(".skill1").addClass("on"); 
+       $(".ch3, .ch4").addClass("on");    
+    });    
+    </script>
+    <!--html-->
+    <script>
+    $(document).ready(function(){
+       $(".skill2").addClass("on"); 
+       $(".ch5, .ch6").addClass("on");    
+    });    
+    </script>
+    <!--css-->
+    <script>
+    $(document).ready(function(){
+       $(".skill3").addClass("on"); 
+       $(".ch7, .ch8").addClass("on");    
+    });    
+    </script>
+    <!--js-->
+    <script>
+    $(document).ready(function(){
+       $(".skill4").addClass("on"); 
+       $(".ch9, .ch10").addClass("on");    
+    });    
+    </script>
+<body>
+    <div class="wrop">
+    <header class="hd">
+        <input type="checkbox" id="ck" class="ckbox">
+        <label for="ck" class="ons"><img src="./icon/s.svg" alt=""></label>
+        <nav id="gnb">
+        <label for="ck" class="off"></label>
+            <div class="subtitle">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="content.html">Works</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </div>
+        </nav>
+        </header>
+        <section class="sec1">
+            <input type="radio" name="ra11" id="ra11" class="raItem raItem1" checked>
+            <input type="radio" name="ra11" id="ra12" class="raItem raItem2">
+            <input type="radio" name="ra11" id="ra13" class="raItem raItem3">
+            <input type="radio" name="ra11" id="ra14" class="raItem raItem4">
+            <ul class="imgbox">
+                <label for="ra11" class="raBtn item1"><li><img src="./img/botton.png" alt=""></li></label>
+                <label for="ra12" class="raBtn item2"><li><img src="./img/botton.png" alt=""></li></label>
+                <label for="ra13" class="raBtn item3"><li><img src="./img/botton.png" alt=""></li></label>
+                <label for="ra14" class="raBtn item4"><li><img src="./img/botton.png" alt=""></li></label>
+            </ul>
+        <div id="wrop1">
+        <div class="sub item1">
+            <h3 class="title">01. 이야기 첫 번째</h3>
+            <h4 class="tit">예체능을 하기 위해 태어난 아이</h4>
+            <p class="txt">충청남도 공주시 정안면의 작은 시골에서 아버지가 직접<br>지으신 집과 자연으로 둘러쌓여진 곳에서 자라왔습니다.<br>3남매중 둘째이며 욕심이 많고 애교도 많아 동네 어른들<br>뿐 아니라 학교 선생님들에게도 이쁨을 많이 받았습니다.<br></p>
+            <img src="./img/goje.png" alt="" class="go">
+            <img src="./img/e.png" alt="" class="me">
+            <img src="./img/ee.PNG" alt="" class="ee">
+        </div>
+        <div class="sub item2">
+            <h3 class="title">02. 이야기 두 번째</h3>
+            <h4 class="tit">입시 미술준비를 하다</h4>
+            <p class="txt">고등학교를 진학하면서 디자인과를 가기 위해 입시미술을<br>시작하였습니다. 처음에는 힘들어서 포기하고 싶은 생각도<br>들었지만 주변 친구들의 응원과 뒤에서 응원해주신 부모님<br>덕분에 끈기와 노력으로 디자인과에 진학하게 되었습니다.<br></p>
+            <img src="./img/agrippa.png" alt="" class="ag">
+            <img src="./img/agg.png" alt="" class="me1">
+        </div>
+        <div class="sub item3">
+            <h3 class="title">03. 이야기 세 번째</h3>
+            <h4 class="tit">다양한 활동과 다양한 경험!</h4>
+            <p class="txt">내가 맡고자 하는 일들은 책임지고 해놓는 모습과 총학생회 같은 큰 임<br>무를 맡았을 때 사람들과 함께 해결하며 책임감을 기르는데 도움이 되<br>었습니다.뿐만 아니라 각종 축제나 학생활동에 필요한 포스터디자인,<br>현수막,옷등의디자인을 도맡아 하였고 팀원들의 의견을 묻고 듣고 서<br>로 상의하면서 좋은 결과를 얻었습니다.이러한 활동과 경험으로  </p>
+            <img src="./img/cha.png" alt="" class="dd">
+            <img src="./img/ch.png" alt="" class="m">
+        </div>
+        <div class="sub item4">
+            <h3 class="title">04. 이야기 네 번째</h3>
+            <h4 class="tit">모든 일에 책임감 있게!</h4>
+            <p class="txt"></p>
+            <img src="./img/fr.png" alt="" class="fr">
+            <img src="./img/" alt="" class="">
+        </div>
+        </div>
+        </section>
+<!--
+        
+        <div class="conter">
+        <div class="mos">
+              <img src="./img/kko.png" alt="">
+          <div class="box">
+              <img src="./img/kko1.png" alt="">
+              <h3 class="title">About</h3>
+              <p class="title_p">Name : 김민정<br><br>Birthday : 1995.10.17<br><br>Phone : 010 9281 8273<br><br>E-mail : dkfqkaakdmf@naver.com<br><br>Hobby : 그림 그리기, 음악듣기</p>
+          </div>
+            <div class="moss"></div>
+          </div>
+        </div>
+          <div class="mos1">
+              <ul class="lot">
+                  <li class="let1">
+                     <img src="./img/me.png" alt="">
+                  </li>  
+            <div class="op">
+              <h1 class="tit1">About me</h1>
+              <div class="skill">
+                <div class="ch1"></div>
+                <div class="ch2"></div>
+                <h4>95%</h4>
+              </div>
+              <div class="skill1">
+                <div class="ch3"></div>
+                <div class="ch4"></div>
+                <h4>95%</h4>
+              </div>
+               <div class="skill2">
+                <div class="ch5"></div>
+                <div class="ch6"></div>
+                <h4>80%</h4>
+              </div>
+               <div class="skill3">
+                <div class="ch7"></div>
+                <div class="ch8"></div>
+                <h4>75%</h4>
+              </div>
+              <div class="skill4">
+                <div class="ch9"></div>
+                <div class="ch10"></div>
+                <h4>70%</h4>
+              </div>
+              </div>
+             </ul>
+          </div>
+          <div class="mos2">
+                <h2 class="mt">My Story</h2>
+            <div class="elementary">
+                <h3 class="tt">1.미술에 눈을 뜨다.</h3>
+                <p class="ttt">초등학교 1학년 때 담임선생님의 권유로 미술을 처음으로 시작해보았습니다. 처음에는 선생님의 권유로 미술에 흥미가 생겼지만 조금 지나면서 미술을 좋아하게 되고 각종 미술대회를 나가 상을 타면서 디자이너가 되고 싶다는 꿈을 가지게 되었습니다.</p>
+                <img src="./img/e.png" alt="">
+            </div>
+            <div class="high">
+                <h3 class="lo">2. 디자이너가 되기 위한 노력</h3>
+                <p class="lop">학창시절에 디자인과에 가기 위해 입시미술 준비를 하였습니다.입시미술을 하면서 좌절과 그만두고 싶은 생각도 있었지만 포기하지 않고 열심히하여 좋은 결과를 얻었습니다.이러한 경험들로 힘든일이 있어도 포기하지 않고 끈기있게 할 수 있는 능력을 기를 수 있었습니다. </p>
+                <img src="./img/bird.png" alt="" class="bi">
+                <img src="./img/bird1.png" alt="" class="bir">
+                <img src="./img/li.png" alt="" class="li">
+                <img src="./img/agrippa1.png" alt="입시준비" class="ag">
+            </div>
+            <div class="university">
+                <h3 class="un">3.디자인과 전공 + 총학생회 활동</h3>
+                <p class="min">디자인전공으로 총학생회에 들어가 다양한 행사포스터,</p>
+                <img src="./img/post.png" alt="" class="mn">
+            </div>
+          </div>
+-->
+
+    </div>
+</body>
+</html>
