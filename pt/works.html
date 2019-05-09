@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>포트폴리오</title>
+    <script src="js/jquery-3.4.0.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <!--폰트어썸-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     <!--폰트-->
+    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet">
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./icon/icon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./icon/icon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./icon/icon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+        *{margin: 0; padding: 0; }
+        body, html {width: 100%; height:100%; font-family: 'Wendy One', sans-serif; overflow:hidden;}
+        ul{list-style: none;}
+        a{text-decoration: none;}
+        .wrop {width: 100%; height: 100%; overflow:hidden;}
+        .conter {width:100%; height:100%; position:relative;}
+        .img1 {width:100%; height:100%; background-image: url(img/about2.png); background-repeat: no-repeat; background-position: center; background-size: cover; position: relative;}
+        @keyframes move {
+            to{transform: translateY(0);}
+            50% { transform: translateY(30px);}
+            from {transform: translateY(0);}
+        }
+        .click {position: absolute; width:180px; height:100px; top:19%; left:3%; z-index:9999; background:url(./img/click.png); background-repeat: no-repeat; background-size: 50px 50px; cursor: pointer;}
+        
+        .mo {position: absolute;top:550px; left:1100px; width: 400px; height: 400px; background-repeat: repeat-y;  background-size:90px 90px;}
+        .month {position: absolute; background-repeat: repeat-y;transition:3s;}
+        #mot1 { background-image: url(img/month.png); background-repeat: no-repeat; z-index:999; width: 400px; height: 400px; top: 0; left: 0; background-size: cover;}
+        
+        .on {animation:on 3s linear alternate; animation-fill-mode: both;}
+        @keyframes on {
+            from {  width: 450px; height: 438px;top:0px; left:0px; }
+            to { width: 675px; height: 657px; top:-300px; left:-750px;}
+            
+        }
+         @keyframes move1 {
+            to{transform: translateY(0);}
+            50% {transform: translateY(10px);}
+            from {transform: translateY(0);}
+        }
+        .img2 {position: absolute; width: 40%; height: 50%; bottom:0; right: 0; animation:move1 2s infinite; z-index: 99;}
+        
+        @keyframes move2 {
+            to{transform: translateY(0);}
+            50% {transform: translateY(10px);}
+            from {transform: translateY(0);}
+        }
+        .img3 {position: absolute; top:800px; left:0; animation:move2 2s infinite; z-index: 99;}
+        
+        @keyframes move3 {
+            to{transform: translateY(0);}
+            50% {transform: translateY(10px);}
+            from {transform: translateY(0);}
+        }
+        .img4 {width:50%; height:30%;position: absolute; top:70%; right:5px; animation:move3 2s infinite; z-index: 999;}
+        
+         @keyframes move4 {
+            to{transform: translateY(0);}
+            50% {transform: translateY(10px);}
+            from {transform: translateY(0);}
+        }
+        .img5 {position: absolute; top:700px; right:10px; animation:move4 2s infinite; width: 20%; height: 25%; z-index: 9999;}
+        
+        
+        .img6 {position: absolute; top:720px; right:10%; animation:move4 2s infinite; width: 20%; height: 23%; z-index: 99999;  }
+    </style>
+    <!--메뉴-->
+    <style>
+        .hd img {width:80%;}
+        .ckbox {display: none;}
+         #gnb {width:55%; height:12%; background:#f9d1d3; position:absolute; display: block; top:43px; left:-100%; border-radius:100px; transition: 1.6s; }
+        .subtitle {width: 100%; height: 100%; margin: 0 auto; position: relative; line-height: 60px; text-align: center;}
+        .subtitle ul {width:90%; height: 100px; margin: 0 auto; text-align: center center; position: absolute; top: 30%; left: 5%;}
+        .subtitle li {float: left; width:25% }
+        .subtitle li a {font-size: 3em; color: #222; }
+        #ck:checked ~ #gnb {left: 10%;}
+        .on:checked ~ .off {display: block;}
+        .fas {font-size: 5em;}
+        
+        @keyframes cloud {
+            to {transform: translateY(0);}
+            50% {transform: translateY(5px);}
+            from {transform: translateY(0);}
+        }
+        .ons {position: absolute; animation:cloud 2s infinite; top: 0; left: 0; cursor: pointer;z-index: 99;}
+    </style>
+    <style>
+        #main {width:calc(100% - 180px); height:600px; position:absolute;left: 10%; top:20%;}
+        .works {width: 100%; height: 100%; position: relative; clear: both; overflow: hidden; top: 0; float: left; text-align: center;}
+        .work_inner {width: 100%; height:100%; position: relative; clear: both; top: 0;}
+        .work {width:80%; height:193px; float:left; position:relative; margin-top:10%;}
+        .work ul {width: 100%; height: 400px; float: left;}
+        .work ul li {float: left; width:25%; height: 200px; }
+        .work .work_wor {width:100%; height:100%; position: relative; float:left; margin-left:8%;}
+        .work .wo1 { width:25%; height:95%;  background-image: url(img/s.png); background-repeat: no-repeat; background-position: top; background-size: cover; overflow: hidden; box-shadow:10px 0 10px #6E6E6E;}
+        .work_tit {width:25%; height:95%; position: absolute; top: 0; left:0; background:#f5989d; line-height:40px;  opacity:0; transition:0.8s;}
+        .wcom {font-size: 2em; text-align: center; margin-top: 10%;}
+        .work_tit .more {text-align: center; font-size:0.5em; margin-left:45%; color:#f7cf2a;}
+        .work_tit .more .fas {margin-top:-25px; text-align: center; float: left; margin-left:45%;}
+        .wo1:hover .work_tit{opacity:1; cursor: pointer;}
+        
+        .work .wo2 {position: relative; width:25%; height:95%;  background-image: url(img/p.png); background-repeat: no-repeat; background-position: top; background-size: cover; margin-left: 10%; overflow: hidden; box-shadow:10px 0 10px #6E6E6E;}
+        .wo2:hover .work_tit1{opacity:1;}
+        .work_tit1 {width:100%; height:100%; position: absolute; top: 0; left:0; background:#f5989d; line-height:40px;  opacity:0; transition:0.8s;}
+        .wcom1 {font-size: 2em; text-align: center; margin-top:8%;}
+        .work_tit1 .more1 {text-align: center; font-size:0.5em; margin-left:45%; color:#f7cf2a;}
+        .work_tit1 .more1 .fas {margin-top:-20px; text-align: center; float: left; margin-left:45%;}
+        .wo2:hover .work_tit1{opacity:1;  cursor: pointer;}
+        
+        .work .wo3 {position: relative; width:25%; height:95%;  background-image: url(img/pr.png); background-repeat: no-repeat; background-position: top; background-size: cover; margin-left: 10%; overflow: hidden; box-shadow:10px 0 10px #6E6E6E;}
+        .wo3:hover .work_tit2{opacity:1;  cursor: pointer;}
+        .work_tit2 {width:100%; height:100%; position: absolute; top: 0; left:0; background:#f5989d; line-height:40px;  opacity:0; transition:0.8s;}
+        .wcom2 {font-size: 2em; text-align: center; margin-top:8%;}
+        .work_tit2 .more2 {text-align: center; font-size:0.5em; margin-left:45%; color:#f7cf2a;}
+        .work_tit2 .more2 .fas {margin-top:-20px; text-align: center; float: left; margin-left:45%;}
+        .wo2:hover .work_tit1{opacity:1;  cursor: pointer;}
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+    <div class="wrop">
+       <div class="conter">
+           <div class="img1">
+        <header class="hd">
+        <input type="checkbox" id="ck" class="ckbox">
+        <label for="ck" class="ons"><img src="./icon/s.svg" alt=""></label>
+	    <label for="ck" class="click" style="display:block"></label>	
+        <nav id="gnb">
+        <label for="ck" class="off"></label>
+            <div class="subtitle">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </div>
+        </nav>
+        </header>
+        <main id="main">
+           <section class="works">
+               <div class="work_inner">
+                   <div class="work">
+                       <ul class="work_wor">
+                           <li class="wo1">
+                               <div class="work_tit">
+                                   <p class="wcom">스토리보드<br>Storyboard</p>
+                                   <a href="https://postimg.cc/34djhjPs" target="_blank" class="more">
+                                       <i class="fas fa-moon"></i>
+                                   </a>
+                               </div>
+                           </li>
+                           <li class="wo2">
+                               <div class="work_tit1">
+                                   <p class="wcom1">페이퍼프로토<br>Paper Proto</p>
+                                   <a href="https://postimg.cc/34djhjPs" target="_blank" class="more1">
+                                       <i class="fas fa-moon"></i>
+                                   </a>
+                               </div>
+                           </li>
+                           <li class="wo3">
+                               <div class="work_tit2">
+                                   <p class="wcom2">프로젝트완료보고서<br>Paper Proto</p>
+                                   <a href="https://postimg.cc/Tyg2VYx8" target="_blank" class="more2">
+                                       <i class="fas fa-moon"></i>
+                                   </a>
+                               </div>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+           </section>
+       </main>
+       </div>
+        </div>
+    </div>
+</body>
+</html>

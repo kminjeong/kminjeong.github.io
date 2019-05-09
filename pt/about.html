@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>portfolio</title>
+    <script src="js/jquery-3.4.0.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Some ideas for hover effects with a fancy tilt effect" />
+    <meta name="keywords" content="tilt, hover, effect, demo, inspiration, animation, template" />
+    <meta name="author" content="Smart Media" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Abril+Fatface" rel="stylesheet">
+    <!--폰트어썸-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     <!--폰트-->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Wendy+One" rel="stylesheet">
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./icon/icon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./icon/icon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./icon/icon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./icon/icon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+    <style>
+        * {margin:0;padding:0;}
+        body, html {width: 100%; height:100%; background-image:url(img/about1.png); background-repeat:no-repeat; background-size: 100% 100%;  font-family: 'Nanum Gothic', sans-serif;font-family: 'Wendy One', sans-serif;}
+        img {border: 0;}
+        ul,li {list-style: none;}
+        a {text-decoration: none;color: #777;}
+        button, label, select, input {outline:0; border:0; }
+</style>
+    <style>
+    .wrop {position: relative; width: 100%; height:auto; clear: both; display: block;}
+    .hd {width: 100%; height:200px;}
+    .hd img {width:85%;}
+    .ckbox {display: none;}
+        #gnb {width:55%; height:50%; background:rgba(255,240,240); position:absolute; display: block; top:45px; left: -100%; border-radius:100px; transition: 1.6s; }
+        .subtitle {width: 100%; height: 100%; margin: 0 auto; position: relative; line-height: 60px; text-align: center;}
+        .subtitle ul {width:90%; height: 100px; margin: 0 auto; text-align: center center; position: absolute; top: 30%; left: 5%;}
+        .subtitle li {float: left; width:25%;}
+        .subtitle li a {font-size: 2.5em; color: #222; line-height:5px;}
+        #ck:checked ~ #gnb {left: 10%;}
+        .on:checked ~ .off {display: block;} 
+        .fas {font-size: 5em;}
+        @keyframes cloud {
+            to {transform: translateY(0);}
+            50% {transform: translateY(5px);}
+            from {transform: translateY(0);}
+        }
+        .ons {position: absolute; animation:cloud 2s infinite; top: 0; left: 0; cursor: pointer;}
+
+        
+        @keyframes mosi {
+            to {transform: translateY(0);}
+            50% {transform: translateY(5px);}
+            from {transform: translateY(0);}
+        }
+    </style>
+    <style>
+        .sec1 {position: relative;}
+        .raItem {display:none;}
+        .imgbox {width: 40px;margin: 0 auto; float:left; z-index:10; height:10px; margin-left:90%; margin-top: 10%;}
+        .imgbox li {float:right;}
+        .raBtn {display: block; height: 40px; line-height:50px; cursor: pointer;}
+        #ra11:checked ~ #wrop1 .sub.item1 {display: block;}
+        #ra12:checked ~ #wrop1 .sub.item2 {display: block;}
+        #ra13:checked ~ #wrop1 .sub.item3 {display: block;}
+        #ra14:checked ~ #wrop1 .sub.item4 {display: block;}
+        #ra15:checked ~ #wrop1 .sub.item5 {display: block;}
+        #wrop1 {position:relative; width:100%; height:100%; background-size: cover;}
+        .sub {position:absolute; width:90%; height:auto;display: none;}
+        .sub .title {color: #edc4c2; float: left; margin-left: 10%;}
+        .item1 .st {width: 836px; height: 193px; margin: 0 auto; float: right; margin-right:15%; margin-top:-3%}
+        /*.sub .tit {color: #222; float: right; font-size:5em; font-weight:bold; margin-right:20%;}*/
+        .sub .t {float: left; margin-top:1%; margin-left:40%; font-size:1.3em; line-height:40px;}
+        .sub .t1 {float: right;  margin-top:1%; margin-right:15%; font-size:1.3em; line-height:40px;}
+        .sub .kko {position: absolute; display: block; width: 400px; height: 500px;margin-top:5%;margin-left:9%;}
+        .item2 .img1 {position:absolute; width:800px; height:600px; margin-top:4%; float: left; margin-left:-9%;}
+        .item2 .img2 {position: absolute; width: 700px; height:600px; float:left; margin-top:3.3%; margin-left:40%;}
+        .item2 .st1 {float: right; margin-right:34%; margin-top:5%;}
+        .item3 .st2 {float: left; margin-left:-10%; width:50%;}
+        .item3 .img3 {float:left; width:55%; margin-left: 10%;}
+        .item3 .img4 {margin-left:2%; margin-top: -10px;}
+        .item4 .img5 {width:45%; height:45%; float: left; margin-left:13%; margin-top:0;}
+        .img6 {width:45%; float: right; margin-right:5%; margin-top:-1%;}
+        .imgg {width: 20%; height: 40%; float:left; margin-left:70%; margin-top: -40%}
+        .item .p1 {position: relative; font-size:1.5em; color:#fff; margin-top:-155%; z-index: 99999; margin-left:35%;}
+        .item .p2 {position: relative; font-size:1.6em;  margin-top:60%; text-align: center;}
+        .item4 .st3 {float: right; margin-top:32%; margin-right:5%; height:30%;}
+        .item5 .st4 {float: left; margin-top:28%; margin-left: -10%}
+        .item5 .img7 {position: absolute; float:right; margin-right:10%; margin-top:2%; list-style: none; border:none; width:55%;}
+    </style>
+     <style>
+         .item {position:relative; width:100px; height:100px; float:left; margin-left: -40px;}    
+         .cat1 {margin-top:20%; margin-left: -10%;}
+         .cat2 {margin-top:20%; margin-left:1%;}
+         .cat3 {margin-top:3%; margin-left:5%;}
+         .cat4 {margin-top:3%; margin-left:5%;}
+         .cat5 {margin-top:3%;  margin-left:5%;}
+         .txt { position:absolute; width:150px; height:150px; top:10px; left: 20px; z-index:999; text-align:center; color:#fff; font-size:40px; line-height:200px; } 
+        #circle1 { animation:mov1 5s; stroke-dasharray:600; animation-fill-mode:both; }
+        @keyframes mov1 {
+        0% { fill:#006d8b; stroke-dashoffset:600; } /* stroke-dashoffset:원의둘레 */
+        20% { fill:#009ec9; }
+        60% { fill:#00afdf; }
+        100% { fill:#00c8ff; stroke-dashoffset:300;} 
+        } 
+        #circle2 { animation:mov2 5s; stroke-dasharray:600; animation-fill-mode:both; }
+        @keyframes mov2 {
+        0% { fill:#713701; stroke-dashoffset:600; } /* stroke-dashoffset:원의둘레 */
+        20% { fill:#d66a04; }
+        60% { fill:#e26e00; }
+        100% { fill:#ff7c00; stroke-dashoffset:300; }
+        }  
+        #circle3 { animation:mov3 5s; stroke-dasharray:600; animation-fill-mode:both; }
+        @keyframes mov3 {
+        0% { fill:#ffd2c5; stroke-dashoffset:600; } /* stroke-dashoffset:원의둘레 */
+        20% { fill:#ff8968; }
+        60% { fill:#f3653e; }
+        100% { fill:#e44f26; stroke-dashoffset:350; }
+        }  
+         #circle4 { animation:mov4 5s; stroke-dasharray:600; animation-fill-mode:both; }
+        @keyframes mov4 {
+        0% { fill:#6fc2ff; stroke-dashoffset:600; } /* stroke-dashoffset:원의둘레 */
+        20% { fill:#28a0f7; }
+        60% { fill:#1b8de0; }
+        100% { fill:#1572b6; stroke-dashoffset:380; }
+        }  
+         #circle5 { animation:mov5 5s; stroke-dasharray:600; animation-fill-mode:both; }
+        @keyframes mov5 {
+        0% { fill:#fff1cc; stroke-dashoffset:600; } /* stroke-dashoffset:원의둘레 */
+        20% { fill:#ffdc82; }
+        60% { fill:#f8c84b; }
+        100% { fill:#ecb31e; stroke-dashoffset:380; }
+        }  
+
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+
+       var n=0;
+        $(".txt").each(function(index){
+            var val1 = parseInt($(this).attr("data-val"));    
+            setInterval(function(){ 
+                n=n+1;   
+                if(n<=val1) {   
+                    func(n);
+                }
+            }, 63); 
+            function func(cnt){
+                $(".txt").text(cnt+"%");
+            }
+          }
+        )}; 
+    </script>
+<body>
+    <div class="wrop">
+    <header class="hd">
+        <input type="checkbox" id="ck" class="ckbox">
+        <label for="ck" class="ons"><img src="./icon/s.svg" alt=""></label>
+        <nav id="gnb">
+        <label for="ck" class="off"></label>
+            <div class="subtitle">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </div>
+        </nav>
+        </header>
+        <section class="sec1">
+            <input type="radio" name="ra11" id="ra11" class="raItem raItem1" checked>
+            <input type="radio" name="ra11" id="ra12" class="raItem raItem2">
+            <input type="radio" name="ra11" id="ra13" class="raItem raItem3">
+            <input type="radio" name="ra11" id="ra14" class="raItem raItem4">
+            <input type="radio" name="ra11" id="ra15" class="raItem raItem5">
+            <ul class="imgbox">
+                <label for="ra11" class="raBtn item1"><li><img src="./img/botton.png" alt=""></li></label>
+                <label for="ra12" class="raBtn item2"><li><img src="./img/botton.png" alt=""></li></label>
+                <label for="ra13" class="raBtn item3"><li><img src="./img/botton.png" alt=""></li></label>
+                <label for="ra14" class="raBtn item4"><li><img src="./img/botton.png" alt=""></li></label>
+                <label for="ra15" class="raBtn item5"><li><img src="./img/botton.png" alt=""></li></label>
+            </ul>
+        <div id="wrop1">
+        <div class="sub item1">
+            <h3 class="title">01 이야기 첫번째</h3>
+            <img src="./img/tit.png" alt="" class="st">
+            <p class="t">Name : 김민정<br><br>Birthday : 1995.10.17<br><br>Blood Type : B형<br><br>Phone : 010 9281 8273</p>
+            <p class="t1">E-mail : dkfqkaakdmf@naver.com<br><br>Personality : 쾌활하고 명쾌한 성격<br><br>Motto :자신이 맡은 일은 최선을 다하자!<br><br>Address:충청남도 공주시</p>
+            <img src="./img/kko.png" alt="" class="kko">
+        <div class="item cat1">
+            <svg width="200" height="200">
+                <circle cx="60" cy="60" r="50" stroke="black" stroke-width="10" stroke-style="dashed" id="circle1" />
+            </svg>
+            <div class="txt" data-val="90"></div>
+            <p class="p1">90%</p>
+            <p class="p2">Photoshop</p>
+        </div>
+        <div class="item cat2">
+            <svg width="200" height="200">
+                <circle cx="60" cy="60" r="50" stroke="black" stroke-width="10" stroke-style="dashed" id="circle2" />
+            </svg>
+            <div class="txt" data-val="90"></div>
+            <p class="p1">90%</p>
+            <p class="p2">Illustration</p>
+        </div>
+        <div class="item cat3">
+            <svg width="200" height="200">
+                <circle cx="60" cy="60" r="50" stroke="black" stroke-width="10" stroke-style="dashed" id="circle3" />
+            </svg>
+            <div class="txt" data-val="80"></div>
+            <p class="p1">80%</p>
+            <p class="p2">Html</p>
+        </div>
+        <div class="item cat4">
+            <svg width="200" height="200">
+                <circle cx="60" cy="60" r="50" stroke="black" stroke-width="10" stroke-style="dashed" id="circle4" />
+            </svg>
+            <div class="txt" data-val="75"></div>
+            <p class="p1">75%</p>
+            <p class="p2">Css</p>
+        </div>
+        <div class="item cat5">
+            <svg width="200" height="200">
+                <circle cx="60" cy="60" r="50" stroke="black" stroke-width="10" stroke-style="dashed" id="circle5" />
+            </svg>
+            <div class="txt" data-val="75"></div>
+            <p class="p1">75%</p>
+            <p class="p2">Js</p>
+        </div>
+        </div>
+        <div class="sub item2">
+            <h3 class="title">02 이야기 두번째</h3>
+            <img src="./img/tit1.png" alt="" class="st1">
+            <img src="./img/e.png" alt="" class="img1">
+            <img src="./img/ee.png" alt="" class="img2">
+        </div>
+        <div class="sub item3">
+            <h3 class="title">03 이야기 세번째</h3>
+            <img src="./img/tit2.png" alt="" class="st2">
+            <img src="./img/agg.png" alt="" class="img3">
+            <img src="./img/agrippa1.png" alt="" class="img4" onmouseover="this.src='./img/agrippa2.png'" onmouseout="this.src='./img/agrippa1.png'" border="0" style="width:500px; height:600px;" class="img4">
+        </div>
+        <div class="sub item4">
+            <h3 class="title">04 이야기 네번째</h3>
+            <img src="./img/tit3.png" alt="" class="st3">
+            <img src="./img/chh.png" alt="" class="img5">
+            <img src="./img/h.png" alt="" class="img6">
+            <img src="./img/pos.png" alt="" class="imgg" >
+        </div>
+        <div class="sub item5">
+            <h3 class="title">05 이야기 다섯번째</h3>
+            <img src="./img/tit4.png" alt="" class="st4">
+            <img src="./img/fr.png" alt="" class="img7">
+            <img src="./img/" alt="" class="img8">
+        </div>
+        </div>
+        </section>
+    </div>
+</body>
+</html>
