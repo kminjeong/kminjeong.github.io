@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>대검찰청</title>
+    <!--폰트-->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding|Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- 구형 브라우저 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./logo/icon16.png">
+    <!-- 신형 브라우저와 안드로이드 폰 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./logo/icon32.png">
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="./logo/icon57.png">
+    <!-- 아이패드 -->
+    <link rel="apple-touch-icon" size="72x72" href="./logo/icon72.png">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="./logo/icon114.png">
+    <!-- IE10 이상 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="검찰청">
+    <meta name="author" content="minjeong Kim">
+    <meta name="description" content="대검찰청">
+    <meta name="keywords" content="검찰,법,대검찰청,민원,사건">
+    <!-- 반응형, 모바일, 태블릿 사이트 일 경우 뷰포트 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- 적응형 미디어 스크립트 연결 -->
+    <script src="media.js"></script>
+    <link rel="stylesheet" href="reste.css">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <script src="./script/main.js"></script>
+    <script src="script/main2.js"></script>
+</head>
+<style>
+    .content { clear:both;}
+        
+    .vs { width:auto; margin:10px auto; padding:10px; }    
+    .vs img { display:block; width:100%; height:auto; }
+    .title { text-indent:1em; }    
+        
+    .lst { clear:both; position:relative; padding-top:10px; height:auto;
+        max-width:320px; margin:0 auto; padding-left:0; }    
+    .lst li {  background-repeat:no-repeat; background-position:center center; background-size:100%; transition:0.5s; }    
+    .lst li:hover { background-size:130%;}    
+    .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8 { width: auto; height: auto; top:auto; bottom:auto; left:auto; right:auto;
+        position:relative;  background:#999; margin-top:10px; margin-bottom:10px; }
+    .item1 { background-image:url(./img/main.png);}
+    .item2 { background-image:url(./img/main2.png);}    
+    .item3 { background-image:url(./img/main3.png);}    
+    .item4 { background-image:url(./img/main4.png);}
+    .item5 { background-image:url(./img/main5.png);}
+    .item6 { background-image:url(./img/main7.png);}
+    .item7 { background-image:url(./img/main6.png);}
+    .item8 { background-image:url(./img/main6.png);}
+    .lst li.item5:hover { background-size:100%; } 
+    .lst li.item7 { background-position:0px 0px; }    
+    .lst li.item7:hover { background-size:100%; }   
+    .lst li.item8 { background-position:0px -252px; }  
+    .lst li.item8:hover { background-size:100%; }      
+        
+    .lstImg { display:block; width:90%; margin:10px auto; } 
+    .box { position:relative; }    
+    .container section h3 { line-height: 2.4; }    
+    .lstTit { line-height:2.4; font-size:1.4em; text-align:center;
+        padding:1em; }
+    .lstCom { padding:2em; text-align:center; }        
+    .item1 .lstTit {color: #fff; font-size: 3em; float: left; margin-top: 100px;}
+    .item1 .lstCom {float: left; color: #fff; margin-left: -275px; margin-top:230px;}
+    .item2 .lstTit {color: #fff; font-size: 2em; float: left; margin-left: 50px;}
+    .item2 .lstCom {float: left; color: #fff; margin-left: -330px; margin-top:100px; font-size: 18px;}
+    .item3 .lstTit {color: #fff; font-size: 2em;}
+    .item3 .lstCom {float: left; color: #fff; font-size: 14px; margin: 0; padding: 0; margin-top: -50px; margin-left: 52px}
+    .item4 .lstTit {color: #fff; font-size: 2em;}
+    .item5 .lstTit {color: #fff; font-size: 2em;}
+    .item7 .lstTit {color: #222; font-size: 1.5em; margin-top: 110px; margin-left: 100px;}
+    .item8 .lstTit {color: #fff; font-size: 2em; }
+</style>
+<style>
+  
+    @media screen and (min-width:1280px){
+        .lst { max-width:1260px; margin:0 auto; height:920px; }
+        .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8 { position:absolute; overflow:hidden; background-color:#ccc; margin-top: 0;  }
+        .item1, .item3, .item6 { top:10px; }
+        .item2 { top:610px; }
+        .item4 { top:240px; }
+        .item5 { top:700px; }
+        .item7 { top:490px; }
+        .item8 { top:690px; }
+        .item1, .item2 { left:10px; }
+        .item3, .item4, .item5 { left:640px; }
+        .item6, .item7, .item8 { left:950px; }
+        .item1 { width: 620px; height: 590px; }
+        .item2 { width: 620px; height: 300px; }
+        .item3 { width: 300px; height: 220px; }
+        .item4 { width: 300px; height: 450px; }
+        .item5 { width: 300px; height: 210px; }
+        .item6 { width: 300px; height: 470px; }
+        .item7 { width: 300px; height: 200px; }
+        .item8 { width: 300px; height: 220px;  }
+        .lst li.item8 { background-position:0px -220px; } 
+        .itemBox { position:relative; top:auto; left:auto; color:#333; } 
+    }       
+    
+    
+</style>
+<style>
+    /*해더부분*/
+    .hd {min-width: 1200px;  background-color: #fff; z-index: 100; position: relative; padding-top: 114px; margin: 0 auto; text-align: center;}
+    .main{width: 1200px; height: 74px; top: 20px; left: 50%; margin-left: -600px; position: absolute;}
+    .logo {float: left; }
+    .logoicon {position: relative; z-index: 2; width: 105px; height: 50px; background: url(./logo/logo.png); float: left; background-repeat: no-repeat; margin-top: 13px; margin-left: -20px}
+    .logotitle {font-weight:400;font-size: 10px; color: #333; right: 0;position: absolute; bottom: -18px;}
+    /*로그인.회원가입*/
+    .member {float: left; }
+    .member ul li {display: inline-block; padding: 22px 7px; padding-top: 25px;}
+    .member ul li a {color: #222; font-size: 16px; display: block; font-weight: 700;}
+    /*메뉴*/
+    .gnb {width: 900px; height: 0px;float: right; margin-top: 25px;}
+    .gnb .imgg {padding: 0;}
+    .gnb li {width: 150px; height: 50px; float: left;  text-align: center; font-size: 16px; }
+    .gnb .kor {color: #222; font-weight: 700;}
+    .gnb .sub { width: 150px; height:0; font-weight: 500; padding:0; padding-top:55px; position:absolute; z-index:10; transition: 0.6s; box-sizing:border-box; overflow:hidden; }
+    .gnb:hover .sub { display:block; height:260px;} 
+    .gnb .sub li {line-height: 40px; height: 40px; width: 150px; }
+    .gnb .sub li a {color: #fff; font-size: 15px; }
+    .subimg {background: url(img/maincorlo.png); background-repeat: no-repeat; width: 1240px; height:0px; position:absolute; display:block; z-index:6; transition: 0.5s; top:100px; left: -20px;}
+/*    .nav_bg{position: fixed; left: 0; top: 114px; z-index: 99; width:100%; height: 400px; background:rgba(0,0,0,0.75);}*/
+    .gnb:after { content:""; display:block; position:absolute; z-index:5; min-width:4000px; height:0px; background:rgba(0,0,0,0.75); left:-1000px;  top:100px;  transition:1s; }
+    .gnb:hover::after { height: 840px; }
+/*    .gnb .imgg:hover .nav_bg {display: block; opacity:1;}*/
+    .gnb .imgg:hover .subimg {display: block; height: 420px; }
+    .gnb .imgg:hover .sub {display: block; z-index: 999; transition: 0.5s;}
+    /*버튼*/
+    .search { background: #1a395b; width: 1241px;height: 50px; margin: 0 auto;}
+    .search .width {text-align: center; margin: 0 auto; position: relative; }
+    .white {width: 300px; height: 30px; float: right; margin-top: 7px; margin-right: 100px;}
+    .btn {float:left; position: absolute;  width: 40px; height: 40px;margin-left: 730px; margin-top: 5px; background-color: transparent;}
+    .btn:before{content: ""; display: block; width: 25px; height: 25px; background-image: url(img/btn.png); background-repeat: no-repeat; background-position: left top; z-index: 1;}
+    
+    .btn:after{content: "";display: block; width: 25px; height: 25px; top: 7px; height: 25px; position: absolute; background-image: url(img/btn1.png); background-repeat: no-repeat; background-position: left bottom; z-index: 2; overflow:hidden; transition: all  0.15s ease-out;}
+    
+    /*밑에메뉴*/
+    .groupleft {padding: 0; float: left; width:auto; }
+    .groupleft .title {float: left; padding: 0; line-height: 80px; width: 100%; text-align: center; display: block; position: relative;}
+    .groupleft .title a { color: #fff; }
+    .itemtit1 {cursor: pointer; width: 150px; border: 0; position: relative;  float: left; height: 50px; padding: 0;}
+    .itemtit2 {cursor: pointer; width: 150px; border: 0; position: relative; float: left; height: 50px; padding: 0;}
+    .itemtit3 {cursor: pointer; width: 150px; border: 0; position: relative; float: left; height: 50px; padding: 0;}
+    .itemtit1 .title {padding: 0; height: 50px; margin-top: -15px; font-weight: 700;}
+    .itemtit2 .title {padding: 0; height: 50px; margin-top: -15px; font-weight: 700;}
+    .itemtit3 .title {padding: 0; height: 50px; margin-top: -15px; font-weight: 700;}
+    .tit1 {font-size: 14px; display:none; background:#1a395b;  position: absolute; bottom:50px; width: 150px; height:300px; padding: 0; line-height: 50px;}
+    .tit1 a {color: #fff; text-align: center;}
+    .itemtit1:hover .tit1{display: block;}
+    .tit2 {font-size: 14px; display: none; background:#1a395b; position: absolute; bottom:50px; width: 150px; height: 300px; padding: 0; line-height: 50px;}
+    .tit2 a {color: #fff; text-align: center;}
+    .itemtit2:hover .tit2{display: block;}
+    .tit3 {font-size: 14px; display: none; background:#1a395b; position: absolute; bottom:50px; width: 150px; height: 300px; padding: 0; line-height: 50px;}
+    .tit3 a {color: #fff; text-align: center;}
+    .itemtit3:hover .tit3{display: block;}
+    .csdc {margin: 0; margin-left: -40px;}
+    /*푸터*/
+    .ft { background:url(img/ft.png); text-align: center; background-repeat: no-repeat; width:100%; height: 15%; margin-left: -10px; clear: both; background-size: cover;}
+    .define_width {text-align: center; width: 1260px; margin: 0 auto; position: relative;}
+    .copyright {float: left; line-height: 22px; font-size: 15px;font-weight:bold; text-align: center; margin-top: 80px;}
+    .copyright p {padding: 0px 15px; font-weight: bold; float: left; margin-left: -5px;}
+    .copyright .pot {color:black;opacity: 0.7;}
+    .copyright:hover a{color: #fff;}
+</style>
+
+<body>
+    <header class="hd">
+        <div class="main">
+            <a href="index.html" class="logo">
+                <div class="logoicon">
+                    <h1 class="logotitle">PROSECUTORS'OFFICE</h1>
+                </div>
+            </a>
+            <div class="member">
+                <ul>
+                    <li>
+                        <a href="#">로그인</a>
+                    </li>
+                    <li>
+                        <a href="#">회원가입</a>
+                    </li>
+                </ul>
+            </div>
+            <nav class="gnb">
+                <ul class="imgg">
+                   <li>
+                    <a href="#">
+                      <span class="kor">참여민원</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="">일반민원</a></li>
+                        <li><a href="">제증명민원</a></li>
+                        <li><a href="">벌과금/사전검색</a></li>
+                        <li><a href="">자주묻는질문</a></li>
+                        <li><a href="">자유발언대</a></li>
+                        <li><a href="">감동직원추진</a></li>
+                    </ul>
+                    </li>
+                    <li>
+                    <a href="#">
+                    <span class="kor">검찰활동</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="">주요수사활동</a></li>
+                        <li><a href="">공판·형집행</a></li>
+                        <li><a href="">지원활동</a></li>
+                        <li><a href="">국제협력</a></li>
+                    </ul>
+                    </li>
+                    <li>
+                    <a href="#">
+                    <span class="kor">정보자료</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="">동계자료</a></li>
+                        <li><a href="">연구자료</a></li>
+                        <li><a href="">나라지표 상황판</a></li>
+                        <li><a href="">훈령/예규</a></li>
+                    </ul>
+                    </li>
+                    <li>
+                    <a href="#">
+                    <span class="kor">알림소식</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="">공지사항</a></li>
+                        <li><a href="">고시공고</a></li>
+                        <li><a href="">검찰발표자료</a></li>
+                        <li><a href="">검찰소식</a></li>
+                        <li><a href="">찾아오시는 길</a></li>
+                        <li><a href="">전국 겸찰청 찾기</a></li>
+                    </ul>
+                    </li>
+                    <li>
+                    <a href="#">
+                    <span class="kor">정보공개</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="">정보공개안내</a></li>
+                        <li><a href="">사전정보공표</a></li>
+                        <li><a href="">정보목록</a></li>
+                        <li><a href="">정보공개청구</a></li>
+                        <li><a href="">공공테이터개방</a></li>
+                        <li><a href="">정책실명제</a></li>
+                    </ul>
+                    </li>
+                    <li>
+                    <a href="">
+                    <span class="kor">검찰소개</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="">검찰구성</a></li>
+                        <li><a href="">조직 및 업무</a></li>
+                        <li><a href="">검찰총장소개</a></li>
+                        <li><a href="">검찰 CI/CM</a></li>
+                        <li><a href="">검찰역사관</a></li>
+                        <li><a href="">대검찰청견학</a></li>
+                    </ul>
+                    </li>
+                    <div class="subimg">
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<!--    <div class="nav_bg" style="display: block; opacity: 1;"></div>-->
+     <section class="content">
+        <div class="flex_item" id="contents">
+            <div class="lstGroup">
+                <ul class="lst">
+                    <li class="item1">
+                        <div class="box">
+                            <div class="itemBox">
+                                <h3 class="lstTit">바른 검찰</h3>
+                                <p class="lstCom">스스로에게 엄격하고<br>국민의 인권보호에 철저한<br>바른 경찰이 되겠습니다.</p>
+                            </div>       
+                        </div>
+                    </li>
+                    <li class="item2">
+                        <div class="box">
+                            <div class="itemBox">
+                                <h3 class="lstTit">국민의 신뢰를 받는</h3>
+                                <p class="lstCom">'투명한 검찰,바른검찰,열린검찰'</p>
+                            </div>     
+                        </div>
+                    </li>
+                    <li class="item3">
+                        <div class="box">
+                            <div class="itemBox">
+                                <h3 class="lstTit">통계자료</h3>
+                                <p class="lstCom">범죄 없는 밝은 세상을 만드는데<br>앞장서고 있습니다.</p>
+                            </div>     
+                        </div>
+                    </li>
+                    <li class="item4">
+                        <div class="box">
+                            <div class="itemBox">
+                                <h3 class="lstTit">검찰소식</h3>
+                               <!-- <p class="lstCom"></p>-->
+                            </div>     
+                        </div>
+                    </li>
+                    <li class="item5">
+                        <div class="box">
+                            <div class="itemBox">
+                                <h3 class="lstTit">증명서발급</h3>
+                                <!--<p class="lstCom">해당 서비스에 대한 설명</p>-->
+                            </div>     
+                        </div>
+                    </li>
+                    <li class="item6">
+                        <div class="box">
+                            <div class="itemBox">
+                            </div>     
+                        </div>
+                    </li>
+                    <li class="item7">
+                        <div class="box">
+                            <div class="itemBox">
+                                <h3 class="lstTit">자주묻는질문</h3>
+                               <!-- <p class="lstCom">해당 서비스에 대한 설명</p>-->
+                            </div>     
+                        </div>
+                    </li>
+                    <li class="item8">
+                        <div class="box">
+                            <div class="itemBox">
+                                <h3 class="lstTit">나의사건조회</h3>
+                              <!--  <p class="lstCom">해당 서비스에 대한 설명</p>-->
+                            </div>     
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="search">
+        <div class="width">
+            <div class="search_bar">
+                <span></span>
+                <input type="text" class="white" placeholder="검색어를 입력해주세요." id="searchWord" value="">
+                <button type="submit" class="btn">
+                </button>
+            </div>
+            <div class="groupleft">
+               <ul class="csdc">
+                <li class="itemtit1">
+                    <span class="title"><a href="">온라인민원</a></span>
+                    <ul class="tit1">
+                        <li class="parent"><a href="">민원안내</a></li>
+                        <li class="parent"><a href="">일반민원</a></li>
+                        <li class="parent"><a href="">제증명민원</a></li>
+                        <li class="parent"><a href="">벌과금/사건조회</a></li>
+                        <li class="parent"><a href="">감동직원추천</a></li>
+                        <li class="parent"><a href="">자주묻는질문</a></li>
+                    </ul>    
+                </li>
+                <li class="itemtit2">
+                    <span class="title"><a href="">정보서비스</a></span>
+                    <ul class="tit2">
+                        <li class="parent"><a href="">정보공개안내</a></li>
+                        <li class="parent"><a href="">사전정보공표</a></li>
+                        <li class="parent"><a href="">연구자료</a></li>
+                        <li class="parent"><a href="">통계자료</a></li>
+                        <li class="parent"><a href="">훈령/예규</a></li>
+                        <li class="parent"><a href="">정보공개청구</a></li>
+                    </ul>
+                </li>
+                <li class="itemtit3">
+                    <span class="title"><a href="">검찰안내</a></span>
+                    <ul class="tit3">
+                        <li class="parent"><a href="">검찰구성안내</a></li>
+                        <li class="parent"><a href="">검찰청조직과업무</a></li>
+                        <li class="parent"><a href="">검찰활동</a></li>
+                        <li class="parent"><a href="">찾아오시는 길</a></li>
+                        <li class="parent"><a href="">전국검찰청찾기</a></li>
+                        <li class="parent"><a href="">견학신청</a></li>
+                    </ul>
+                </li>
+                <li class="itemtit3">
+                    <span class="title"><a href="">역사관·체험관</a></span>
+                    <ul class="tit3">
+                        <li class="parent"><a href="">검찰소개</a></li>
+                        <li class="parent"><a href="">역사관</a></li>
+                        <li class="parent"><a href="">체험관</a></li>
+                        <li class="parent"><a href="">견학신청</a></li>
+                        <li class="parent"><a href="">게시판</a></li>
+                        <li class="parent"><a href="">알려드려요.</a></li>
+                    </ul>
+                </li>
+                <li class="itemtit3">
+                    <span class="title"><a href="">초대검사 이준</a></span>
+                    <ul class="tit3">
+                        <li class="parent"><a href="">대한제국검사</a></li>
+                        <li class="parent"><a href="">연혁</a></li>
+                        <li class="parent"><a href="">어록</a></li>
+                        <li class="parent"><a href="">이준 기념행사</a></li>
+                        <li class="parent"><a href="">이준 서고</a></li>
+                    </ul>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </div>           
+    </section>
+    
+    <footer class="ft">
+        <div class="define_width">
+            <span class="copyright">
+               <p><a href="" class="pot">개인정보 처리방침</a></p>
+                <p>ㅣ 우편번호 : 06590</p><p>ㅣ서울특별시 서초구 반포대로 157</p> <p>ㅣ대표전화 : 국번없이 130</p>
+                <p class="tit">ㅣCOPYRIGHT ⓒ PROSECUTION SERVICE. ALL RIGHTS RESERVED.</p>
+            </span>
+        </div>
+    </footer>
+</body>
+
+</html>
